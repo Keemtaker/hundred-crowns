@@ -8,8 +8,8 @@ class Destination < ApplicationRecord
 
   validates :name, presence: true
   validates :address, presence: true
-  #validates :type, presence: true
-  #validates :open_hours, presence: true, numericality: {only_integer: true}
-  #validates :close_hours, presence: true, numericality: {only_integer: true}
+  validates :type, presence: true
+  validates :open_hours, presence: true, numericality: {only_integer: true}
+  validates :close_hours, presence: true, numericality: {only_integer: true}
 
 end
