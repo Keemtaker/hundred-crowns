@@ -4,6 +4,7 @@ class DestinationsController < ApplicationController
   end
 
   def show
+
     @destination = Destination.find(params[:id])
     @destination_coordinates = { lat: @destination.latitude, lng: @destination.longitude }
       @destination_coordinates = Destination.where.not(latitude: nil, longitude: nil)
