@@ -1,2 +1,6 @@
-<h1>Destinations#index</h1>
-<p>Find me in app/views/destinations/index.html.erb</p>
+
+<% @destinations.each do |destination| %>
+    <h3><%= destination.name %></h3>
+<% end %>
+
+
