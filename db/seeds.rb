@@ -1,6 +1,4 @@
 
-
-
 # --------------------------------------------------PLACES---------------------------------------------------------------
 
 # BARS
@@ -24,7 +22,7 @@ bar_list = [
   { name: "Sabotøren", address: "Fensmarkgade 27, Norrebro", type: "Bar", open_hours: 16, close_hours: 02 },
   { name: "Dupong", address: "Griffenfeldsgade 52, Norrebro", type: "Bar", open_hours: 16, close_hours: 02 },
   { name: "Brewers Inc", address: "Gormsgade 25, Norrebro", type: "Bar", open_hours: 16, close_hours: 02 },
-  { name: "Nørrebro Bryghus", address: "Ryesgade 3, 2200 København N", type: "Bar", open_hours: 16, close_hours: 02 }
+  { name: "Nørrebro Bryghus", address: "Ryesgade 3, 2200 København N", type: "Bar", open_hours: 16, close_hours: 02 },
   #Kgs. Nytorv
   { name: "1105", address: "Kristen Bernikows Gade 4, 1105 København K", type: "Bar", open_hours: 16, close_hours: 02 },
   { name: "Cafe Viktor", address: "Ny Østergade 8, 1101 København K", type: "Bar", open_hours: 16, close_hours: 02 },
@@ -757,6 +755,17 @@ restaurant_list = [
   { name: "Nicecream", address: "Elmegade 30, 2200 København N", type: "Restaurant", open_hours: 17, close_hours: 22 },
   { name: "Rita's Smørrebrød", address: "Fælledvej 11, Norrebro", type: "Restaurant", open_hours: 17, close_hours: 22 },
 
+
+  #VERSTERBRO
+  { name: "Madklubben", address: "Vesterbrogade 62, 1620 København V", type: "Restaurant", open_hours: 17, close_hours: 22 },
+  { name: "Jensens Bøfhus", address: "Vesterbrogade 11A, 1620 København V", type: "Restaurant", open_hours: 17, close_hours: 22 },
+  { name: "Groeften", address: "Vesterbrogade 3, 1620 København V", type: "Restaurant", open_hours: 17, close_hours: 22 },
+  { name: "Kebabish Vestebro", address: "Vesterbrogade 13, 1620 København V", type: "Restaurant", open_hours: 17, close_hours: 22 },
+  { name: "Tommi’s", address: "Høkerboderne 21-23, 1712 København V", type: "Restaurant", open_hours: 17, close_hours: 22 },
+  { name: "Frascati", address: "Vesterbrogade 9, 1620 København V", type: "Restaurant", open_hours: 17, close_hours: 22 },
+  { name: "Al-Diwan", address: "Vesterbrogade 94, 1620 København V", type: "Restaurant", open_hours: 17, close_hours: 22 },
+  { name: "Sticks n Sushi", address: "Istedgade 62, 1650 København V", type: "Restaurant", open_hours: 17, close_hours: 22 },
+  { name: "Neighborhood", address: "Istegade 27", type: "Restaurant", open_hours: 17, close_hours: 22 }
 ]
 
 
@@ -1081,19 +1090,178 @@ main_course = [
 MenuItem.create!(main_course)
 
 
+#-------------------------------VESTERBRO--------------------------------------
 
+#-------------------------------------------------------------------------------
+restaurant = Destination.find_by_name("Jensens Bøfhus")
 
+appetizers = [
+  {name: "Jensens vegetarian course", type: "appetizer", price: 75, destination: restaurant},
+  {name: "Cold-smoked salmon", type: "appetizer", price: 75, destination: restaurant},
+  {name: "Jensens steak salad", type: "appetizer", price: 75, destination: restaurant}
+]
 
+MenuItem.create!(appetizers)
 
+main_course = [
+  {name: "Ribeye", type: "main_course", price: 200, destination: restaurant},
+  {name: "Beef tenderloin", type: "main_course", price: 225, destination: restaurant},
+  {name: "Strip steak", type: "main_course", price: 250, destination: restaurant}
+]
 
+MenuItem.create!(main_course)
 
+desserts = [
+  {name: "Belgian chocolate cake", type: "dessert", price: 50, destination: restaurant},
+  {name: "New York Style Cheesecake", type: "dessert", price: 50, destination: restaurant},
+  {name: "Coffee & sweet", type: "dessert", price: 50, destination: restaurant}
+]
 
+MenuItem.create!(desserts)
 
+#-------------------------------------------------------------------------------
+restaurant = Destination.find_by_name("Groeften")
 
+appetizers = [
+  {name: "Kartoffelsuppe", type: "appetizer", price: 95, destination: restaurant},
+  {name: "Græskarsuppe", type: "appetizer", price: 95, destination: restaurant},
+  {name: "75gr. søkogte rejer", type: "appetizer", price: 125, destination: restaurant}
+]
 
+MenuItem.create!(appetizers)
 
+main_course = [
+  {name: "Grøftens Stjerneskud", type: "main_course", price: 165, destination: restaurant},
+  {name: "200g. hakkebøf", type: "main_course", price: 215, destination: restaurant},
+  {name: "Kokkens rørte tatar", type: "main_course", price: 179, destination: restaurant}
+]
 
+MenuItem.create!(main_course)
 
+desserts = [
+  {name: "Gammeldags Æblekage", type: "dessert", price: 89, destination: restaurant},
+  {name: "Grøftens Citronfromage", type: "dessert", price: 89, destination: restaurant},
+  {name: "Chokolademousse", type: "dessert", price: 99, destination: restaurant}
+]
+
+MenuItem.create!(desserts)
+
+#-------------------------------------------------------------------------------
+restaurant = Destination.find_by_name("Kebabish Vestebro")
+
+appetizers = [
+  {name: "Mix Salat", type: "appetizer", price: 35, destination: restaurant},
+  {name: "Chicken Salad", type: "appetizer", price: 45, destination: restaurant},
+  {name: "Homus", type: "appetizer", price: 15, destination: restaurant}
+]
+
+MenuItem.create!(appetizers)
+
+main_course = [
+  {name: "Seekh Kebab Ret", type: "main_course", price: 89, destination: restaurant},
+  {name: "Chicken Tikka Ret", type: "main_course", price: 89, destination: restaurant},
+  {name: "Lamb Tikka Ret", type: "main_course", price: 89, destination: restaurant}
+]
+
+MenuItem.create!(main_course)
+
+desserts = [
+  {name: "Kheer", type: "dessert", price: 35, destination: restaurant},
+  {name: " Falooda", type: "dessert", price: 35, destination: restaurant},
+]
+
+MenuItem.create!(desserts)
+
+#-------------------------------------------------------------------------------
+restaurant = Destination.find_by_name("Tommi’s")
+
+main_course = [
+  {name: "Burger", type: "main_course", price: 69, destination: restaurant},
+  {name: "Cheese Burger", type: "main_course", price: 74, destination: restaurant},
+  {name: "Veggie Burger", type: "main_course", price: 69, destination: restaurant}
+]
+
+MenuItem.create!(main_course)
+
+#-------------------------------------------------------------------------------
+restaurant = Destination.find_by_name("Frascati")
+
+appetizers = [
+  {name: "BRUSCHETTA AL POMODORO E BASILICO", type: "appetizer", price: 49, destination: restaurant},
+  {name: "TRIS DI BRUSCHETTE FANTASIA", type: "appetizer", price: 69, destination: restaurant},
+  {name: "MOZZARELLA DI BUFALA E POMODORO", type: "appetizer", price: 95, destination: restaurant}
+]
+
+MenuItem.create!(appetizers)
+
+main_course = [
+  {name: "RAVIOLI DI MAGRO AL POMODORO E BASILICO", type: "main_course", price: 139, destination: restaurant},
+  {name: "PIZZA MARGHERITA", type: "main_course", price: 95, destination: restaurant},
+  {name: "TAGLIATELLE AL SALMONE E ZUCCHINE", type: "main_course", price: 149, destination: restaurant}
+]
+
+MenuItem.create!(main_course)
+
+desserts = [
+  {name: "TIRAMISU", type: "dessert", price: 65, destination: restaurant},
+  {name: "TARTUFO AL CIOCCOLATO", type: "dessert", price: 69, destination: restaurant},
+  {name: "BANANA SPLIT", type: "dessert", price: 65, destination: restaurant}
+]
+
+MenuItem.create!(desserts)
+
+#-------------------------------------------------------------------------------
+restaurant = Destination.find_by_name("Al-Diwan")
+
+appetizers = [
+  {name: "SOUP", type: "appetizer", price: 10, destination: restaurant},
+  {name: "SAMOSA", type: "appetizer", price: 55, destination: restaurant},
+  {name: "CHICKEN TIKKA", type: "appetizer", price: 49, destination: restaurant}
+]
+
+MenuItem.create!(appetizers)
+
+main_course = [
+  {name: "AL-DIWAN LAMB JALFREZI “HOUSE SPECIALITY”", type: "main_course", price: 149, destination: restaurant},
+  {name: "BEEF BHUNA", type: "main_course", price: 149, destination: restaurant},
+  {name: "ALOO METHI", type: "main_course", price: 99, destination: restaurant}
+]
+
+MenuItem.create!(main_course)
+
+desserts = [
+  {name: "ICE CREAM", type: "dessert", price: 45, destination: restaurant},
+  {name: "KULFI", type: "dessert", price: 55, destination: restaurant},
+  {name: "CHEF ́S SPECIAL - DESSERT PLATE", type: "dessert", price: 75, destination: restaurant}
+]
+
+MenuItem.create!(desserts)
+
+#-------------------------------------------------------------------------------
+restaurant = Destination.find_by_name("Neighborhood")
+
+appetizers = [
+  {name: "PORK BEET TERRINE", type: "appetizer", price: 85, destination: restaurant},
+  {name: "COD CEVICHE", type: "appetizer", price: 85, destination: restaurant},
+  {name: "MARY’S OYSTER", type: "appetizer", price: 85, destination: restaurant}
+]
+
+MenuItem.create!(appetizers)
+
+main_course = [
+  {name: "Pizza", type: "main_course", price: 145, destination: restaurant},
+  {name: "Salad", type: "main_course", price: 125, destination: restaurant}
+]
+
+MenuItem.create!(main_course)
+
+desserts = [
+  {name: "DECONSTRUCTED RISALAMANDE", type: "dessert", price: 85, destination: restaurant},
+  {name: "CARROT CAKE", type: "dessert", price: 85, destination: restaurant},
+  {name: "GRANDMA’S FAVORITE", type: "dessert", price: 85, destination: restaurant}
+]
+
+MenuItem.create!(desserts)
 
 
 
