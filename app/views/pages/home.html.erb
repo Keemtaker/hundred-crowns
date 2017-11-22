@@ -1,12 +1,86 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+</head>
 
-<%= form_tag(destinations_path, method: "get") do %>
-  <%= label_tag(:search_item, "Search for:") %>
-  <%= text_field_tag(:search_item) %>
-  <%= submit_tag("Search") %>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="ol-xs-12 col-sm-6 col-sm-offset-3">
+      <div class="form-show">
+        <h1>100 Crowns</h1>
+        <p>Get What you Want.</p>
+        <%= simple_form_for :destination, url: destinations_path, :method => :get do |f| %>
+        <%= f.input :price, placeholder: "DKK", :autofocus => true %>
 
-<%= link_to destinations_path(search_item: "cocktails") do  %>
-  <i class="fa fa-star"></i>
-<% end %>
+
+
+        <div class="form-group">
+
+          <input type="hidden" name="destination[category][]" value="">
+
+        <div class="category-choices">
+          <input class="hidden" type="checkbox" value="Beers" name="destination[category][]" id="destination_category_beers">
+          <label class="category-choice" for="destination_category_beers">
+           Beers
+         </label>
+
+         <input class="hidden" type="checkbox" value="Wines" name="destination[category][]" id="destination_category_wines">
+         <label class="category-choice" for="destination_category_wines">
+          Wines
+        </label>
+
+        <input class="hidden" type="checkbox" value="Cocktails" name="destination[category][]" id="destination_category_cocktails">
+        <label class="category-choice" for="destination_category_cocktails">
+          Cocktails
+        </label>
+
+        <input class="hidden" type="checkbox" value="Apps" name="destination[category][]" id="destination_category_apps">
+        <label class="category-choice" for="destination_category_apps">
+          Apps
+        </label>
+
+        <input class="hidden" type="checkbox" value="Mains" name="destination[category][]" id="destination_category_mains">
+        <label class="category-choice" for="destination_category_mains">
+          Mains
+        </label>
+
+        <input class="hidden" type="checkbox" value="Desserts" name="destination[category][]" id="destination_category_desserts">
+        <label class="category-choice" for="destination_category_desserts">
+          Desserts
+        </label>
+        </div>
+      </div>
+
+
+      <%= f.submit "Search", class: "btn btn-danger" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+<!-- <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Food
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">Apps</a>
+    <a class="dropdown-item" href="#">Mains</a>
+    <a class="dropdown-item" href="#">Desserts</a>
+  </div>
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Drinks
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">Beers</a>
+    <a class="dropdown-item" href="#">Wines</a>
+    <a class="dropdown-item" href="#">Cocktails</a>
+  </div>
+</div>
+-->
+
+
+
+
