@@ -11,45 +11,41 @@
         <%= simple_form_for :destination, url: destinations_path, :method => :get do |f| %>
         <%= f.input :price, placeholder: "DKK", :autofocus => true %>
 
-
-
         <div class="form-group">
-
           <input type="hidden" name="destination[category][]" value="">
 
-        <div class="category-choices">
-          <input class="hidden" type="checkbox" value="Beers" name="destination[category][]" id="destination_category_beers">
-          <label class="category-choice" for="destination_category_beers">
-           Beers
-         </label>
+          <div class="category-choices">
+            <input class="hidden" type="checkbox" value="Beers" name="destination[category][]" id="destination_category_beers">
+            <label class="category-choice" for="destination_category_beers">
+             Beers
+           </label>
 
-         <input class="hidden" type="checkbox" value="Wines" name="destination[category][]" id="destination_category_wines">
-         <label class="category-choice" for="destination_category_wines">
-          Wines
-        </label>
+           <input class="hidden" type="checkbox" value="Wines" name="destination[category][]" id="destination_category_wines">
+           <label class="category-choice" for="destination_category_wines">
+            Wines
+          </label>
 
-        <input class="hidden" type="checkbox" value="Cocktails" name="destination[category][]" id="destination_category_cocktails">
-        <label class="category-choice" for="destination_category_cocktails">
-          Cocktails
-        </label>
+          <input class="hidden" type="checkbox" value="Cocktails" name="destination[category][]" id="destination_category_cocktails">
+          <label class="category-choice" for="destination_category_cocktails">
+            Cocktails
+          </label>
 
-        <input class="hidden" type="checkbox" value="Apps" name="destination[category][]" id="destination_category_apps">
-        <label class="category-choice" for="destination_category_apps">
-          Apps
-        </label>
+          <input class="hidden" type="checkbox" value="Apps" name="destination[category][]" id="destination_category_apps">
+          <label class="category-choice" for="destination_category_apps">
+            Apps
+          </label>
 
-        <input class="hidden" type="checkbox" value="Mains" name="destination[category][]" id="destination_category_mains">
-        <label class="category-choice" for="destination_category_mains">
-          Mains
-        </label>
+          <input class="hidden" type="checkbox" value="Mains" name="destination[category][]" id="destination_category_mains">
+          <label class="category-choice" for="destination_category_mains">
+            Mains
+          </label>
 
-        <input class="hidden" type="checkbox" value="Desserts" name="destination[category][]" id="destination_category_desserts">
-        <label class="category-choice" for="destination_category_desserts">
-          Desserts
-        </label>
+          <input class="hidden" type="checkbox" value="Desserts" name="destination[category][]" id="destination_category_desserts">
+          <label class="category-choice" for="destination_category_desserts">
+            Desserts
+          </label>
         </div>
       </div>
-
 
       <%= f.submit "Search", class: "btn btn-danger" %>
       <% end %>
@@ -57,30 +53,6 @@
   </div>
 </div>
 </div>
-
-
-
-
-<!-- <div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Food
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">Apps</a>
-    <a class="dropdown-item" href="#">Mains</a>
-    <a class="dropdown-item" href="#">Desserts</a>
-  </div>
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Drinks
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">Beers</a>
-    <a class="dropdown-item" href="#">Wines</a>
-    <a class="dropdown-item" href="#">Cocktails</a>
-  </div>
-</div>
--->
-
 
 
 
