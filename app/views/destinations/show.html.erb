@@ -1,12 +1,14 @@
 <div class="container">
   <div class="map-wrapper">
     <div class="map-title">
-      <h1><%= @destination.name %></h1>
+      <% if @destination.photo? %>
+          <%= cl_image_tag @destination.photo.path, width: 200, height: 300, crop: :fill %>
+      <% end %>
 
+      <h1><%= @destination.name %></h1>
     </div>
     <div id="map" style= "height: 80vh; width: 700px;"></div>
   </div>
-
 
 <% content_for(:after_js) do %>
 <script type="text/javascript">
@@ -59,8 +61,6 @@
         ]
     }
 ];
-
-
 
   handler.buildMap({
     provider: {

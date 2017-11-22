@@ -4,7 +4,6 @@ class DestinationsController < ApplicationController
   end
 
   def show
-
     @destination = Destination.find(params[:id])
     @destination_coordinates = { lat: @destination.latitude, lng: @destination.longitude }
       @destination_coordinates = Destination.where.not(latitude: nil, longitude: nil)
@@ -21,4 +20,10 @@ class DestinationsController < ApplicationController
       marker.lng destination.longitude
       end
   end
+
+  def destination_params
+     params.require(:product).permit(:name, :address, :type, :open_hours, :close_hours, :photo)
+  end
 end
+
+#add on-click event listener to markers and add url

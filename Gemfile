@@ -7,6 +7,10 @@ gem 'pg'
 gem 'puma'
 gem 'rails', '5.0.6'
 gem 'redis'
+gem 'cloudinary', '1.1.7'
+gem 'attachinary', github: 'assembler/attachinary'
+gem 'jquery-fileupload-rails'
+
 gem "geocoder"
 gem "coffee-rails"
 gem "gmaps4rails"
