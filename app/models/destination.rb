@@ -1,8 +1,10 @@
 class Destination < ApplicationRecord
   has_many :menus
   has_many :menu_items
+  has_attachment :photo
 
-    geocoded_by :address
+
+  geocoded_by :address
   after_validation :geocode, if: :address_changed?
 
 
