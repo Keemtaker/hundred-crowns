@@ -1,65 +1,73 @@
+p "destroying"
+
+klasses = [Destination, MenuItem]
+klasses.each do |k|
+	k.destroy_all
+end
+
+p "creating"
 
 # --------------------------------------------------PLACES---------------------------------------------------------------
 
 # BARS
 # Nørrebro
 bar_list = [
-  { name: "Kind of Blue", address: "Ravnsborggade 17, 2200 Copenhagen ", type: "Bar", open_hours: 16, close_hours: 02 },
-  { name: "Bo-Bi Bar", address: "Klareboderne 4 1115 Kobenhavn K", type: "Bar", open_hours: 16, close_hours: 02 },
-  { name: "Plenum", address: "Sankt Hans Torv 3, 2200 Copenhagen N", type: "Bar", open_hours: 16, close_hours: 02 },
-  { name: "Ruby", address: "Nybrogade 10 / 1203 København K", type: "Bar", open_hours: 16, close_hours: 02 },
-  { name: "Oak Room", address: "Birkegade 10, kl. tv. 2200 København N", type: "Bar", open_hours: 16, close_hours: 02 },
-  { name: "Charlie's Bar", address: "Pilestræde 33, 1112 Copenhagen K", type: "Bar", open_hours: 16, close_hours: 02 },
-  { name: "Ølbaren", address: "Elmesgade 2, Norrebro", type: "Bar", open_hours: 16, close_hours: 02 },
-  { name: "The Barking Dog", address: "Sankt Hans Gade 19, Norrebro", type: "Bar", open_hours: 16, close_hours: 02 },
-  { name: "Mexibar", address: "Elmesgade 27, Norrebro", type: "Bar", open_hours: 16, close_hours: 02 },
-  { name: "Mikkeller & Friends", address: "Stefansgade 35, Norrebro", type: "Bar", open_hours: 16, close_hours: 02 },
-  { name: "Gilt", address: "Rantzausgade 39, Norrebro", type: "Bar", open_hours: 16, close_hours: 02 },
-  { name: "Brus", address: "Guldbergsgade 29 F, Norrebro", type: "Bar", open_hours: 16, close_hours: 02 },
-  { name: "Himmeriget", address: "Aboulevard 27, Norrebro", type: "Bar", open_hours: 16, close_hours: 02 },
-  { name: "Antidote", address: "Jægerborggade 56, Norrebro", type: "Bar", open_hours: 16, close_hours: 02 },
-  { name: "Kølsters Tolv Haner", address: "Rantzausgade 56, Norrebro", type: "Bar", open_hours: 16, close_hours: 02 },
-  { name: "Sabotøren", address: "Fensmarkgade 27, Norrebro", type: "Bar", open_hours: 16, close_hours: 02 },
-  { name: "Dupong", address: "Griffenfeldsgade 52, Norrebro", type: "Bar", open_hours: 16, close_hours: 02 },
-  { name: "Brewers Inc", address: "Gormsgade 25, Norrebro", type: "Bar", open_hours: 16, close_hours: 02 },
-  { name: "Nørrebro Bryghus", address: "Ryesgade 3, 2200 København N", type: "Bar", open_hours: 16, close_hours: 02 },
+  { name: "Kind of Blue", address: "Ravnsborggade 17, 2200 Copenhagen ", category: "Bar", open_hours: 16, close_hours: 02 },
+  { name: "Bo-Bi Bar", address: "Klareboderne 4 1115 Kobenhavn K", category: "Bar", open_hours: 16, close_hours: 02 },
+  { name: "Plenum", address: "Sankt Hans Torv 3, 2200 Copenhagen N", category: "Bar", open_hours: 16, close_hours: 02 },
+  { name: "Ruby", address: "Nybrogade 10 / 1203 København K", category: "Bar", open_hours: 16, close_hours: 02 },
+  { name: "Oak Room", address: "Birkegade 10, kl. tv. 2200 København N", category: "Bar", open_hours: 16, close_hours: 02 },
+  { name: "Charlie's Bar", address: "Pilestræde 33, 1112 Copenhagen K", category: "Bar", open_hours: 16, close_hours: 02 },
+  { name: "Ølbaren", address: "Elmesgade 2, Norrebro", category: "Bar", open_hours: 16, close_hours: 02 },
+  { name: "The Barking Dog", address: "Sankt Hans Gade 19, Norrebro", category: "Bar", open_hours: 16, close_hours: 02 },
+  { name: "Mexibar", address: "Elmesgade 27, Norrebro", category: "Bar", open_hours: 16, close_hours: 02 },
+  { name: "Mikkeller & Friends", address: "Stefansgade 35, Norrebro", category: "Bar", open_hours: 16, close_hours: 02 },
+  { name: "Gilt", address: "Rantzausgade 39, Norrebro", category: "Bar", open_hours: 16, close_hours: 02 },
+  { name: "Brus", address: "Guldbergsgade 29 F, Norrebro", category: "Bar", open_hours: 16, close_hours: 02 },
+  { name: "Himmeriget", address: "Aboulevard 27, Norrebro", category: "Bar", open_hours: 16, close_hours: 02 },
+  { name: "Antidote", address: "Jægerborggade 56, Norrebro", category: "Bar", open_hours: 16, close_hours: 02 },
+  { name: "Kølsters Tolv Haner", address: "Rantzausgade 56, Norrebro", category: "Bar", open_hours: 16, close_hours: 02 },
+  { name: "Sabotøren", address: "Fensmarkgade 27, Norrebro", category: "Bar", open_hours: 16, close_hours: 02 },
+  { name: "Dupong", address: "Griffenfeldsgade 52, Norrebro", category: "Bar", open_hours: 16, close_hours: 02 },
+  { name: "Brewers Inc", address: "Gormsgade 25, Norrebro", category: "Bar", open_hours: 16, close_hours: 02 },
+  { name: "Nørrebro Bryghus", address: "Ryesgade 3, 2200 København N", category: "Bar", open_hours: 16, close_hours: 02 },
   #Kgs. Nytorv
-  { name: "1105", address: "Kristen Bernikows Gade 4, 1105 København K", type: "Bar", open_hours: 16, close_hours: 02 },
-  { name: "Cafe Viktor", address: "Ny Østergade 8, 1101 København K", type: "Bar", open_hours: 16, close_hours: 02 },
-  { name: "Brønnum", address: "August Bournonvilles Passage 1, 1055 København K", type: "Bar", open_hours: 16, close_hours: 02 },
-  { name: "Nebbiolo ", address: "Store Strandstræde 18, 1255 København K", type: "Bar", open_hours: 16, close_hours: 02 },
-  { name: "Palae Bar", address: "Rantzausgade 39, Norrebro", type: "Bar", open_hours: 16, close_hours: 02 },
-  { name: "Balthazar", address: "Ny Østergade 6, 1101 København K", type: "Bar", open_hours: 16, close_hours: 02 },
-  { name: "Fugu", address: "Gammel Strand 42, 1202 København K", type: "Bar", open_hours: 16, close_hours: 02 },
-  { name: "Dahl & Dahl", address: "Dronningens Tværgade 6, 1302 København K", type: "Bar", open_hours: 16, close_hours: 02 },
-  { name: "K Bar", address: "Ved Stranden 20, 1061 København K", type: "Bar", open_hours: 16, close_hours: 02 },
-  { name: "The Jane", address: "Gråbrødretorv 8, 1154 København K", type: "Bar", open_hours: 16, close_hours: 02 },
-  { name: "Hviids Vinstue", address: "Kongens Nytorv 19, 1050 København K", type: "Bar", open_hours: 16, close_hours: 02 },
-  { name: "Fisken Pub", address: "Nyhavn 17, 1051 København K", type: "Bar", open_hours: 16, close_hours: 02 },
-  { name: "Ruby", address: "Nybrogade 10, 1203 København K", type: "Bar", open_hours: 16, close_hours: 02 },
-  { name: "The bird & The Churchkey", address: "Gammel Strand 44, 1202 København K", type: "Bar", open_hours: 16, close_hours: 02 },
-  { name: "Kayak Bar", address: "Børskaj 12, 1221 København K", type: "Bar", open_hours: 16, close_hours: 02 },
-  { name: "Strom", address: "Niels Hemmingsens Gade 32, 1153 København K", type: "Bar", open_hours: 16, close_hours: 02 },
-  { name: "Nyhavn 17", address: "Nyhavn 17, 1051 København K", type: "Bar", open_hours: 16, close_hours: 02 },
-  { name: "The Standard", address: "Havnegade 44, 1058 København K", type: "Bar", open_hours: 16, close_hours: 02 },
-  { name: "Wessels Kro", address: "Sværtegade 7, 1118 København K", type: "Bar", open_hours: 16, close_hours: 02 },
-  { name: "Bar O", address: "Pilestræde 12, 1112 København K", type: "Bar", open_hours: 16, close_hours: 02 },
-  { name: "Europa 1989", address: "Amagertorv 1, 1160 København K", type: "Bar", open_hours: 16, close_hours: 02 },
+  { name: "1105", address: "Kristen Bernikows Gade 4, 1105 København K", category: "Bar", open_hours: 16, close_hours: 02 },
+  { name: "Cafe Viktor", address: "Ny Østergade 8, 1101 København K", category: "Bar", open_hours: 16, close_hours: 02 },
+  { name: "Brønnum", address: "August Bournonvilles Passage 1, 1055 København K", category: "Bar", open_hours: 16, close_hours: 02 },
+  { name: "Nebbiolo", address: "Store Strandstræde 18, 1255 København K", category: "Bar", open_hours: 16, close_hours: 02 },
+  { name: "Palae Bar", address: "Rantzausgade 39, Norrebro", category: "Bar", open_hours: 16, close_hours: 02 },
+  { name: "Balthazar", address: "Ny Østergade 6, 1101 København K", category: "Bar", open_hours: 16, close_hours: 02 },
+  { name: "Fugu", address: "Gammel Strand 42, 1202 København K", category: "Bar", open_hours: 16, close_hours: 02 },
+  { name: "Dahl & Dahl", address: "Dronningens Tværgade 6, 1302 København K", category: "Bar", open_hours: 16, close_hours: 02 },
+  { name: "K Bar", address: "Ved Stranden 20, 1061 København K", category: "Bar", open_hours: 16, close_hours: 02 },
+  { name: "The Jane", address: "Gråbrødretorv 8, 1154 København K", category: "Bar", open_hours: 16, close_hours: 02 },
+  { name: "Hviids Vinstue", address: "Kongens Nytorv 19, 1050 København K", category: "Bar", open_hours: 16, close_hours: 02 },
+  { name: "Fisken Pub", address: "Nyhavn 17, 1051 København K", category: "Bar", open_hours: 16, close_hours: 02 },
+  { name: "Ruby", address: "Nybrogade 10, 1203 København K", category: "Bar", open_hours: 16, close_hours: 02 },
+  { name: "The bird & The Churchkey", address: "Gammel Strand 44, 1202 København K", category: "Bar", open_hours: 16, close_hours: 02 },
+  { name: "Kayak Bar", address: "Børskaj 12, 1221 København K", category: "Bar", open_hours: 16, close_hours: 02 },
+  { name: "Strom", address: "Niels Hemmingsens Gade 32, 1153 København K", category: "Bar", open_hours: 16, close_hours: 02 },
+  { name: "Nyhavn 17", address: "Nyhavn 17, 1051 København K", category: "Bar", open_hours: 16, close_hours: 02 },
+  { name: "The Standard", address: "Havnegade 44, 1058 København K", category: "Bar", open_hours: 16, close_hours: 02 },
+  { name: "Wessels Kro", address: "Sværtegade 7, 1118 København K", category: "Bar", open_hours: 16, close_hours: 02 },
+  { name: "Bar O", address: "Pilestræde 12, 1112 København K", category: "Bar", open_hours: 16, close_hours: 02 },
+  { name: "Europa 1989", address: "Amagertorv 1, 1160 København K", category: "Bar", open_hours: 16, close_hours: 02 },
   #Vesterbro
-  { name: "Old English", address: "Vesterbrogade 2B, 1620 København V", type: "Bar", open_hours: 16, close_hours: 02 },
-  { name: "Curfew", address: "Stenosgade 1, 1616 København V", type: "Bar", open_hours: 16, close_hours: 02 },
-  { name: "PatePateDk", address: "Slagterboderne 1, 1716 København V", type: "Bar", open_hours: 16, close_hours: 02 },
-  { name: "BarbBar", address: "Vesterbrogade 47, 1620 København V", type: "Bar", open_hours: 16, close_hours: 02 },
-  { name: "Lidkoeb", address: "Vesterbrogade 72B, 1620 København V", type: "Bar", open_hours: 16, close_hours: 02 },
-  { name: "Zeppelin", address: "Vesterbrogade 45, 1620 København V", type: "Bar", open_hours: 16, close_hours: 02 },
-  { name: "Fleisch", address: "Slagterboderne 7, 1716 København V", type: "Bar", open_hours: 16, close_hours: 02 },
-  { name: "Jernbane Cafeen", address: "Reventlowsgade 16, 1651 København V", type: "Bar", open_hours: 16, close_hours: 02 },
-  { name: "Duck and Cover", address: "Dannebrogsgade 6, 1660 København V", type: "Bar", open_hours: 16, close_hours: 02 },
-  { name: "Kolsters Tolv Haner", address: "Rantzausgade 56, 2200 København N", type: "Bar", open_hours: 16, close_hours: 02 },
-  { name: "Nimb Vinotek", address: "Bernstorffsgade 5, 1577 København V", type: "Bar", open_hours: 16, close_hours: 02 },
-  { name: "Brewpub ", address: "Vestergade 29, 1456 København K", type: "Bar", open_hours: 16, close_hours: 02 },
-  { name: "Nimb Bar", address: "Bernstorffsgade 5, 1577 København V", type: "Bar", open_hours: 16, close_hours: 02 },
-  { name: "Dia'legd", address: "Viktoriagade 1, 1655 København V", type: "Bar", open_hours: 16, close_hours: 02 }
+  { name: "Old English", address: "Vesterbrogade 2B, 1620 København V", category: "Bar", open_hours: 16, close_hours: 02 },
+  { name: "Curfew", address: "Stenosgade 1, 1616 København V", category: "Bar", open_hours: 16, close_hours: 02 },
+  { name: "PatePateDk", address: "Slagterboderne 1, 1716 København V", category: "Bar", open_hours: 16, close_hours: 02 },
+  { name: "BarbBar", address: "Vesterbrogade 47, 1620 København V", category: "Bar", open_hours: 16, close_hours: 02 },
+  { name: "Lidkoeb", address: "Vesterbrogade 72B, 1620 København V", category: "Bar", open_hours: 16, close_hours: 02 },
+  { name: "Zeppelin", address: "Vesterbrogade 45, 1620 København V", category: "Bar", open_hours: 16, close_hours: 02 },
+  { name: "Fleisch", address: "Slagterboderne 7, 1716 København V", category: "Bar", open_hours: 16, close_hours: 02 },
+  { name: "Jernbane Cafeen", address: "Reventlowsgade 16, 1651 København V", category: "Bar", open_hours: 16, close_hours: 02 },
+  { name: "Duck and Cover", address: "Dannebrogsgade 6, 1660 København V", category: "Bar", open_hours: 16, close_hours: 02 },
+  { name: "Kolsters Tolv Haner", address: "Rantzausgade 56, 2200 København N", category: "Bar", open_hours: 16, close_hours: 02 },
+  { name: "Nimb Vinotek", address: "Bernstorffsgade 5, 1577 København V", category: "Bar", open_hours: 16, close_hours: 02 },
+  { name: "Brewpub ", address: "Vestergade 29, 1456 København K", category: "Bar", open_hours: 16, close_hours: 02 },
+  { name: "Nimb Bar", address: "Bernstorffsgade 5, 1577 København V", category: "Bar", open_hours: 16, close_hours: 02 },
+  { name: "Dia'legd", address: "Viktoriagade 1, 1655 København V", category: "Bar", open_hours: 16, close_hours: 02 }
 ]
 
 Destination.create!(bar_list)
@@ -69,17 +77,17 @@ Destination.create!(bar_list)
 bar = Destination.find_by_name("Kind of Blue")
 
 beer = [
-MenuItem.create(name: "Ale 16", type: "beer", price: 35, destination: bar),
-MenuItem.create(name: "Fynsk Forår", type: "beer", price: 35, destination: bar),
-MenuItem.create(name: "Bækker Pilsner", type: "beer", price: 30, destination: bar)
+	{name: "Ale 16", category: "beer", price: 35, destination: bar},
+	{name: "Fynsk Forår", category: "beer", price: 35, destination: bar},
+	{name: "Bækker Pilsner", category: "beer", price: 30, destination: bar}
 ]
 
 MenuItem.create!(beer)
 
 wine = [
-MenuItem.create(name: "Postales Del Fin Del Mundo", type: "wine", price: 40, destination: bar),
-MenuItem.create(name: "Petit Chablis", type: "wine", price: 40, destination: bar),
-MenuItem.create(name: "Château Pesquiè Rosé", type: "wine", price: 60, destination: bar)
+{name: "Postales Del Fin Del Mundo", category: "wine", price: 40, destination: bar},
+{name: "Petit Chablis", category: "wine", price: 40, destination: bar},
+{name: "Château Pesquiè Rosé", category: "wine", price: 60, destination: bar}
 ]
 
 MenuItem.create!(wine)
@@ -88,13 +96,13 @@ MenuItem.create!(wine)
 bar = Destination.find_by_name("Bo-Bi Bar")
 
 beer = [
-MenuItem.create(name: "beer", type: "beer", price: 40, destination: bar)
+{name: "beer", category: "beer", price: 40, destination: bar}
 ]
 
 MenuItem.create!(beer)
 
 wine = [
-MenuItem.create(name: "wine", type: "wine", price: 30, destination: bar)
+{name: "wine", category: "wine", price: 30, destination: bar}
 ]
 
 MenuItem.create!(wine)
@@ -103,174 +111,174 @@ MenuItem.create!(wine)
 bar = Destination.find_by_name("Plenum")
 
 beer = [
-MenuItem.create(name: "beer", type: "beer", price: 40, destination: bar)
+{name: "beer", category: "beer", price: 40, destination: bar}
 ]
 MenuItem.create!(beer)
 
 wine = [
-MenuItem.create(name: "wine", type: "wine", price: 45, destination: bar)
+{name: "wine", category: "wine", price: 45, destination: bar}
 ]
 MenuItem.create!(wine)
 
 cocktail = [
-MenuItem.create(name: "cocktail", type: "cocktail", price: 60, destination: bar)
+{name: "cocktail", category: "cocktail", price: 60, destination: bar}
 ]
 MenuItem.create!(cocktail)
 
 #-------------------------------------------------------------------------------
 bar = Destination.find_by_name("Ruby")
 beer = [
-MenuItem.create(name: "Ruby Lager", type: "beer", price: 50, destination: bar),
-MenuItem.create(name: "Geranium Cobbler", type: "beer", price: 50, destination: bar),
-MenuItem.create(name: "Short Straw", type: "beer", price: 50, destination: bar)
+{name: "Ruby Lager", category: "beer", price: 50, destination: bar},
+{name: "Geranium Cobbler", category: "beer", price: 50, destination: bar},
+{name: "Short Straw", category: "beer", price: 50, destination: bar}
 ]
 MenuItem.create!(beer)
 cocktail = [
-MenuItem.create(name: "Gin Fizz", type: "cocktail", price: 100, destination: bar),
-MenuItem.create(name: "G.N. (Grape Nations)", type: "cocktail", price: 100, destination: bar),
-MenuItem.create(name: "Julep & Co.", type: "cocktail", price: 100, destination: bar)
+{name: "Gin Fizz", category: "cocktail", price: 100, destination: bar},
+{name: "G.N. (Grape Nations)", category: "cocktail", price: 100, destination: bar},
+{name: "Julep & Co.", category: "cocktail", price: 100, destination: bar}
 ]
 MenuItem.create!(cocktail)
 
 #-------------------------------------------------------------------------------
 bar = Destination.find_by_name("Oak Room")
 beer = [
-MenuItem.create(name: "Heineken", type: "beer", price: 45, destination: bar),
-MenuItem.create(name: "Brooklyn East India Pale Ale", type: "beer", price: 60, destination: bar),
-MenuItem.create(name: "La Lupulosa IPA", type: "beer", price: 70, destination: bar)
+{name: "Heineken", category: "beer", price: 45, destination: bar},
+{name: "Brooklyn East India Pale Ale", category: "beer", price: 60, destination: bar},
+{name: "La Lupulosa IPA", category: "beer", price: 70, destination: bar}
 ]
 MenuItem.create!(beer)
 wine = [
-MenuItem.create(name: "2015 Domaine de Fontavin", type: "wine", price: 65, destination: bar),
-MenuItem.create(name: "2016 Domaine de Vedilhan", type: "wine", price: 50, destination: bar),
-MenuItem.create(name: "2016 Solval", type: "wine", price: 60, destination: bar)
+{name: "2015 Domaine de Fontavin", category: "wine", price: 65, destination: bar},
+{name: "2016 Domaine de Vedilhan", category: "wine", price: 50, destination: bar},
+{name: "2016 Solval", category: "wine", price: 60, destination: bar}
 ]
 MenuItem.create!(wine)
 cocktail = [
-MenuItem.create(name: "Bushwagon", type: "cocktail", price: 90, destination: bar),
-MenuItem.create(name: "Improved Daiquiri", type: "cocktail", price: 100, destination: bar),
-MenuItem.create(name: "Pink Sammy", type: "cocktail", price: 100, destination: bar)
+{name: "Bushwagon", category: "cocktail", price: 90, destination: bar},
+{name: "Improved Daiquiri", category: "cocktail", price: 100, destination: bar},
+{name: "Pink Sammy", category: "cocktail", price: 100, destination: bar}
 ]
 MenuItem.create!(cocktail)
 
 #-------------------------------------------------------------------------------
 bar = Destination.find_by_name("Charlie's Bar")
 beer = [
-MenuItem.create(name: "Beer", type: "beer", price: 50, destination: bar)
+{name: "Beer", category: "beer", price: 50, destination: bar}
 ]
 MenuItem.create!(beer)
 
 #-------------------------------------------------------------------------------
 bar = Destination.find_by_name("The Barking Dog")
 beer = [
-MenuItem.create(name: "The Barking dog Pilsner", type: "beer", price: 30, destination: bar),
-MenuItem.create(name: "Engel, Hefeweizen Hell", type: "beer", price: 55, destination: bar),
-MenuItem.create(name: "Saison Dupont", type: "beer", price: 50, destination: bar)
+{name: "The Barking dog Pilsner", category: "beer", price: 30, destination: bar},
+{name: "Engel, Hefeweizen Hell", category: "beer", price: 55, destination: bar},
+{name: "Saison Dupont", category: "beer", price: 50, destination: bar}
 ]
 MenuItem.create!(beer)
 wine = [
-MenuItem.create(name: "White", type: "wine", price: 55, destination: bar),
-MenuItem.create(name: "Red", type: "wine", price: 55, destination: bar)
+{name: "White", category: "wine", price: 55, destination: bar},
+{name: "Red", category: "wine", price: 55, destination: bar}
 ]
 MenuItem.create!(wine)
 cocktail = [
-MenuItem.create(name: "Batanga #2", type: "cocktail", price: 90, destination: bar),
-MenuItem.create(name: "Brown Sugar", type: "cocktail", price: 90, destination: bar),
-MenuItem.create(name: "Gin & It", type: "cocktail", price: 90, destination: bar)
+{name: "Batanga #2", category: "cocktail", price: 90, destination: bar},
+{name: "Brown Sugar", category: "cocktail", price: 90, destination: bar},
+{name: "Gin & It", category: "cocktail", price: 90, destination: bar}
 ]
 MenuItem.create!(cocktail)
 
 #-------------------------------------------------------------------------------
 bar = Destination.find_by_name("Mexibar")
 beer = [
-MenuItem.create(name: "Baja Beer", type: "beer", price: 35, destination: bar),
-MenuItem.create(name: "Mexikanske Øl", type: "beer", price: 42, destination: bar)
+{name: "Baja Beer", category: "beer", price: 35, destination: bar},
+{name: "Mexikanske Øl", category: "beer", price: 42, destination: bar}
 ]
 MenuItem.create!(beer)
 cocktail = [
-MenuItem.create(name: "Cosmopolitan", type: "cocktail", price: 44, destination: bar),
-MenuItem.create(name: "Whiskey Sour", type: "cocktail", price: 44, destination: bar),
-MenuItem.create(name: "Mojito", type: "cocktail", price: 56, destination: bar)
+{name: "Cosmopolitan", category: "cocktail", price: 44, destination: bar},
+{name: "Whiskey Sour", category: "cocktail", price: 44, destination: bar},
+{name: "Mojito", category: "cocktail", price: 56, destination: bar}
 ]
 MenuItem.create!(cocktail)
 
 #-------------------------------------------------------------------------------
 bar = Destination.find_by_name("Gilt")
 beer = [
-MenuItem.create(name: "ØKO THY", type: "beer", price: 35, destination: bar),
-MenuItem.create(name: "FINAL FRONTIER ", type: "beer", price: 45, destination: bar),
-MenuItem.create(name: "KARMA CITRA ", type: "beer", price: 45, destination: bar)
+{name: "ØKO THY", category: "beer", price: 35, destination: bar},
+{name: "FINAL FRONTIER ", category: "beer", price: 45, destination: bar},
+{name: "KARMA CITRA ", category: "beer", price: 45, destination: bar}
 ]
 MenuItem.create!(beer)
 wine = [
-MenuItem.create(name: "Chardonnay 2012", type: "wine", price: 50, destination: bar)
+{name: "Chardonnay 2012", category: "wine", price: 50, destination: bar}
 ]
 MenuItem.create!(wine)
 cocktail = [
-MenuItem.create(name: "Cafe Negroni", type: "cocktail", price: 105, destination: bar),
-MenuItem.create(name: "Espresso Martini", type: "cocktail", price: 95, destination: bar),
-MenuItem.create(name: "Pisco Club", type: "cocktail", price: 95, destination: bar)
+{name: "Cafe Negroni", category: "cocktail", price: 105, destination: bar},
+{name: "Espresso Martini", category: "cocktail", price: 95, destination: bar},
+{name: "Pisco Club", category: "cocktail", price: 95, destination: bar}
 ]
 MenuItem.create!(cocktail)
 
 #-------------------------------------------------------------------------------
 bar = Destination.find_by_name("Nørrebro Bryghus")
 beer = [
-MenuItem.create(name: "New York Lager", type: "beer", price: 45, destination: bar),
-MenuItem.create(name: "Bombay Pale Ale", type: "beer", price: 45, destination: bar),
-MenuItem.create(name: "Ravnsborg Rød", type: "beer", price: 45, destination: bar)
+{name: "New York Lager", category: "beer", price: 45, destination: bar},
+{name: "Bombay Pale Ale", category: "beer", price: 45, destination: bar},
+{name: "Ravnsborg Rød", category: "beer", price: 45, destination: bar}
 ]
 MenuItem.create!(beer)
 
 #-------------------------------------------------------------------------------
 bar = Destination.find_by_name("1105")
 beer = [
-MenuItem.create(name: "beer", type: "beer", price: 30, destination: bar)
+{name: "beer", category: "beer", price: 30, destination: bar}
 ]
 MenuItem.create!(beer)
 cocktail = [
-MenuItem.create(name: "cocktail", type: "cocktail", price: 100, destination: bar)
+{name: "cocktail", category: "cocktail", price: 100, destination: bar}
 ]
 MenuItem.create!(cocktail)
 
 #-------------------------------------------------------------------------------
 bar = Destination.find_by_name("Cafe Viktor")
 beer = [
-MenuItem.create(name: "Guld Tuborg", type: "beer", price: 50, destination: bar),
-MenuItem.create(name: "Tuborg Super Light ", type: "beer", price: 50, destination: bar),
-MenuItem.create(name: "Tuborg Classic", type: "beer", price: 50, destination: bar)
+{name: "Guld Tuborg", category: "beer", price: 50, destination: bar},
+{name: "Tuborg Super Light ", category: "beer", price: 50, destination: bar},
+{name: "Tuborg Classic", category: "beer", price: 50, destination: bar}
 ]
 MenuItem.create!(beer)
 wine = [
-MenuItem.create(name: "2016 Alameda, Chardonnay, Central Valley, Chile", type: "wine", price: 70, destination: bar),
-MenuItem.create(name: "2014 Chianti, Barone Ricasoli", type: "wine", price: 75, destination: bar),
-MenuItem.create(name: "2015 Mas Pouperas Côtes du Rhone Magnum Rose", type: "wine", price: 75, destination: bar)
+{name: "2016 Alameda, Chardonnay, Central Valley, Chile", category: "wine", price: 70, destination: bar},
+{name: "2014 Chianti, Barone Ricasoli", category: "wine", price: 75, destination: bar},
+{name: "2015 Mas Pouperas Côtes du Rhone Magnum Rose", category: "wine", price: 75, destination: bar}
 ]
 MenuItem.create!(wine)
 cocktail = [
-MenuItem.create(name: "Four Roses Old Fashioned", type: "cocktail", price: 130, destination: bar),
-MenuItem.create(name: "Negroni", type: "cocktail", price: 130, destination: bar),
-MenuItem.create(name: "Espresso Martini", type: "cocktail", price: 130, destination: bar)
+{name: "Four Roses Old Fashioned", category: "cocktail", price: 130, destination: bar},
+{name: "Negroni", category: "cocktail", price: 130, destination: bar},
+{name: "Espresso Martini", category: "cocktail", price: 130, destination: bar}
 ]
 MenuItem.create!(cocktail)
 
 #-------------------------------------------------------------------------------
 bar = Destination.find_by_name("Brønnum")
 beer = [
-MenuItem.create(name: "Copper-Keeper", type: "beer", price: 60, destination: bar),
-MenuItem.create(name: "Seasonal Beer", type: "beer", price: 60, destination: bar),
-MenuItem.create(name: "Blonde", type: "beer", price: 60, destination: bar)
+{name: "Copper-Keeper", category: "beer", price: 60, destination: bar},
+{name: "Seasonal Beer", category: "beer", price: 60, destination: bar},
+{name: "Blonde", category: "beer", price: 60, destination: bar}
 ]
 MenuItem.create!(beer)
 wine = [
-MenuItem.create(name: "Sauvignon Blac Le Blac De La Mariee", type: "wine", price: 80, destination: bar),
-MenuItem.create(name: "Gamay Gamay Sans Tra La La", type: "wine", price: 80, destination: bar)
+{name: "Sauvignon Blac Le Blac De La Mariee", category: "wine", price: 80, destination: bar},
+{name: "Gamay Gamay Sans Tra La La", category: "wine", price: 80, destination: bar}
 ]
 MenuItem.create!(wine)
 cocktail = [
-MenuItem.create(name: "Bloody Marry", type: "cocktail", price: 140, destination: bar),
-MenuItem.create(name: "Pisco Express", type: "cocktail", price: 135, destination: bar),
-MenuItem.create(name: "Amber Fizz", type: "cocktail", price: 135, destination: bar)
+{name: "Bloody Mary", category: "cocktail", price: 140, destination: bar},
+{name: "Pisco Express", category: "cocktail", price: 135, destination: bar},
+{name: "Amber Fizz", category: "cocktail", price: 135, destination: bar}
 ]
 MenuItem.create!(cocktail)
 
@@ -278,527 +286,526 @@ MenuItem.create!(cocktail)
 bar = Destination.find_by_name("Nebbiolo")
 MenuItem.create!(beer)
 wine = [
-MenuItem.create(name: "wine", type: "wine", price: 75, destination: bar),
-MenuItem.create(name: "wine", type: "wine", price: 100, destination: bar),
-MenuItem.create(name: "wine", type: "wine", price: 125, destination: bar)
+	{name: "red wine", category: "wine", price: 75, destination: bar},
+	{name: "white wine", category: "wine", price: 100, destination: bar},
+	{name: "rosé wine", category: "wine", price: 125, destination: bar}
 ]
 MenuItem.create!(wine)
 cocktail = [
-MenuItem.create(name: "cocktail", type: "cocktail", price: 75, destination: bar)
+{name: "cocktail", category: "cocktail", price: 75, destination: bar}
 ]
 MenuItem.create!(cocktail)
 
 #-------------------------------------------------------------------------------
 bar = Destination.find_by_name("Palae Bar")
 beer = [
-MenuItem.create(name: "lager", type: "beer", price: 28, destination: bar),
-MenuItem.create(name: "Luksus", type: "beer", price: 32, destination: bar),
-MenuItem.create(name: "Lys Øl", type: "beer", price: 28, destination: bar)
+{name: "lager", category: "beer", price: 28, destination: bar},
+{name: "Luksus", category: "beer", price: 32, destination: bar},
+{name: "Lys Øl", category: "beer", price: 28, destination: bar}
 ]
 MenuItem.create!(beer)
 wine = [
-MenuItem.create(name: "White", type: "wine", price: 38, destination: bar),
-MenuItem.create(name: "Red", type: "wine", price: 38, destination: bar),
-MenuItem.create(name: "Rose", type: "wine", price: 38, destination: bar)
+{name: "White", category: "wine", price: 38, destination: bar},
+{name: "Red", category: "wine", price: 38, destination: bar},
+{name: "Rose", category: "wine", price: 38, destination: bar}
 ]
 MenuItem.create!(wine)
 cocktail = [
-MenuItem.create(name: "Spiritus", type: "cocktail", price: 28, destination: bar)
+{name: "Spiritus", category: "cocktail", price: 28, destination: bar}
 ]
 MenuItem.create!(cocktail)
 
 #-------------------------------------------------------------------------------
 bar = Destination.find_by_name("Balthazar")
 beer = [
-MenuItem.create(name: "Kronenbourg 1664", type: "beer", price: 55, destination: bar)
+{name: "Kronenbourg 1664", category: "beer", price: 55, destination: bar}
 ]
 MenuItem.create!(beer)
 wine = [
-MenuItem.create(name: "2014 Macon Blanc Villages Faiveley", type: "wine", price: 85, destination: bar),
-MenuItem.create(name: "2013 Bourgogne Rouge, Vieilles Vignes", type: "wine", price: 85, destination: bar)
+{name: "2014 Macon Blanc Villages Faiveley", category: "wine", price: 85, destination: bar},
+{name: "2013 Bourgogne Rouge, Vieilles Vignes", category: "wine", price: 85, destination: bar}
 ]
 MenuItem.create!(wine)
 cocktail = [
-MenuItem.create(name: "Miracles", type: "cocktail", price: 145, destination: bar),
-MenuItem.create(name: "Espresso Martini", type: "cocktail", price: 155, destination: bar),
-MenuItem.create(name: "Downtown Abbey", type: "cocktail", price: 145, destination: bar)
+{name: "Miracles", category: "cocktail", price: 145, destination: bar},
+{name: "Espresso Martini", category: "cocktail", price: 155, destination: bar},
+{name: "Downtown Abbey", category: "cocktail", price: 145, destination: bar}
 ]
 MenuItem.create!(cocktail)
 
 #-------------------------------------------------------------------------------
 bar = Destination.find_by_name("Fugu")
 beer = [
-MenuItem.create(name: "Royal Øko", type: "beer", price: 50, destination: bar),
-MenuItem.create(name: "Heineken", type: "beer", price: 50, destination: bar),
-MenuItem.create(name: "Beer of the Season", type: "beer", price: 60, destination: bar)
+{name: "Royal Øko", category: "beer", price: 50, destination: bar},
+{name: "Heineken", category: "beer", price: 50, destination: bar},
+{name: "Beer of the Season", category: "beer", price: 60, destination: bar}
 ]
 MenuItem.create!(beer)
 wine = [
-MenuItem.create(name: "White", type: "wine", price: 70, destination: bar),
-MenuItem.create(name: "Red", type: "wine", price: 70, destination: bar),
-MenuItem.create(name: "I am Rose", type: "wine", price: 70, destination: bar)
+{name: "White", category: "wine", price: 70, destination: bar},
+{name: "Red", category: "wine", price: 70, destination: bar},
+{name: "I am Rose", category: "wine", price: 70, destination: bar}
 ]
 MenuItem.create!(wine)
 cocktail = [
-MenuItem.create(name: "Espresso Martini", type: "cocktail", price: 85, destination: bar),
-MenuItem.create(name: "Doctor Cucumber", type: "cocktail", price: 85, destination: bar),
-MenuItem.create(name: "Pecan Old Fashioned", type: "cocktail", price: 85, destination: bar)
+{name: "Espresso Martini", category: "cocktail", price: 85, destination: bar},
+{name: "Doctor Cucumber", category: "cocktail", price: 85, destination: bar},
+{name: "Pecan Old Fashioned", category: "cocktail", price: 85, destination: bar}
 ]
 MenuItem.create!(cocktail)
 
 #-------------------------------------------------------------------------------
 bar = Destination.find_by_name("Dahl & Dahl")
 beer = [
-MenuItem.create(name: "Sommerpajan", type: "beer", price: 65, destination: bar),
-MenuItem.create(name: "Rokkestenen", type: "beer", price: 65, destination: bar),
-MenuItem.create(name: "Opalsøen", type: "beer", price: 65, destination: bar)
+{name: "Sommerpajan", category: "beer", price: 65, destination: bar},
+{name: "Rokkestenen", category: "beer", price: 65, destination: bar},
+{name: "Opalsøen", category: "beer", price: 65, destination: bar}
 ]
 MenuItem.create!(beer)
 wine = [
-MenuItem.create(name: "Classique Single Varietals", type: "wine", price: 55, destination: bar),
-MenuItem.create(name: "Haus Klosterberg", type: "wine", price: 70, destination: bar),
-MenuItem.create(name: "Arroyo Crianza, Arroyo", type: "wine", price: 85, destination: bar)
+{name: "Classique Single Varietals", category: "wine", price: 55, destination: bar},
+{name: "Haus Klosterberg", category: "wine", price: 70, destination: bar},
+{name: "Arroyo Crianza, Arroyo", category: "wine", price: 85, destination: bar}
 ]
 MenuItem.create!(wine)
 cocktail = [
-MenuItem.create(name: "Rabarber Hâud", type: "cocktail", price: 85, destination: bar),
-MenuItem.create(name: "Bornholmsk Granit", type: "cocktail", price: 85, destination: bar),
-MenuItem.create(name: "Lady Killer", type: "cocktail", price: 85, destination: bar)
+{name: "Rabarber Hâud", category: "cocktail", price: 85, destination: bar},
+{name: "Bornholmsk Granit", category: "cocktail", price: 85, destination: bar},
+{name: "Lady Killer", category: "cocktail", price: 85, destination: bar}
 ]
 MenuItem.create!(cocktail)
 
 #-------------------------------------------------------------------------------
 bar = Destination.find_by_name("K Bar")
 beer = [
-MenuItem.create(name: "Pilsner", type: "beer", price: 45, destination: bar),
-MenuItem.create(name: "Ale #1", type: "beer", price: 55, destination: bar)
+{name: "Pilsner", category: "beer", price: 45, destination: bar},
+{name: "Ale #1", category: "beer", price: 55, destination: bar}
 ]
 MenuItem.create!(beer)
 wine = [
-MenuItem.create(name: "White", type: "wine", price: 60, destination: bar),
-MenuItem.create(name: "Red", type: "wine", price: 60, destination: bar),
-MenuItem.create(name: "Rose", type: "wine", price: 60, destination: bar)
+{name: "White", category: "wine", price: 60, destination: bar},
+{name: "Red", category: "wine", price: 60, destination: bar},
+{name: "Rose", category: "wine", price: 60, destination: bar}
 ]
 MenuItem.create!(wine)
 cocktail = [
-MenuItem.create(name: "The Salad Martini", type: "cocktail", price: 100, destination: bar),
-MenuItem.create(name: "Bulldog Gin", type: "cocktail", price: 80, destination: bar),
-MenuItem.create(name: "Et Stille Drama", type: "cocktail", price: 135, destination: bar)
+{name: "The Salad Martini", category: "cocktail", price: 100, destination: bar},
+{name: "Bulldog Gin", category: "cocktail", price: 80, destination: bar},
+{name: "Et Stille Drama", category: "cocktail", price: 135, destination: bar}
 ]
 MenuItem.create!(cocktail)
 
 #-------------------------------------------------------------------------------
 bar = Destination.find_by_name("The Jane")
 beer = [
-MenuItem.create(name: "beer", type: "beer", price: 75, destination: bar)
+{name: "beer", category: "beer", price: 75, destination: bar}
 ]
 MenuItem.create!(beer)
 cocktail = [
-MenuItem.create(name: "cocktail", type: "cocktail", price: 80, destination: bar)
+{name: "cocktail", category: "cocktail", price: 80, destination: bar}
 ]
 MenuItem.create!(cocktail)
 
 #-------------------------------------------------------------------------------
 bar = Destination.find_by_name("Hviids Vinstue")
 beer = [
-MenuItem.create(name: "beer", type: "beer", price: 60, destination: bar)
+{name: "beer", category: "beer", price: 60, destination: bar}
 ]
 MenuItem.create!(beer)
 wine = [
-MenuItem.create(name: "Wine", type: "wine", price: 40, destination: bar)
+{name: "Wine", category: "wine", price: 40, destination: bar}
 ]
 MenuItem.create!(wine)
 
 #-------------------------------------------------------------------------------
 bar = Destination.find_by_name("Fisken Pub")
 beer = [
-MenuItem.create(name: "beer", type: "beer", price: 55, destination: bar)
+{name: "beer", category: "beer", price: 55, destination: bar}
 ]
 MenuItem.create!(beer)
 wine = [
-MenuItem.create(name: "White", type: "wine", price: 45, destination: bar)
+{name: "White", category: "wine", price: 45, destination: bar}
 ]
 MenuItem.create!(wine)
 
 #-------------------------------------------------------------------------------
 bar = Destination.find_by_name("The bird & The Churchkey")
 beer = [
-MenuItem.create(name: "Heineken", type: "beer", price: 50, destination: bar),
-MenuItem.create(name: "Royal Øko", type: "beer", price: 50, destination: bar),
-MenuItem.create(name: "Royal Øko Classic", type: "beer", price: 50, destination: bar)
+{name: "Heineken", category: "beer", price: 50, destination: bar},
+{name: "Royal Øko", category: "beer", price: 50, destination: bar},
+{name: "Royal Øko Classic", category: "beer", price: 50, destination: bar}
 ]
 MenuItem.create!(beer)
 cocktail = [
-MenuItem.create(name: "42-00", type: "cocktail", price: 95, destination: bar),
-MenuItem.create(name: "Mr. Henrik Hammer", type: "cocktail", price: 95, destination: bar),
-MenuItem.create(name: "The Neoclassic", type: "cocktail", price: 95, destination: bar)
+{name: "42-00", category: "cocktail", price: 95, destination: bar},
+{name: "Mr. Henrik Hammer", category: "cocktail", price: 95, destination: bar},
+{name: "The Neoclassic", category: "cocktail", price: 95, destination: bar}
 ]
 MenuItem.create!(cocktail)
 
 #-------------------------------------------------------------------------------
 bar = Destination.find_by_name("Kayak Bar")
 beer = [
-MenuItem.create(name: "Fadøl", type: "beer", price: 45, destination: bar),
-MenuItem.create(name: "Special øl", type: "beer", price: 60, destination: bar),
-MenuItem.create(name: "Sol", type: "beer", price: 40, destination: bar)
+{name: "Fadøl", category: "beer", price: 45, destination: bar},
+{name: "Special øl", category: "beer", price: 60, destination: bar},
+{name: "Sol", category: "beer", price: 40, destination: bar}
 ]
 MenuItem.create!(beer)
 wine = [
-MenuItem.create(name: "White", type: "wine", price: 50, destination: bar),
-MenuItem.create(name: "Red", type: "wine", price: 50, destination: bar),
-MenuItem.create(name: "Rose", type: "wine", price: 50, destination: bar)
+{name: "White", category: "wine", price: 50, destination: bar},
+{name: "Red", category: "wine", price: 50, destination: bar},
+{name: "Rose", category: "wine", price: 50, destination: bar}
 ]
 MenuItem.create!(wine)
 cocktail = [
-MenuItem.create(name: "Aperol Spritz", type: "cocktail", price: 85, destination: bar),
-MenuItem.create(name: "Cava Spritz", type: "cocktail", price: 85, destination: bar),
-MenuItem.create(name: "Classic Cocktails", type: "cocktail", price: 90, destination: bar)
+{name: "Aperol Spritz", category: "cocktail", price: 85, destination: bar},
+{name: "Cava Spritz", category: "cocktail", price: 85, destination: bar},
+{name: "Classic Cocktails", category: "cocktail", price: 90, destination: bar}
 ]
 MenuItem.create!(cocktail)
 
 #-------------------------------------------------------------------------------
 bar = Destination.find_by_name("Strom")
 beer = [
-MenuItem.create(name: "beer", type: "beer", price: 60, destination: bar)
+{name: "beer", category: "beer", price: 60, destination: bar}
 ]
 MenuItem.create!(beer)
 wine = [
-MenuItem.create(name: "Wine", type: "wine", price: 70, destination: bar)
+{name: "Wine", category: "wine", price: 70, destination: bar}
 ]
 MenuItem.create!(wine)
 cocktail = [
-MenuItem.create(name: "cocktail", type: "cocktail", price: 100, destination: bar)
+{name: "cocktail", category: "cocktail", price: 100, destination: bar}
 ]
 MenuItem.create!(cocktail)
 
 #-------------------------------------------------------------------------------
 bar = Destination.find_by_name("Nyhavn 17")
 beer = [
-MenuItem.create(name: "Nyhavn 17 Ale", type: "beer", price: 38, destination: bar),
-MenuItem.create(name: "Carlsberg Pilsner", type: "beer", price: 32, destination: bar),
-MenuItem.create(name: "Turborg Classic", type: "beer", price: 34, destination: bar)
+{name: "Nyhavn 17 Ale", category: "beer", price: 38, destination: bar},
+{name: "Carlsberg Pilsner", category: "beer", price: 32, destination: bar},
+{name: "Turborg Classic", category: "beer", price: 34, destination: bar}
 ]
 MenuItem.create!(beer)
 wine = [
-MenuItem.create(name: "Bestheim, Roayon de Lune, Alsace, 2016", type: "wine", price: 95, destination: bar),
-MenuItem.create(name: "Veranza, Tinto, Valle De La Cinca, 2015", type: "wine", price: 85, destination: bar),
-MenuItem.create(name: "Raimat Clamor Rosado, Catalonien", type: "wine", price: 80, destination: bar)
+{name: "Bestheim, Roayon de Lune, Alsace, 2016", category: "wine", price: 95, destination: bar},
+{name: "Veranza, Tinto, Valle De La Cinca, 2015", category: "wine", price: 85, destination: bar},
+{name: "Raimat Clamor Rosado, Catalonien", category: "wine", price: 80, destination: bar}
 ]
 MenuItem.create!(wine)
 
 #-------------------------------------------------------------------------------
 bar = Destination.find_by_name("Wessels Kro")
 beer = [
-MenuItem.create(name: "beer", type: "beer", price: 45, destination: bar)
+{name: "beer", category: "beer", price: 45, destination: bar}
 ]
 MenuItem.create!(beer)
 wine = [
-MenuItem.create(name: "wine", type: "wine", price: 40, destination: bar)
+{name: "wine", category: "wine", price: 40, destination: bar}
 ]
 MenuItem.create!(wine)
 
 #-------------------------------------------------------------------------------
 bar = Destination.find_by_name("Bar O")
 beer = [
-MenuItem.create(name: "Beer", type: "beer", price: 80, destination: bar)
+{name: "Beer", category: "beer", price: 80, destination: bar}
 ]
 MenuItem.create!(beer)
 wine = [
-MenuItem.create(name: "wine", type: "wine", price: 70, destination: bar)
+{name: "wine", category: "wine", price: 70, destination: bar}
 ]
 MenuItem.create!(wine)
 cocktail = [
-MenuItem.create(name: "cocktail", type: "cocktail", price: 110, destination: bar)
+{name: "cocktail", category: "cocktail", price: 110, destination: bar}
 ]
 MenuItem.create!(cocktail)
 
 #-------------------------------------------------------------------------------
 bar = Destination.find_by_name("Europa 1989")
 beer = [
-MenuItem.create(name: "CARLSBERG", type: "beer", price: 49, destination: bar),
-MenuItem.create(name: "Turborg Classic", type: "beer", price: 52, destination: bar),
-MenuItem.create(name: "Tuborg Guld", type: "beer", price: 54, destination: bar)
+{name: "CARLSBERG", category: "beer", price: 49, destination: bar},
+{name: "Turborg Classic", category: "beer", price: 52, destination: bar},
+{name: "Tuborg Guld", category: "beer", price: 54, destination: bar}
 ]
 MenuItem.create!(beer)
 wine = [
-MenuItem.create(name: "Sauvignon Blanc", type: "wine", price: 75, destination: bar),
-MenuItem.create(name: "Merlot", type: "wine", price: 80, destination: bar),
-MenuItem.create(name: "D2 Rosé", type: "wine", price: 85, destination: bar)
+{name: "Sauvignon Blanc", category: "wine", price: 75, destination: bar},
+{name: "Merlot", category: "wine", price: 80, destination: bar},
+{name: "D2 Rosé", category: "wine", price: 85, destination: bar}
 ]
 MenuItem.create!(wine)
 cocktail = [
-MenuItem.create(name: "Cosmopolitan", type: "cocktail", price: 94, destination: bar),
-MenuItem.create(name: "Mojito", type: "cocktail", price: 99, destination: bar),
-MenuItem.create(name: "Espresso Martini", type: "cocktail", price: 99, destination: bar)
+{name: "Cosmopolitan", category: "cocktail", price: 94, destination: bar},
+{name: "Mojito", category: "cocktail", price: 99, destination: bar},
+{name: "Espresso Martini", category: "cocktail", price: 99, destination: bar}
 ]
 MenuItem.create!(cocktail)
 
 #-------------------------------------------------------------------------------
 bar = Destination.find_by_name("Old English")
 beer = [
-MenuItem.create(name: "Fadøl", type: "beer", price: 45, destination: bar)
+{name: "Fadøl", category: "beer", price: 45, destination: bar}
 ]
 MenuItem.create!(beer)
 
 #-------------------------------------------------------------------------------
 bar = Destination.find_by_name("Curfew")
 beer = [
-MenuItem.create(name: "Brooklyn Lager Pre Prohibition Style", type: "beer", price: 75, destination: bar)
+{name: "Brooklyn Lager Pre Prohibition Style", category: "beer", price: 75, destination: bar}
 ]
 MenuItem.create!(beer)
 wine = [
-MenuItem.create(name: "Muros Antigos Loureiro 2015", type: "wine", price: 80, destination: bar),
-MenuItem.create(name: "EA, Cartuxa, Alentejo 2014", type: "wine", price: 80, destination: bar)
+{name: "Muros Antigos Loureiro 2015", category: "wine", price: 80, destination: bar},
+{name: "EA, Cartuxa, Alentejo 2014", category: "wine", price: 80, destination: bar}
 ]
 MenuItem.create!(wine)
 cocktail = [
-MenuItem.create(name: "Clockwork orange", type: "cocktail", price: 125, destination: bar),
-MenuItem.create(name: "Tess of the D’urbervilles", type: "cocktail", price: 125, destination: bar),
-MenuItem.create(name: "Negroni", type: "cocktail", price: 125, destination: bar)
+{name: "Clockwork orange", category: "cocktail", price: 125, destination: bar},
+{name: "Tess of the D’urbervilles", category: "cocktail", price: 125, destination: bar},
+{name: "Negroni", category: "cocktail", price: 125, destination: bar}
 ]
 MenuItem.create!(cocktail)
 
 #-------------------------------------------------------------------------------
 bar = Destination.find_by_name("PatePate")
 wine = [
-MenuItem.create(name: "lopez de haro Vintae · Rosado ", type: "wine", price: 75, destination: bar),
-MenuItem.create(name: "Le Manpòt Blanc Domaine Bassac", type: "wine", price: 85, destination: bar),
-MenuItem.create(name: "Plan de dieu Domaine Durieu ", type: "wine", price: 85, destination: bar)
+{name: "lopez de haro Vintae · Rosado ", category: "wine", price: 75, destination: bar},
+{name: "Le Manpòt Blanc Domaine Bassac", category: "wine", price: 85, destination: bar},
+{name: "Plan de dieu Domaine Durieu ", category: "wine", price: 85, destination: bar}
 ]
 MenuItem.create!(wine)
 
 #-------------------------------------------------------------------------------
 bar = Destination.find_by_name("BarbBar")
 beer = [
-MenuItem.create(name: "Heineken - Extra Cold", type: "beer", price: 32, destination: bar),
-MenuItem.create(name: "Royal Pilsner Organic", type: "beer", price: 32, destination: bar),
-MenuItem.create(name: "Royal Classic Organic", type: "beer", price: 32, destination: bar)
+{name: "Heineken - Extra Cold", category: "beer", price: 32, destination: bar},
+{name: "Royal Pilsner Organic", category: "beer", price: 32, destination: bar},
+{name: "Royal Classic Organic", category: "beer", price: 32, destination: bar}
 ]
 MenuItem.create!(beer)
 cocktail = [
-MenuItem.create(name: "Gin Tonic", type: "cocktail", price: 40, destination: bar),
-MenuItem.create(name: "Brown Sugar", type: "cocktail", price: 90, destination: bar),
-MenuItem.create(name: "Gin & It", type: "cocktail", price: 90, destination: bar)
+{name: "Gin Tonic", category: "cocktail", price: 40, destination: bar},
+{name: "Brown Sugar", category: "cocktail", price: 90, destination: bar},
+{name: "Gin & It", category: "cocktail", price: 90, destination: bar}
 ]
 MenuItem.create!(cocktail)
 
 #-------------------------------------------------------------------------------
 bar = Destination.find_by_name("Lidkoeb")
 beer = [
-MenuItem.create(name: "Green Keeper", type: "beer", price: 50, destination: bar),
-MenuItem.create(name: "Ruby Lager", type: "beer", price: 50, destination: bar),
-MenuItem.create(name: "Founders All Day IPA", type: "beer", price: 60, destination: bar)
+{name: "Green Keeper", category: "beer", price: 50, destination: bar},
+{name: "Ruby Lager", category: "beer", price: 50, destination: bar},
+{name: "Founders All Day IPA", category: "beer", price: 60, destination: bar}
 ]
 MenuItem.create!(beer)
 wine = [
-MenuItem.create(name: "Calles Jazz Riesling", type: "wine", price: 70, destination: bar),
-MenuItem.create(name: "Le Rouge de Cornus, Garreliere", type: "wine", price: 70, destination: bar)
+{name: "Calles Jazz Riesling", category: "wine", price: 70, destination: bar},
+{name: "Le Rouge de Cornus, Garreliere", category: "wine", price: 70, destination: bar}
 ]
 MenuItem.create!(wine)
 cocktail = [
-MenuItem.create(name: "Vores Daiquir", type: "cocktail", price: 100, destination: bar),
-MenuItem.create(name: "Om Kvæde", type: "cocktail", price: 120, destination: bar),
-MenuItem.create(name: "Skrædder Punch", type: "cocktail", price: 110, destination: bar)
+{name: "Vores Daiquir", category: "cocktail", price: 100, destination: bar},
+{name: "Om Kvæde", category: "cocktail", price: 120, destination: bar},
+{name: "Skrædder Punch", category: "cocktail", price: 110, destination: bar}
 ]
 MenuItem.create!(cocktail)
 
 #-------------------------------------------------------------------------------
 bar = Destination.find_by_name("Zeppelin")
 beer = [
-MenuItem.create(name: "Turborg Classic", type: "beer", price: 30, destination: bar),
-MenuItem.create(name: "Turborg Rå, IPA", type: "beer", price: 40, destination: bar)
+{name: "Turborg Classic", category: "beer", price: 30, destination: bar},
+{name: "Turborg Rå, IPA", category: "beer", price: 40, destination: bar}
 ]
 MenuItem.create!(beer)
 wine = [
-MenuItem.create(name: "White", type: "wine", price: 50, destination: bar),
-MenuItem.create(name: "Red", type: "wine", price: 50, destination: bar),
-MenuItem.create(name: "Rose", type: "wine", price: 50, destination: bar)
+{name: "White", category: "wine", price: 50, destination: bar},
+{name: "Red", category: "wine", price: 50, destination: bar},
+{name: "Rose", category: "wine", price: 50, destination: bar}
 ]
 MenuItem.create!(wine)
 cocktail = [
-MenuItem.create(name: "Gin & Tonic", type: "cocktail", price: 70, destination: bar),
-MenuItem.create(name: "Rum & Coke", type: "cocktail", price: 70, destination: bar),
-MenuItem.create(name: "Tom Collins", type: "cocktail", price: 90, destination: bar)
+{name: "Gin & Tonic", category: "cocktail", price: 70, destination: bar},
+{name: "Rum & Coke", category: "cocktail", price: 70, destination: bar},
+{name: "Tom Collins", category: "cocktail", price: 90, destination: bar}
 ]
 MenuItem.create!(cocktail)
 
 #-------------------------------------------------------------------------------
 bar = Destination.find_by_name("Fleisch")
 beer = [
-MenuItem.create(name: "beer", type: "beer", price: 40, destination: bar)
+{name: "beer", category: "beer", price: 40, destination: bar}
 ]
 MenuItem.create!(beer)
 wine = [
-MenuItem.create(name: "wine", type: "wine", price: 70, destination: bar)
+{name: "wine", category: "wine", price: 70, destination: bar}
 ]
 MenuItem.create!(wine)
 cocktail = [
-MenuItem.create(name: "cocktail", type: "cocktail", price: 90, destination: bar)
+{name: "cocktail", category: "cocktail", price: 90, destination: bar}
 ]
 MenuItem.create!(cocktail)
 
 #-------------------------------------------------------------------------------
 bar = Destination.find_by_name("Jernbane Cafeen")
 beer = [
-MenuItem.create(name: "beer", type: "beer", price: 70, destination: bar)
+{name: "beer", category: "beer", price: 70, destination: bar}
 ]
 MenuItem.create!(beer)
 wine = [
-MenuItem.create(name: "wine", type: "wine", price: 50, destination: bar)
+{name: "wine", category: "wine", price: 50, destination: bar}
 ]
 MenuItem.create!(wine)
 cocktail = [
-MenuItem.create(name: "cocktail", type: "cocktail", price: 100, destination: bar)
+{name: "cocktail", category: "cocktail", price: 100, destination: bar}
 ]
 MenuItem.create!(cocktail)
 
 #-------------------------------------------------------------------------------
 bar = Destination.find_by_name("Duck and Cover")
 beer = [
-MenuItem.create(name: "beer", type: "beer", price: 70, destination: bar)
+{name: "beer", category: "beer", price: 70, destination: bar}
 ]
 MenuItem.create!(beer)
 cocktail = [
-MenuItem.create(name: "cocktail", type: "cocktail", price: 100, destination: bar)
+{name: "cocktail", category: "cocktail", price: 100, destination: bar}
 ]
 MenuItem.create!(cocktail)
 
 #-------------------------------------------------------------------------------
 bar = Destination.find_by_name("Kolsters Tolv Haner")
 beer = [
-MenuItem.create(name: "beer", type: "beer", price: 50, destination: bar)
+{name: "beer", category: "beer", price: 50, destination: bar}
 ]
 MenuItem.create!(beer)
 wine = [
-MenuItem.create(name: "wine", type: "wine", price: 35, destination: bar)
+{name: "wine", category: "wine", price: 35, destination: bar}
 ]
 MenuItem.create!(wine)
 
 #-------------------------------------------------------------------------------
 bar = Destination.find_by_name("Nimb Vinotek")
 beer = [
-MenuItem.create(name: "beer", type: "beer", price: 90, destination: bar)
+{name: "beer", category: "beer", price: 90, destination: bar}
 ]
 MenuItem.create!(beer)
 wine = [
-MenuItem.create(name: "wine", type: "wine", price: 80, destination: bar)
+{name: "wine", category: "wine", price: 80, destination: bar}
 ]
 MenuItem.create!(wine)
 cocktail = [
-MenuItem.create(name: "cocktail", type: "cocktail", price: 100, destination: bar)
+{name: "cocktail", category: "cocktail", price: 100, destination: bar}
 ]
 MenuItem.create!(cocktail)
 
 #-------------------------------------------------------------------------------
 bar = Destination.find_by_name("Curfew")
 beer = [
-MenuItem.create(name: "beer", type: "beer", price: 90, destination: bar)
+{name: "beer", category: "beer", price: 90, destination: bar}
 ]
 MenuItem.create!(beer)
 wine = [
-MenuItem.create(name: "wine", type: "wine", price: 80, destination: bar)
+{name: "wine", category: "wine", price: 80, destination: bar}
 ]
 MenuItem.create!(wine)
 cocktail = [
-MenuItem.create(name: "cocktail", type: "cocktail", price: 100, destination: bar)
+{name: "cocktail", category: "cocktail", price: 100, destination: bar}
 ]
 MenuItem.create!(cocktail)
 
 #-------------------------------------------------------------------------------
 bar = Destination.find_by_name("Brewpub ")
 beer = [
-MenuItem.create(name: "beer", type: "beer", price: 65, destination: bar)
+{name: "beer", category: "beer", price: 65, destination: bar}
 ]
 MenuItem.create!(beer)
 wine = [
-MenuItem.create(name: "wine", type: "wine", price: 65, destination: bar)
+{name: "wine", category: "wine", price: 65, destination: bar}
 ]
 MenuItem.create!(wine)
 cocktail = [
-MenuItem.create(name: "cocktail", type: "cocktail", price: 70, destination: bar)
+{name: "cocktail", category: "cocktail", price: 70, destination: bar}
 ]
 MenuItem.create!(cocktail)
 
 #-------------------------------------------------------------------------------
 bar = Destination.find_by_name("Nimb Bar")
 beer = [
-MenuItem.create(name: "beer", type: "beer", price: 75, destination: bar)
+{name: "beer", category: "beer", price: 75, destination: bar}
 ]
 MenuItem.create!(beer)
 wine = [
-MenuItem.create(name: "wine", type: "wine", price: 85, destination: bar)
+{name: "wine", category: "wine", price: 85, destination: bar}
 ]
 MenuItem.create!(wine)
 cocktail = [
-MenuItem.create(name: "cocktail", type: "cocktail", price: 120, destination: bar)
+{name: "cocktail", category: "cocktail", price: 120, destination: bar}
 ]
 MenuItem.create!(cocktail)
 
 #-------------------------------------------------------------------------------
 bar = Destination.find_by_name("Dia'legd")
 beer = [
-MenuItem.create(name: "beer", type: "beer", price: 45, destination: bar)
+{name: "beer", category: "beer", price: 45, destination: bar}
 ]
 MenuItem.create!(beer)
 wine = [
-MenuItem.create(name: "wine", type: "wine", price: 150, destination: bar)
+{name: "wine", category: "wine", price: 150, destination: bar}
 ]
 MenuItem.create!(wine)
 
 # --------------------------------------------------RESTAURANTS--------------------------------------------------------
 # Norrebro-------------------
 restaurant_list = [
-  { name: "Bæst", address: "Guldbergsgade 29, DK-2200 Copenhagen N", type: "Restaurant", open_hours: 17, close_hours: 22 },
-  { name: "Fætter Fætter", address: "Griffenfeldsgade 17, 2200 Copenhagen N", type: "Restaurant", open_hours: 17, close_hours: 22 },
-  { name: "Sidecar", address: "Skyttegade 5, 2200 Copenhagen N", type: "Restaurant", open_hours: 17, close_hours: 22 },
-  { name: "Grisen", address: "Fredensgade 5, DK-2200 Copenhagen N", type: "Restaurant", open_hours: 17, close_hours: 22 },
-  { name: "Mirabelle", address: "Guldbergsgade 29 2200 København N", type: "Restaurant", open_hours: 17, close_hours: 22 },
-  { name: "Ramen to Biiru", address: "Griffenfeldsgade 28, 2200 Copenhagen N", type: "Restaurant", open_hours: 17, close_hours: 22 },
-  { name: "Nepali Bhancha", address: "Tagensvej 102, 2200 København N", type: "Restaurant", open_hours: 17, close_hours: 22 },
-  { name: "Banana Joe", address: "Elmegade 18, 2200 Copenhagen N", type: "Restaurant", open_hours: 17, close_hours: 22 },
-  { name: "Banh Mi", address: "2200 n, Elmegade 20, 2200 Copenhagen N", type: "Restaurant", open_hours: 17, close_hours: 22 },
-  { name: "Sund Sult", address: "Elmegade 8, DK-2200 Copenhagen N", type: "Restaurant", open_hours: 17, close_hours: 22 },
-  { name: "YoBurger", address: "NØRREGADE 2 1165 København K", type: "Restaurant", open_hours: 17, close_hours: 22 },
-  { name: "Plenum", address: "Sankt Hans Torv 3, 2200 Copenhagen N", type: "Restaurant", open_hours: 17, close_hours: 22 },
-  { name: "Nordic Noodles", address: "Nørrebrogade 29, 2200 København N", type: "Restaurant", open_hours: 17, close_hours: 22 },
-  { name: "Nino's Pizza", address: "Guldbergsgade 18, 2200 København N", type: "Restaurant", open_hours: 17, close_hours: 22 },
-  { name: "Nicecream", address: "Elmegade 30, 2200 København N", type: "Restaurant", open_hours: 17, close_hours: 22 },
-  { name: "Rita's Smørrebrød", address: "Fælledvej 11, Norrebro", type: "Restaurant", open_hours: 17, close_hours: 22 },
+  { name: "Bæst", address: "Guldbergsgade 29, DK-2200 Copenhagen N", category: "Restaurant", open_hours: 17, close_hours: 22 },
+  { name: "Fætter Fætter", address: "Griffenfeldsgade 17, 2200 Copenhagen N", category: "Restaurant", open_hours: 17, close_hours: 22 },
+  { name: "Sidecar", address: "Skyttegade 5, 2200 Copenhagen N", category: "Restaurant", open_hours: 17, close_hours: 22 },
+  { name: "Grisen", address: "Fredensgade 5, DK-2200 Copenhagen N", category: "Restaurant", open_hours: 17, close_hours: 22 },
+  { name: "Mirabelle", address: "Guldbergsgade 29 2200 København N", category: "Restaurant", open_hours: 17, close_hours: 22 },
+  { name: "Ramen to Biiru", address: "Griffenfeldsgade 28, 2200 Copenhagen N", category: "Restaurant", open_hours: 17, close_hours: 22 },
+  { name: "Nepali Bhancha", address: "Tagensvej 102, 2200 København N", category: "Restaurant", open_hours: 17, close_hours: 22 },
+  { name: "Banana Joe", address: "Elmegade 18, 2200 Copenhagen N", category: "Restaurant", open_hours: 17, close_hours: 22 },
+  { name: "Banh Mi", address: "2200 n, Elmegade 20, 2200 Copenhagen N", category: "Restaurant", open_hours: 17, close_hours: 22 },
+  { name: "Sund Sult", address: "Elmegade 8, DK-2200 Copenhagen N", category: "Restaurant", open_hours: 17, close_hours: 22 },
+  { name: "YoBurger", address: "NØRREGADE 2 1165 København K", category: "Restaurant", open_hours: 17, close_hours: 22 },
+  { name: "Plenum", address: "Sankt Hans Torv 3, 2200 Copenhagen N", category: "Restaurant", open_hours: 17, close_hours: 22 },
+  { name: "Nordic Noodles", address: "Nørrebrogade 29, 2200 København N", category: "Restaurant", open_hours: 17, close_hours: 22 },
+  { name: "Nino's Pizza", address: "Guldbergsgade 18, 2200 København N", category: "Restaurant", open_hours: 17, close_hours: 22 },
+  { name: "Nicecream", address: "Elmegade 30, 2200 København N", category: "Restaurant", open_hours: 17, close_hours: 22 },
+  { name: "Rita's Smørrebrød", address: "Fælledvej 11, Norrebro", category: "Restaurant", open_hours: 17, close_hours: 22 },
   
   # Kgs. Nytorv---------------------------------
-  { name: "Fiat", address: "Kongens Nytorv 18, 1050 København K", type: "Restaurant", open_hours: 17, close_hours: 22 },
-  { name: "Geist", address: "Kongens Nytorv 8, 1050 København K", type: "Restaurant", open_hours: 17, close_hours: 22 },
-  { name: "Madklubben", address: "Kongens Nytorv 26, 1050 København K", type: "Restaurant", open_hours: 17, close_hours: 22 },
-  { name: "Mash", address: "Bredgade 20, 1260 København K", type: "Restaurant", open_hours: 17, close_hours: 22 },
-  { name: "Ravage", address: "Kongens Nytorv 16, 1050 København K", type: "Restaurant", open_hours: 17, close_hours: 22 },
-  { name: "Fish Market", address: "Hovedvagtsgade 2, 1103 København K", type: "Restaurant", open_hours: 17, close_hours: 22 },
-  { name: "Union Kitchen", address: "Store Strandstræde 21, 1255 København K", type: "Restaurant", open_hours: 17, close_hours: 22 },
-  { name: "Hafnia Bar", address: "Store Regnegade 26A, 1110 København K", type: "Restaurant", open_hours: 17, close_hours: 22 },
-  { name: "Pizza Huset", address: "Gothersgade 21, 1123 København K", type: "Restaurant", open_hours: 17, close_hours: 22 },
-  { name: "Fredco's Deli", address: "Denmark, Grønnegade 32, 1107 København K", type: "Restaurant", open_hours: 17, close_hours: 22 },
-  { name: "Wokshop", address: "Ny Adelgade 6, 1104 København K", type: "Restaurant", open_hours: 17, close_hours: 22 },
-  { name: "Sticks n Sushi", address: "Borgergade 13, 1300 Copenhagen", type: "Restaurant", open_hours: 17, close_hours: 22 },
-  { name: "Umami", address: "Store Kongensgade 59, 1264 København K", type: "Restaurant", open_hours: 17, close_hours: 22 },
-  { name: "Serenity Cupcake", address: "Grønnegade 32", type: "Restaurant", open_hours: 17, close_hours: 22 },
-  { name: "Restaurant Koef", address: "Landgreven 3, 1301 København K", type: "Restaurant", open_hours: 17, close_hours: 22 },
-  { name: "Nyhavns Faerge", address: "Nyhavn 5, 1051 København K", type: "Restaurant", open_hours: 17, close_hours: 22 },
-  { name: "Pluto", address: "Borgergade 16, 1300 København K", type: "Restaurant", open_hours: 17, close_hours: 22 },
-  { name: "Hot Buns", address: "Gothersgade 3, 1123 København K", type: "Restaurant", open_hours: 17, close_hours: 22 },
-  { name: "Nyhavn Pizzeria", address: "Lille Strandstræde 6, 1254 København K", type: "Restaurant", open_hours: 17, close_hours: 22 },
-  { name: "Wok On", address: "Gothersgade 15", type: "Restaurant", open_hours: 17, close_hours: 22 },
+  { name: "Fiat", address: "Kongens Nytorv 18, 1050 København K", category: "Restaurant", open_hours: 17, close_hours: 22 },
+  { name: "Geist", address: "Kongens Nytorv 8, 1050 København K", category: "Restaurant", open_hours: 17, close_hours: 22 },
+  { name: "Madklubben", address: "Kongens Nytorv 26, 1050 København K", category: "Restaurant", open_hours: 17, close_hours: 22 },
+  { name: "Mash", address: "Bredgade 20, 1260 København K", category: "Restaurant", open_hours: 17, close_hours: 22 },
+  { name: "Ravage", address: "Kongens Nytorv 16, 1050 København K", category: "Restaurant", open_hours: 17, close_hours: 22 },
+  { name: "Fish Market", address: "Hovedvagtsgade 2, 1103 København K", category: "Restaurant", open_hours: 17, close_hours: 22 },
+  { name: "Union Kitchen", address: "Store Strandstræde 21, 1255 København K", category: "Restaurant", open_hours: 17, close_hours: 22 },
+  { name: "Hafnia Bar", address: "Store Regnegade 26A, 1110 København K", category: "Restaurant", open_hours: 17, close_hours: 22 },
+  { name: "Pizza Huset", address: "Gothersgade 21, 1123 København K", category: "Restaurant", open_hours: 17, close_hours: 22 },
+  { name: "Fredco's Deli", address: "Denmark, Grønnegade 32, 1107 København K", category: "Restaurant", open_hours: 17, close_hours: 22 },
+  { name: "Wokshop", address: "Ny Adelgade 6, 1104 København K", category: "Restaurant", open_hours: 17, close_hours: 22 },
+  { name: "Sticks n Sushi", address: "Borgergade 13, 1300 Copenhagen", category: "Restaurant", open_hours: 17, close_hours: 22 },
+  { name: "Umami", address: "Store Kongensgade 59, 1264 København K", category: "Restaurant", open_hours: 17, close_hours: 22 },
+  { name: "Serenity Cupcake", address: "Grønnegade 32", category: "Restaurant", open_hours: 17, close_hours: 22 },
+  { name: "Restaurant Koef", address: "Landgreven 3, 1301 København K", category: "Restaurant", open_hours: 17, close_hours: 22 },
+  { name: "Nyhavns Faerge", address: "Nyhavn 5, 1051 København K", category: "Restaurant", open_hours: 17, close_hours: 22 },
+  { name: "Pluto", address: "Borgergade 16, 1300 København K", category: "Restaurant", open_hours: 17, close_hours: 22 },
+  { name: "Hot Buns", address: "Gothersgade 3, 1123 København K", category: "Restaurant", open_hours: 17, close_hours: 22 },
+  { name: "Nyhavn Pizzeria", address: "Lille Strandstræde 6, 1254 København K", category: "Restaurant", open_hours: 17, close_hours: 22 },
+  { name: "Wok On", address: "Gothersgade 15", category: "Restaurant", open_hours: 17, close_hours: 22 },
 
   #VERSTERBRO
-  { name: "Madklubben", address: "Vesterbrogade 62, 1620 København V", type: "Restaurant", open_hours: 17, close_hours: 22 },
-  { name: "Jensens Bøfhus", address: "Vesterbrogade 11A, 1620 København V", type: "Restaurant", open_hours: 17, close_hours: 22 },
-  { name: "Groeften", address: "Vesterbrogade 3, 1620 København V", type: "Restaurant", open_hours: 17, close_hours: 22 },
-  { name: "Kebabish Vestebro", address: "Vesterbrogade 13, 1620 København V", type: "Restaurant", open_hours: 17, close_hours: 22 },
-  { name: "Tommi’s", address: "Høkerboderne 21-23, 1712 København V", type: "Restaurant", open_hours: 17, close_hours: 22 },
-  { name: "Frascati", address: "Vesterbrogade 9, 1620 København V", type: "Restaurant", open_hours: 17, close_hours: 22 },
-  { name: "Al-Diwan", address: "Vesterbrogade 94, 1620 København V", type: "Restaurant", open_hours: 17, close_hours: 22 },
-  { name: "Sticks n Sushi", address: "Istedgade 62, 1650 København V", type: "Restaurant", open_hours: 17, close_hours: 22 },
-  { name: "Neighborhood", address: "Istegade 27", type: "Restaurant", open_hours: 17, close_hours: 22 }
+  { name: "Madklubben", address: "Vesterbrogade 62, 1620 København V", category: "Restaurant", open_hours: 17, close_hours: 22 },
+  { name: "Jensens Bøfhus", address: "Vesterbrogade 11A, 1620 København V", category: "Restaurant", open_hours: 17, close_hours: 22 },
+  { name: "Groeften", address: "Vesterbrogade 3, 1620 København V", category: "Restaurant", open_hours: 17, close_hours: 22 },
+  { name: "Kebabish Vestebro", address: "Vesterbrogade 13, 1620 København V", category: "Restaurant", open_hours: 17, close_hours: 22 },
+  { name: "Tommi’s", address: "Høkerboderne 21-23, 1712 København V", category: "Restaurant", open_hours: 17, close_hours: 22 },
+  { name: "Frascati", address: "Vesterbrogade 9, 1620 København V", category: "Restaurant", open_hours: 17, close_hours: 22 },
+  { name: "Al-Diwan", address: "Vesterbrogade 94, 1620 København V", category: "Restaurant", open_hours: 17, close_hours: 22 },
+  { name: "Sticks n Sushi", address: "Istedgade 62, 1650 København V", category: "Restaurant", open_hours: 17, close_hours: 22 },
+  { name: "Neighborhood", address: "Istegade 27", category: "Restaurant", open_hours: 17, close_hours: 22 }
 ]
-
 
 Destination.create!(restaurant_list)
 
@@ -809,17 +816,17 @@ Destination.create!(restaurant_list)
 restaurant = Destination.find_by_name("Bæst")
 
 appetizers = [
-	{name: "Pickled Danish mussels", type: "appetizer", price: 40, destination: restaurant},
-	{name: "Olives stuffed with almonds", type: "appetizer", price: 40, destination: restaurant},
-	{name: "pickles, ciccioli, Mirabelle bread", type: "appetizer", price: 55, destination: restaurant}
+	{name: "Pickled Danish mussels", category: "appetizer", price: 40, destination: restaurant},
+	{name: "Olives stuffed with almonds", category: "appetizer", price: 40, destination: restaurant},
+	{name: "pickles, ciccioli, Mirabelle bread", category: "appetizer", price: 55, destination: restaurant}
 ]
 
 MenuItem.create!(appetizers)
 
 main_course = [
-	{ name: "Margherita Pizza", type: "main_course", price: 85, destination: restaurant },
-	{ name: "Grilled chicken wings", type: "main_course", price: 130, destination: restaurant },
-	{ name: "Grilled Polenta", type: "main_course", price: 95, destination: restaurant }
+	{ name: "Margherita Pizza", category: "main_course", price: 85, destination: restaurant },
+	{ name: "Grilled chicken wings", category: "main_course", price: 130, destination: restaurant },
+	{ name: "Grilled Polenta", category: "main_course", price: 95, destination: restaurant }
 ]
 
 
@@ -828,24 +835,24 @@ main_course = [
 restaurant = Destination.find_by_name("Fætter Fætter")
 
 appetizers = [
-	{name: "Croque Cousin", type: "appetizer", price: 45, destination: restaurant},
-	{name: "Mushroom Toast", type: "appetizer", price: 45, destination: restaurant},
-	{name: "Avocado Goat Toast", type: "appetizer", price: 35, destination: restaurant}
+	{name: "Croque Cousin", category: "appetizer", price: 45, destination: restaurant},
+	{name: "Mushroom Toast", category: "appetizer", price: 45, destination: restaurant},
+	{name: "Avocado Goat Toast", category: "appetizer", price: 35, destination: restaurant}
 ]
 
 MenuItem.create!(appetizers)
 
 main_course = [
-	{name: "Veggie Toast", type: "main_course", price: 95, destination: restaurant},
-	{name: "Toast Experience", type: "main_course", price: 95, destination: restaurant},
-	{name: "When in Rome", type: "main_course", price: 255, destination: restaurant}
+	{name: "Veggie Toast", category: "main_course", price: 95, destination: restaurant},
+	{name: "Toast Experience", category: "main_course", price: 95, destination: restaurant},
+	{name: "When in Rome", category: "main_course", price: 255, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
 
 desserts = [
-	{name: "Cinnamon toast", type: "dessert", price: 35, destination: restaurant},
-	{name: "Crisps", type: "dessert", price: 20, destination: restaurant}
+	{name: "Cinnamon toast", category: "dessert", price: 35, destination: restaurant},
+	{name: "Crisps", category: "dessert", price: 20, destination: restaurant}
 ]
 
 MenuItem.create!(desserts)
@@ -854,15 +861,15 @@ MenuItem.create!(desserts)
 restaurant = Destination.find_by_name("Sidecar")
 
 appetizers = [
-	{name: "Breakfast Plate", type: "appetizer", price: 89, destination: restaurant}
+	{name: "Breakfast Plate", category: "appetizer", price: 89, destination: restaurant}
 ]
 
 MenuItem.create!(appetizers)
 
 main_course = [
-	{name: "Sidecar Brunch", type: "main_course", price: 149, destination: restaurant},
-	{name: "Veggie Brunch", type: "main_course", price: 169, destination: restaurant},
-	{name: "Skyttegade Brunch", type: "main_course", price: 169, destination: restaurant}
+	{name: "Sidecar Brunch", category: "main_course", price: 149, destination: restaurant},
+	{name: "Veggie Brunch", category: "main_course", price: 169, destination: restaurant},
+	{name: "Skyttegade Brunch", category: "main_course", price: 169, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
@@ -871,24 +878,24 @@ MenuItem.create!(main_course)
 restaurant = Destination.find_by_name("Mirabelle")
 
 appetizers = [
-	{name: "Antipasti Plate", type: "appetizer", price: 135, destination: restaurant},
-	{name: "Salad", type: "appetizer", price: 95, destination: restaurant},
-	{name: "Burrata", type: "appetizer", price: 125, destination: restaurant}
+	{name: "Antipasti Plate", category: "appetizer", price: 135, destination: restaurant},
+	{name: "Salad", category: "appetizer", price: 95, destination: restaurant},
+	{name: "Burrata", category: "appetizer", price: 125, destination: restaurant}
 ]
 
 MenuItem.create!(appetizers)
 
 main_course = [
-	{name: "Pesto Pasta", type: "main_course", price: 120, destination: restaurant},
-	{name: "Braised Lamb Pasta", type: "main_course", price: 120, destination: restaurant}
+	{name: "Pesto Pasta", category: "main_course", price: 120, destination: restaurant},
+	{name: "Braised Lamb Pasta", category: "main_course", price: 120, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
 
 desserts = [
-	{name: "Tiramisu", type: "dessert", price: 60, destination: restaurant},
-	{name: "Lemon Granita", type: "dessert", price: 40, destination: restaurant},
-	{name: "Gelato", type: "dessert", price: 50, destination: restaurant}
+	{name: "Tiramisu", category: "dessert", price: 60, destination: restaurant},
+	{name: "Lemon Granita", category: "dessert", price: 40, destination: restaurant},
+	{name: "Gelato", category: "dessert", price: 50, destination: restaurant}
 ]
 
 MenuItem.create!(desserts)
@@ -897,16 +904,16 @@ MenuItem.create!(desserts)
 restaurant = Destination.find_by_name("Ramen to Biiru")
 
 appetizers = [
-	{name: "Edamame Beans", type: "appetizer", price: 40, destination: restaurant},
-	{name: "Kimchi", type: "appetizer", price: 40, destination: restaurant},
+	{name: "Edamame Beans", category: "appetizer", price: 40, destination: restaurant},
+	{name: "Kimchi", category: "appetizer", price: 40, destination: restaurant},
 ]
 
 MenuItem.create!(appetizers)
 
 main_course = [
-	{name: "Shio Ramen", type: "main_course", price: 100, destination: restaurant},
-	{name: "Spicy Miso Ramen", type: "main_course", price: 115, destination: restaurant},
-	{name: "No-Meat Ramen", type: "main_course", price: 100, destination: restaurant}
+	{name: "Shio Ramen", category: "main_course", price: 100, destination: restaurant},
+	{name: "Spicy Miso Ramen", category: "main_course", price: 115, destination: restaurant},
+	{name: "No-Meat Ramen", category: "main_course", price: 100, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
@@ -915,25 +922,25 @@ MenuItem.create!(main_course)
 restaurant = Destination.find_by_name("Nepali Bhancha")
 
 appetizers = [
-	{name: "Veg Pakoda", type: "appetizer", price: 59, destination: restaurant},
-	{name: "Fish Chilli", type: "appetizer", price: 69, destination: restaurant},
-	{name: "Chicken Sekuwa", type: "appetizer", price: 59, destination: restaurant}
+	{name: "Veg Pakoda", category: "appetizer", price: 59, destination: restaurant},
+	{name: "Fish Chilli", category: "appetizer", price: 69, destination: restaurant},
+	{name: "Chicken Sekuwa", category: "appetizer", price: 59, destination: restaurant}
 ]
 
 MenuItem.create!(appetizers)
 
 main_course = [
-	{name: "Vegetarian Curry", type: "main_course", price: 119, destination: restaurant},
-	{name: "Saag Paneer", type: "main_course", price: 119, destination: restaurant},
-	{name: "Lamb Masala", type: "main_course", price: 139, destination: restaurant}
+	{name: "Vegetarian Curry", category: "main_course", price: 119, destination: restaurant},
+	{name: "Saag Paneer", category: "main_course", price: 119, destination: restaurant},
+	{name: "Lamb Masala", category: "main_course", price: 139, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
 
 desserts = [
-	{name: "Kheer", type: "dessert", price: 39, destination: restaurant},
-	{name: "Dahi Lalmohani", type: "dessert", price: 49, destination: restaurant},
-	{name: "MangoBrullé", type: "dessert", price: 59, destination: restaurant}
+	{name: "Kheer", category: "dessert", price: 39, destination: restaurant},
+	{name: "Dahi Lalmohani", category: "dessert", price: 49, destination: restaurant},
+	{name: "MangoBrullé", category: "dessert", price: 59, destination: restaurant}
 ]
 
 MenuItem.create!(desserts)
@@ -942,15 +949,15 @@ MenuItem.create!(desserts)
 restaurant = Destination.find_by_name("Banana Joe")
 
 appetizers = [
-	{name: "Pommes Frites", type: "appetizer", price: 25, destination: restaurant},
+	{name: "Pommes Frites", category: "appetizer", price: 25, destination: restaurant},
 ]
 
 MenuItem.create!(appetizers)
 
 main_course = [
-	{name: "Burger", type: "main_course", price: 35, destination: restaurant},
-	{name: "Vegetarburger", type: "main_course", price: 40, destination: restaurant},
-	{name: "Befsandwich", type: "main_course", price: 30, destination: restaurant}
+	{name: "Burger", category: "main_course", price: 35, destination: restaurant},
+	{name: "Vegetarburger", category: "main_course", price: 40, destination: restaurant},
+	{name: "Befsandwich", category: "main_course", price: 30, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
@@ -960,21 +967,21 @@ MenuItem.create!(main_course)
 restaurant = Destination.find_by_name("Banh Mi")
 
 appetizers = [
-	{name: "Summer Rolls", type: "appetizer", price: 42, destination: restaurant},
+	{name: "Summer Rolls", category: "appetizer", price: 42, destination: restaurant},
 ]
 
 MenuItem.create!(appetizers)
 
 main_course = [
-	{name: "Bun Thang Soup", type: "main_course", price: 88, destination: restaurant},
-	{name: "Bún - Noodle Salad", type: "main_course", price: 84, destination: restaurant},
-	{name: "Dâu Phu Cà Ri Sandwich", type: "main_course", price: 52, destination: restaurant}
+	{name: "Bun Thang Soup", category: "main_course", price: 88, destination: restaurant},
+	{name: "Bún - Noodle Salad", category: "main_course", price: 84, destination: restaurant},
+	{name: "Dâu Phu Cà Ri Sandwich", category: "main_course", price: 52, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
 
 desserts = [
-	{name: "Icecream with condensed milk", type: "dessert", price: 30, destination: restaurant},
+	{name: "Icecream with condensed milk", category: "dessert", price: 30, destination: restaurant},
 ]
 
 MenuItem.create!(desserts)
@@ -983,25 +990,23 @@ MenuItem.create!(desserts)
 restaurant = Destination.find_by_name("Sund Sult")
 
 appetizers = [
-	{name: "Salad", type: "appetizer", price: 42, destination: restaurant},
-	{name: "", type: "appetizer", price: 40, destination: restaurant},
-	{name: "", type: "appetizer", price: 40, destination: restaurant}
+	{name: "Salad", category: "appetizer", price: 42, destination: restaurant}
 ]
 
 MenuItem.create!(appetizers)
 
 main_course = [
-	{name: "Pesto Hummus Sandwich", type: "main_course", price: 52, destination: restaurant},
-	{name: "Pastrami Mozzarella Toast", type: "main_course", price: 49, destination: restaurant},
-	{name: "Grøntsagssuppe", type: "main_course", price: 42, destination: restaurant}
+	{name: "Pesto Hummus Sandwich", category: "main_course", price: 52, destination: restaurant},
+	{name: "Pastrami Mozzarella Toast", category: "main_course", price: 49, destination: restaurant},
+	{name: "Grøntsagssuppe", category: "main_course", price: 42, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
 
 desserts = [
-	{name: "Strawberry Smoothie", type: "dessert", price: 42, destination: restaurant},
-	{name: "Mango Banana Smoothie", type: "dessert", price: 42, destination: restaurant},
-	{name: "Blueberry Banana Smoothie", type: "dessert", price: 42, destination: restaurant}
+	{name: "Strawberry Smoothie", category: "dessert", price: 42, destination: restaurant},
+	{name: "Mango Banana Smoothie", category: "dessert", price: 42, destination: restaurant},
+	{name: "Blueberry Banana Smoothie", category: "dessert", price: 42, destination: restaurant}
 ]
 
 MenuItem.create!(desserts)
@@ -1010,15 +1015,15 @@ MenuItem.create!(desserts)
 restaurant = Destination.find_by_name("YoBurger")
 
 appetizers = [
-	{name: "Crinkle Cut Fries", type: "appetizer", price: 25, destination: restaurant},
+	{name: "Crinkle Cut Fries", category: "appetizer", price: 25, destination: restaurant},
 ]
 
 MenuItem.create!(appetizers)
 
 main_course = [
-	{name: "Bacon YoBurger", type: "main_course", price: 104, destination: restaurant},
-	{name: "Avocado YoBurger", type: "main_course", price: 104, destination: restaurant},
-	{name: "Portobello Burger", type: "main_course", price: 104, destination: restaurant}
+	{name: "Bacon YoBurger", category: "main_course", price: 104, destination: restaurant},
+	{name: "Avocado YoBurger", category: "main_course", price: 104, destination: restaurant},
+	{name: "Portobello Burger", category: "main_course", price: 104, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
@@ -1027,25 +1032,25 @@ MenuItem.create!(main_course)
 restaurant = Destination.find_by_name("Plenum")
 
 appetizers = [
-	{name: "Croissant", type: "appetizer", price: 18, destination: restaurant},
-	{name: "Truffle Chips", type: "appetizer", price: 30, destination: restaurant},
-	{name: "Peanuts and smoked almonds", type: "appetizer", price: 30, destination: restaurant}
+	{name: "Croissant", category: "appetizer", price: 18, destination: restaurant},
+	{name: "Truffle Chips", category: "appetizer", price: 30, destination: restaurant},
+	{name: "Peanuts and smoked almonds", category: "appetizer", price: 30, destination: restaurant}
 ]
 
 MenuItem.create!(appetizers)
 
 main_course = [
-	{name: "Pesto Mozzarella Sandwich", type: "main_course", price: 60, destination: restaurant},
-	{name: "Risotto", type: "main_course", price: 105, destination: restaurant},
-	{name: "Fried Chicken Salad", type: "main_course", price: 115, destination: restaurant}
+	{name: "Pesto Mozzarella Sandwich", category: "main_course", price: 60, destination: restaurant},
+	{name: "Risotto", category: "main_course", price: 105, destination: restaurant},
+	{name: "Fried Chicken Salad", category: "main_course", price: 115, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
 
 desserts = [
-	{name: "Rumbugs", type: "dessert", price: 30, destination: restaurant},
-	{name: "Leckerbaer Cookie", type: "dessert", price: 25, destination: restaurant},
-	{name: "Lemon Pie with Meringue", type: "dessert", price: 40, destination: restaurant}
+	{name: "Rumbugs", category: "dessert", price: 30, destination: restaurant},
+	{name: "Leckerbaer Cookie", category: "dessert", price: 25, destination: restaurant},
+	{name: "Lemon Pie with Meringue", category: "dessert", price: 40, destination: restaurant}
 ]
 
 MenuItem.create!(desserts)
@@ -1053,18 +1058,10 @@ MenuItem.create!(desserts)
 # ---------------------------------------12-------------------------------------
 restaurant = Destination.find_by_name("Nordic Noodles")
 
-appetizers = [
-	{name: "", type: "appetizer", price: 40, destination: restaurant},
-	{name: "", type: "appetizer", price: 40, destination: restaurant},
-	{name: "", type: "appetizer", price: 40, destination: restaurant}
-]
-
-MenuItem.create!(appetizers)
-
 main_course = [
-	{name: "Green Curry", type: "main_course", price: 85, destination: restaurant},
-	{name: "Rice Noodles", type: "main_course", price: 45, destination: restaurant},
-	{name: "Udon Noodles", type: "main_course", price: 45, destination: restaurant}
+	{name: "Green Curry", category: "main_course", price: 85, destination: restaurant},
+	{name: "Rice Noodles", category: "main_course", price: 45, destination: restaurant},
+	{name: "Udon Noodles", category: "main_course", price: 45, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
@@ -1073,17 +1070,17 @@ MenuItem.create!(main_course)
 restaurant = Destination.find_by_name("Nino's Pizza")
 
 appetizers = [
-	{name: "Focaccia", type: "appetizer", price: 70, destination: restaurant},
-	{name: "Bruschetta", type: "appetizer", price: 20, destination: restaurant},
-	{name: "Melon Salad", type: "appetizer", price: 60, destination: restaurant}
+	{name: "Focaccia", category: "appetizer", price: 70, destination: restaurant},
+	{name: "Bruschetta", category: "appetizer", price: 20, destination: restaurant},
+	{name: "Melon Salad", category: "appetizer", price: 60, destination: restaurant}
 ]
 
 MenuItem.create!(appetizers)
 
 main_course = [
-	{name: "Pepperoni Pizza", type: "main_course", price: 50, destination: restaurant},
-	{name: "Lasagna", type: "main_course", price: 62, destination: restaurant},
-	{name: "Bresaola Sandwich", type: "main_course", price: 50, destination: restaurant}
+	{name: "Pepperoni Pizza", category: "main_course", price: 50, destination: restaurant},
+	{name: "Lasagna", category: "main_course", price: 62, destination: restaurant},
+	{name: "Bresaola Sandwich", category: "main_course", price: 50, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
@@ -1092,9 +1089,9 @@ MenuItem.create!(main_course)
 restaurant = Destination.find_by_name("Smag")
 
 main_course = [
-	{name: "Turkey Sandwich", type: "main_course", price: 60, destination: restaurant},
-	{name: "Salmon Sandwich", type: "main_course", price: 60, destination: restaurant},
-	{name: "Veggie Sandwich", type: "main_course", price: 60, destination: restaurant}
+	{name: "Turkey Sandwich", category: "main_course", price: 60, destination: restaurant},
+	{name: "Salmon Sandwich", category: "main_course", price: 60, destination: restaurant},
+	{name: "Veggie Sandwich", category: "main_course", price: 60, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
@@ -1104,9 +1101,9 @@ MenuItem.create!(main_course)
 restaurant = Destination.find_by_name("Rita's Smørrebrød")
 
 main_course = [
-	{name: "Tartar Smørrebrød", type: "main_course", price: 80, destination: restaurant},
-	{name: "Pariserbøf Smørrebrød", type: "main_course", price: 87, destination: restaurant},
-	{name: "Meatball Smørrebrød", type: "main_course", price: 20, destination: restaurant}
+	{name: "Tartar Smørrebrød", category: "main_course", price: 80, destination: restaurant},
+	{name: "Pariserbøf Smørrebrød", category: "main_course", price: 87, destination: restaurant},
+	{name: "Meatball Smørrebrød", category: "main_course", price: 20, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
@@ -1115,9 +1112,9 @@ MenuItem.create!(main_course)
 restaurant = Destination.find_by_name("Grisen")
 
 main_course = [
-	{name: "PorkRoast Sandwich", type: "main_course", price: 99, destination: restaurant},
-	{name: "BofSandwich", type: "main_course", price: 99, destination: restaurant},
-	{name: "Jumbo Burger", type: "main_course", price: 99, destination: restaurant}
+	{name: "PorkRoast Sandwich", category: "main_course", price: 99, destination: restaurant},
+	{name: "BofSandwich", category: "main_course", price: 99, destination: restaurant},
+	{name: "Jumbo Burger", category: "main_course", price: 99, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
@@ -1129,25 +1126,25 @@ MenuItem.create!(main_course)
 restaurant = Destination.find_by_name("Fiat")
 
 appetizers = [
-	{name: "Caprese", type: "appetizer", price: 155, destination: restaurant},
-	{name: "Crab Bruschetta", type: "appetizer", price: 165, destination: restaurant},
-	{name: "Endivia Salad", type: "appetizer", price: 125, destination: restaurant}
+	{name: "Caprese", category: "appetizer", price: 155, destination: restaurant},
+	{name: "Crab Bruschetta", category: "appetizer", price: 165, destination: restaurant},
+	{name: "Endivia Salad", category: "appetizer", price: 125, destination: restaurant}
 ]
  
 MenuItem.create!(appetizers)
 
 main_course = [
-	{name: "Proscuitto Pizze", type: "main_course", price: 155, destination: restaurant},
-	{name: "Wild Garlic Skewers", type: "main_course", price: 215, destination: restaurant},
-	{name: "Steak ala Fiorentina", type: "main_course", price: 348, destination: restaurant}
+	{name: "Proscuitto Pizze", category: "main_course", price: 155, destination: restaurant},
+	{name: "Wild Garlic Skewers", category: "main_course", price: 215, destination: restaurant},
+	{name: "Steak ala Fiorentina", category: "main_course", price: 348, destination: restaurant}
 ]
  
  MenuItem.create!(main_course)
 
   desserts = [
-	{name: "Tiramisu", type: "dessert", price: 85, destination: restaurant},
-	{name: "Caramel Panna Cotta", type: "dessert", price: 95, destination: restaurant},
-	{name: "Ricotta Pie with Pears", type: "dessert", price: 85, destination: restaurant}
+	{name: "Tiramisu", category: "dessert", price: 85, destination: restaurant},
+	{name: "Caramel Panna Cotta", category: "dessert", price: 95, destination: restaurant},
+	{name: "Ricotta Pie with Pears", category: "dessert", price: 85, destination: restaurant}
 ]
 
 MenuItem.create!(desserts)
@@ -1157,25 +1154,25 @@ MenuItem.create!(desserts)
 restaurant = Destination.find_by_name("Geist")
 
 appetizers = [
-	{name: "Raw Zucchini with Pistachi Curry", type: "appetizer", price: 95, destination: restaurant},
-	{name: "Stewed Spinach with Black Kale", type: "appetizer", price: 95, destination: restaurant},
-	{name: "Potato Mash with Löjrom", type: "appetizer", price: 145, destination: restaurant}
+	{name: "Raw Zucchini with Pistachi Curry", category: "appetizer", price: 95, destination: restaurant},
+	{name: "Stewed Spinach with Black Kale", category: "appetizer", price: 95, destination: restaurant},
+	{name: "Potato Mash with Löjrom", category: "appetizer", price: 145, destination: restaurant}
 ]
 
 MenuItem.create!(appetizers)
 
 main_course = [
-	{name: "Charred Beef Tenderloin", type: "main_course", price: 250, destination: restaurant},
-	{name: "Crisphy Artichokes with Suckling Pig", type: "main_course", price: 225, destination: restaurant},
-	{name: "Heart of Lamb", type: "main_course", price: 175, destination: restaurant}
+	{name: "Charred Beef Tenderloin", category: "main_course", price: 250, destination: restaurant},
+	{name: "Crisphy Artichokes with Suckling Pig", category: "main_course", price: 225, destination: restaurant},
+	{name: "Heart of Lamb", category: "main_course", price: 175, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
 
 desserts = [
-	{name: "Chocolate Tart", type: "dessert", price: 95, destination: restaurant},
-	{name: "Caramelized Bread", type: "dessert", price: 125, destination: restaurant},
-	{name: "Salted Wasabi Cream Toffee", type: "dessert", price: 95, destination: restaurant}
+	{name: "Chocolate Tart", category: "dessert", price: 95, destination: restaurant},
+	{name: "Caramelized Bread", category: "dessert", price: 125, destination: restaurant},
+	{name: "Salted Wasabi Cream Toffee", category: "dessert", price: 95, destination: restaurant}
 ]
 
 MenuItem.create!(desserts)
@@ -1184,24 +1181,24 @@ MenuItem.create!(desserts)
 restaurant = Destination.find_by_name("Madklubben")
 
 appetizers = [
-	{name: "Caesar Salad", type: "appetizer", price: 100, destination: restaurant},
-	{name: "Avocado Smash", type: "appetizer", price: 100, destination: restaurant},
-	{name: "Croque Royal", type: "appetizer", price: 100, destination: restaurant}
+	{name: "Caesar Salad", category: "appetizer", price: 100, destination: restaurant},
+	{name: "Avocado Smash", category: "appetizer", price: 100, destination: restaurant},
+	{name: "Croque Royal", category: "appetizer", price: 100, destination: restaurant}
 ]
 
 MenuItem.create!(appetizers)
 
 main_course = [
-	{name: "Biksemad Royal", type: "main_course", price: 150, destination: restaurant},
-	{name: "Cheeseburger", type: "main_course", price: 125, destination: restaurant},
-	{name: "Beef Tartare", type: "main_course", price: 100, destination: restaurant}
+	{name: "Biksemad Royal", category: "main_course", price: 150, destination: restaurant},
+	{name: "Cheeseburger", category: "main_course", price: 125, destination: restaurant},
+	{name: "Beef Tartare", category: "main_course", price: 100, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
 
 desserts = [
-	{name: "Chocolate Mousse", type: "dessert", price: 50, destination: restaurant},
-	{name: "Coupe Royal", type: "dessert", price: 50, destination: restaurant},	
+	{name: "Chocolate Mousse", category: "dessert", price: 50, destination: restaurant},
+	{name: "Coupe Royal", category: "dessert", price: 50, destination: restaurant},	
 ]
 
 MenuItem.create!(desserts)
@@ -1210,25 +1207,25 @@ MenuItem.create!(desserts)
 restaurant = Destination.find_by_name("Mash")
 
 appetizers = [
-	{name: "Charcuterie", type: "appetizer", price: 115, destination: restaurant},
-	{name: "Grillet Carpaccio", type: "appetizer", price: 95, destination: restaurant},
-	{name: "Løgsuppe", type: "appetizer", price: 95, destination: restaurant}
+	{name: "Charcuterie", category: "appetizer", price: 115, destination: restaurant},
+	{name: "Grillet Carpaccio", category: "appetizer", price: 95, destination: restaurant},
+	{name: "Løgsuppe", category: "appetizer", price: 95, destination: restaurant}
 ]
 
 MenuItem.create!(appetizers)
 
 main_course = [
-	{name: "Filet", type: "main_course", price: 265, destination: restaurant},
-	{name: "Mørbrad", type: "main_course", price: 315, destination: restaurant},
-	{name: "Mash Burger", type: "main_course", price: 115, destination: restaurant}
+	{name: "Filet", category: "main_course", price: 265, destination: restaurant},
+	{name: "Mørbrad", category: "main_course", price: 315, destination: restaurant},
+	{name: "Mash Burger", category: "main_course", price: 115, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
 
 desserts = [
-	{name: "Rumbugs", type: "dessert", price: 30, destination: restaurant},
-	{name: "Leckerbaer Cookie", type: "dessert", price: 25, destination: restaurant},
-	{name: "Lemon Pie with Meringue", type: "dessert", price: 185, destination: restaurant}
+	{name: "Rumbugs", category: "dessert", price: 30, destination: restaurant},
+	{name: "Leckerbaer Cookie", category: "dessert", price: 25, destination: restaurant},
+	{name: "Lemon Pie with Meringue", category: "dessert", price: 185, destination: restaurant}
 ]
 
 MenuItem.create!(desserts)
@@ -1238,25 +1235,25 @@ MenuItem.create!(desserts)
 restaurant = Destination.find_by_name("Ravage")
 
 appetizers = [
-	{name: "Scallops", type: "appetizer", price: 111, destination: restaurant},
-	{name: "Duck Terrine", type: "appetizer", price: 126, destination: restaurant},
-	{name: "Moules Marinieres", type: "appetizer", price: 126, destination: restaurant}
+	{name: "Scallops", category: "appetizer", price: 111, destination: restaurant},
+	{name: "Duck Terrine", category: "appetizer", price: 126, destination: restaurant},
+	{name: "Moules Marinieres", category: "appetizer", price: 126, destination: restaurant}
 ]
 
 MenuItem.create!(appetizers)
 
 main_course = [
-	{name: "Fish of the day", type: "main_course", price: 245, destination: restaurant},
-	{name: "Stuffed Quail", type: "main_course", price: 245, destination: restaurant},
-	{name: "Crispy Fried Pork Belly", type: "main_course", price: 215, destination: restaurant}
+	{name: "Fish of the day", category: "main_course", price: 245, destination: restaurant},
+	{name: "Stuffed Quail", category: "main_course", price: 245, destination: restaurant},
+	{name: "Crispy Fried Pork Belly", category: "main_course", price: 215, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
 
 desserts = [
-	{name: "Crème Brûlée", type: "dessert", price: 104, destination: restaurant},
-	{name: "Traditional Danish Rice Pudding", type: "dessert", price: 111, destination: restaurant},
-	{name: "Gateau Marcel", type: "dessert", price: 126, destination: restaurant}
+	{name: "Crème Brûlée", category: "dessert", price: 104, destination: restaurant},
+	{name: "Traditional Danish Rice Pudding", category: "dessert", price: 111, destination: restaurant},
+	{name: "Gateau Marcel", category: "dessert", price: 126, destination: restaurant}
 ]
 
 MenuItem.create!(desserts)
@@ -1266,25 +1263,25 @@ MenuItem.create!(desserts)
 restaurant = Destination.find_by_name("Fish Market")
 
 appetizers = [
-	{name: "Ceviche", type: "appetizer", price: 125, destination: restaurant},
-	{name: "Bouillabaisse", type: "appetizer", price: 145, destination: restaurant},
-	{name: "Østers", type: "appetizer", price: 145, destination: restaurant}
+	{name: "Ceviche", category: "appetizer", price: 125, destination: restaurant},
+	{name: "Bouillabaisse", category: "appetizer", price: 145, destination: restaurant},
+	{name: "Østers", category: "appetizer", price: 145, destination: restaurant}
 ]
 
 MenuItem.create!(appetizers)
 
 main_course = [
-	{name: "Søtunge", type: "main_course", price: 245, destination: restaurant},
-	{name: "Hummer", type: "main_course", price: 375, destination: restaurant},
-	{name: "Oksemørbrad", type: "main_course", price: 285, destination: restaurant}
+	{name: "Søtunge", category: "main_course", price: 245, destination: restaurant},
+	{name: "Hummer", category: "main_course", price: 375, destination: restaurant},
+	{name: "Oksemørbrad", category: "main_course", price: 285, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
 
 desserts = [
-	{name: "Chocolat", type: "dessert", price: 95, destination: restaurant},
-	{name: "Sødt", type: "dessert", price: 45, destination: restaurant},
-	{name: "Profiteroles", type: "dessert", price: 95, destination: restaurant}
+	{name: "Chocolat", category: "dessert", price: 95, destination: restaurant},
+	{name: "Sødt", category: "dessert", price: 45, destination: restaurant},
+	{name: "Profiteroles", category: "dessert", price: 95, destination: restaurant}
 ]
 
 MenuItem.create!(desserts)
@@ -1294,25 +1291,25 @@ MenuItem.create!(desserts)
 restaurant = Destination.find_by_name("Union Kitchen")
 
 appetizers = [
-	{name: "Fishcake Balls", type: "appetizer", price: 99, destination: restaurant},
-	{name: "Truffle Fries", type: "appetizer", price: 69, destination: restaurant},
-	{name: "Green Salad", type: "appetizer", price: 55, destination: restaurant}
+	{name: "Fishcake Balls", category: "appetizer", price: 99, destination: restaurant},
+	{name: "Truffle Fries", category: "appetizer", price: 69, destination: restaurant},
+	{name: "Green Salad", category: "appetizer", price: 55, destination: restaurant}
 ]
 
 MenuItem.create!(appetizers)
 
 main_course = [
-	{name: "Spaghetti", type: "main_course", price: 75, destination: restaurant},
-	{name: "Bowl of Pulled Pork", type: "main_course", price: 132, destination: restaurant},
-	{name: "Croque Monsieur", type: "main_course", price: 115, destination: restaurant}
+	{name: "Spaghetti", category: "main_course", price: 75, destination: restaurant},
+	{name: "Bowl of Pulled Pork", category: "main_course", price: 132, destination: restaurant},
+	{name: "Croque Monsieur", category: "main_course", price: 115, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
 
 desserts = [
-	{name: "Apple Crumble", type: "dessert", price: 75, destination: restaurant},
-	{name: "White Chocolate Cheesecake", type: "dessert", price: 69, destination: restaurant},
-	{name: "Sticky Toffee Pudding", type: "dessert", price: 75, destination: restaurant}
+	{name: "Apple Crumble", category: "dessert", price: 75, destination: restaurant},
+	{name: "White Chocolate Cheesecake", category: "dessert", price: 69, destination: restaurant},
+	{name: "Sticky Toffee Pudding", category: "dessert", price: 75, destination: restaurant}
 ]
 
 MenuItem.create!(desserts)
@@ -1321,25 +1318,25 @@ MenuItem.create!(desserts)
 restaurant = Destination.find_by_name("Hafnia")
 
 appetizers = [
-	{name: "Acai Bowl", type: "appetizer", price: 70, destination: restaurant},
-	{name: "Suppe", type: "appetizer", price: 80, destination: restaurant},
-	{name: "Lille Salat", type: "appetizer", price: 70, destination: restaurant}
+	{name: "Acai Bowl", category: "appetizer", price: 70, destination: restaurant},
+	{name: "Suppe", category: "appetizer", price: 80, destination: restaurant},
+	{name: "Lille Salat", category: "appetizer", price: 70, destination: restaurant}
 ]
 
 MenuItem.create!(appetizers)
 
 main_course = [
-	{name: "Tunmousse Sandwich", type: "main_course", price: 70, destination: restaurant},
-	{name: "Quinoa Bowl", type: "main_course", price: 95, destination: restaurant},
-	{name: "Hafnia Burger", type: "main_course", price: 135, destination: restaurant}
+	{name: "Tunmousse Sandwich", category: "main_course", price: 70, destination: restaurant},
+	{name: "Quinoa Bowl", category: "main_course", price: 95, destination: restaurant},
+	{name: "Hafnia Burger", category: "main_course", price: 135, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
 
 desserts = [
-	{name: "HJ RomKugle", type: "dessert", price: 30, destination: restaurant},
-	{name: "Granolabar", type: "dessert", price: 25, destination: restaurant},
-	{name: "Raw Cake", type: "dessert", price: 45, destination: restaurant}
+	{name: "HJ RomKugle", category: "dessert", price: 30, destination: restaurant},
+	{name: "Granolabar", category: "dessert", price: 25, destination: restaurant},
+	{name: "Raw Cake", category: "dessert", price: 45, destination: restaurant}
 ]
 
 MenuItem.create!(desserts)
@@ -1349,9 +1346,9 @@ MenuItem.create!(desserts)
 restaurant = Destination.find_by_name("Pizza Huset")
 
 main_course = [
-	{name: "Summer Sandwich", type: "main_course", price: 50, destination: restaurant},
-	{name: "Bolognese Pizza", type: "main_course", price: 62, destination: restaurant},
-	{name: "Truffle Pizza", type: "main_course", price: 72, destination: restaurant}
+	{name: "Summer Sandwich", category: "main_course", price: 50, destination: restaurant},
+	{name: "Bolognese Pizza", category: "main_course", price: 62, destination: restaurant},
+	{name: "Truffle Pizza", category: "main_course", price: 72, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
@@ -1361,23 +1358,23 @@ MenuItem.create!(main_course)
 restaurant = Destination.find_by_name("Tonkin")
 
 appetizers = [
-	{name: "Nem Rán", type: "appetizer", price: 45, destination: restaurant},
-	{name: "Wontons", type: "appetizer", price: 45, destination: restaurant},
+	{name: "Nem Rán", category: "appetizer", price: 45, destination: restaurant},
+	{name: "Wontons", category: "appetizer", price: 45, destination: restaurant},
 ]
 
 MenuItem.create!(appetizers)
 
 main_course = [
-	{name: "Bún Nam Bô", type: "main_course", price: 96, destination: restaurant},
-	{name: "Bô Kho", type: "main_course", price: 86, destination: restaurant},
-	{name: "Bánh Mì", type: "main_course", price: 58, destination: restaurant}
+	{name: "Bún Nam Bô", category: "main_course", price: 96, destination: restaurant},
+	{name: "Bô Kho", category: "main_course", price: 86, destination: restaurant},
+	{name: "Bánh Mì", category: "main_course", price: 58, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
 
 desserts = [
-	{name: "Chè Thung - Kokosgrød", type: "dessert", price: 36, destination: restaurant},
-	{name: "Tonkin Chokolademousse", type: "dessert", price: 36, destination: restaurant},
+	{name: "Chè Thung - Kokosgrød", category: "dessert", price: 36, destination: restaurant},
+	{name: "Tonkin Chokolademousse", category: "dessert", price: 36, destination: restaurant},
 ]
 
 MenuItem.create!(desserts)
@@ -1386,14 +1383,14 @@ MenuItem.create!(desserts)
 restaurant = Destination.find_by_name("Fredco's Deli")
 
 appetizers = [
-	{name: "Soup", type: "appetizer", price: 55, destination: restaurant},
+	{name: "Soup", category: "appetizer", price: 55, destination: restaurant},
 ]
 
 MenuItem.create!(appetizers)
 
 main_course = [
-	{name: "Pesto Chicken Salad", type: "main_course", price: 75, destination: restaurant},
-	{name: "Chicken Curry Sandwich", type: "main_course", price: 60, destination: restaurant},
+	{name: "Pesto Chicken Salad", category: "main_course", price: 75, destination: restaurant},
+	{name: "Chicken Curry Sandwich", category: "main_course", price: 60, destination: restaurant},
 ]
 
 MenuItem.create!(main_course)
@@ -1403,23 +1400,23 @@ MenuItem.create!(main_course)
 restaurant = Destination.find_by_name("Wokshop")
 
 appetizers = [
-	{name: "Shrimp Chips", type: "appetizer", price: 40, destination: restaurant},
-	{name: "Rice Cakes", type: "appetizer", price: 45, destination: restaurant},
-	{name: "Crispy Beef", type: "appetizer", price: 75, destination: restaurant}
+	{name: "Shrimp Chips", category: "appetizer", price: 40, destination: restaurant},
+	{name: "Rice Cakes", category: "appetizer", price: 45, destination: restaurant},
+	{name: "Crispy Beef", category: "appetizer", price: 75, destination: restaurant}
 ]
 
 MenuItem.create!(appetizers)
 
 main_course = [
-	{name: "Chicken Coconut Soup - Tom Kha Gai", type: "main_course", price: 120, destination: restaurant},
-	{name: "Phad See-Iew Gai Noodles", type: "main_course", price: 135, destination: restaurant},
-	{name: "Red Duck Curry", type: "main_course", price: 159, destination: restaurant}
+	{name: "Chicken Coconut Soup - Tom Kha Gai", category: "main_course", price: 120, destination: restaurant},
+	{name: "Phad See-Iew Gai Noodles", category: "main_course", price: 135, destination: restaurant},
+	{name: "Red Duck Curry", category: "main_course", price: 159, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
 
 desserts = [
-	{name: "Fried Banana with Ice Cream", type: "dessert", price: 75, destination: restaurant},
+	{name: "Fried Banana with Ice Cream", category: "dessert", price: 75, destination: restaurant},
 ]
 
 MenuItem.create!(desserts)
@@ -1429,25 +1426,25 @@ MenuItem.create!(desserts)
 restaurant = Destination.find_by_name("Sticks n Sushi")
 
 appetizers = [
-	{name: "Spicy Misosuppe", type: "appetizer", price: 47, destination: restaurant},
-	{name: "Fried Cauliflower", type: "appetizer", price: 36, destination: restaurant},
-	{name: "Jerusalem Artichokes", type: "appetizer", price: 39, destination: restaurant}
+	{name: "Spicy Misosuppe", category: "appetizer", price: 47, destination: restaurant},
+	{name: "Fried Cauliflower", category: "appetizer", price: 36, destination: restaurant},
+	{name: "Jerusalem Artichokes", category: "appetizer", price: 39, destination: restaurant}
 ]
 
 MenuItem.create!(appetizers)
 
 main_course = [
-	{name: "Salmon Sushi Plate", type: "main_course", price: 189, destination: restaurant},
-	{name: "Nana Ban Plate", type: "main_course", price: 168, destination: restaurant},
-	{name: "Solo Sushi Plate", type: "main_course", price: 179, destination: restaurant}
+	{name: "Salmon Sushi Plate", category: "main_course", price: 189, destination: restaurant},
+	{name: "Nana Ban Plate", category: "main_course", price: 168, destination: restaurant},
+	{name: "Solo Sushi Plate", category: "main_course", price: 179, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
 
 desserts = [
-	{name: "Match Fondant", type: "dessert", price: 30, destination: restaurant},
-	{name: "Marcel Chocolate Cake", type: "dessert", price: 30, destination: restaurant},
-	{name: "Dark Chocolate Balls", type: "dessert", price: 30, destination: restaurant},
+	{name: "Match Fondant", category: "dessert", price: 30, destination: restaurant},
+	{name: "Marcel Chocolate Cake", category: "dessert", price: 30, destination: restaurant},
+	{name: "Dark Chocolate Balls", category: "dessert", price: 30, destination: restaurant},
 ]
 
 MenuItem.create!(desserts)
@@ -1457,25 +1454,25 @@ MenuItem.create!(desserts)
 restaurant = Destination.find_by_name("Umami")
 
 appetizers = [
-	{name: "Rio Frio Organic Caviar", type: "appetizer", price: 400, destination: restaurant},
-	{name: "New Style Sashimi", type: "appetizer", price: 140, destination: restaurant},
-	{name: "Foi Gras", type: "appetizer", price: 160, destination: restaurant}
+	{name: "Rio Frio Organic Caviar", category: "appetizer", price: 400, destination: restaurant},
+	{name: "New Style Sashimi", category: "appetizer", price: 140, destination: restaurant},
+	{name: "Foi Gras", category: "appetizer", price: 160, destination: restaurant}
 ]
 
 MenuItem.create!(appetizers)
 
 main_course = [
-	{name: "Lobster Tempura", type: "main_course", price: 270, destination: restaurant},
-	{name: "Canette Breast", type: "main_course", price: 160, destination: restaurant},
-	{name: "Miso Braised Short Rib", type: "main_course", price: 160, destination: restaurant}
+	{name: "Lobster Tempura", category: "main_course", price: 270, destination: restaurant},
+	{name: "Canette Breast", category: "main_course", price: 160, destination: restaurant},
+	{name: "Miso Braised Short Rib", category: "main_course", price: 160, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
 
 desserts = [
-	{name: "Umami Chocolate Dessert", type: "dessert", price: 120, destination: restaurant},
-	{name: "Créme Brûleé", type: "dessert", price: 90, destination: restaurant},
-	{name: "Matcha Panna Cotta", type: "dessert", price: 90, destination: restaurant},
+	{name: "Umami Chocolate Dessert", category: "dessert", price: 120, destination: restaurant},
+	{name: "Créme Brûleé", category: "dessert", price: 90, destination: restaurant},
+	{name: "Matcha Panna Cotta", category: "dessert", price: 90, destination: restaurant},
 ]
 
 MenuItem.create!(desserts)
@@ -1485,8 +1482,8 @@ MenuItem.create!(desserts)
 restaurant = Destination.find_by_name("Serenity Cupcake")
 
 desserts = [
-	{name: "8 Mini Cupcakes", type: "dessert", price: 144, destination: restaurant},
-	{name: "Cupcake", type: "dessert", price: 35, destination: restaurant},
+	{name: "8 Mini Cupcakes", category: "dessert", price: 144, destination: restaurant},
+	{name: "Cupcake", category: "dessert", price: 35, destination: restaurant},
 ]
 
 MenuItem.create!(desserts)
@@ -1496,25 +1493,25 @@ MenuItem.create!(desserts)
 restaurant = Destination.find_by_name("Koefoed")
 
 appetizers = [
-	{name: "Chicken Confit", type: "appetizer", price: 125, destination: restaurant},
-	{name: "Burned Scallops", type: "appetizer", price: 145, destination: restaurant},
-	{name: "Salted Salmon", type: "appetizer", price: 95, destination: restaurant}
+	{name: "Chicken Confit", category: "appetizer", price: 125, destination: restaurant},
+	{name: "Burned Scallops", category: "appetizer", price: 145, destination: restaurant},
+	{name: "Salted Salmon", category: "appetizer", price: 95, destination: restaurant}
 ]
 
 MenuItem.create!(appetizers)
 
 main_course = [
-	{name: "Breast of Pork", type: "main_course", price: 215, destination: restaurant},
-	{name: "Fried Cod", type: "main_course", price: 235, destination: restaurant},
-	{name: "Duck", type: "main_course", price: 255, destination: restaurant}
+	{name: "Breast of Pork", category: "main_course", price: 215, destination: restaurant},
+	{name: "Fried Cod", category: "main_course", price: 235, destination: restaurant},
+	{name: "Duck", category: "main_course", price: 255, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
 
 desserts = [
-	{name: "Marzipan", type: "dessert", price: 110, destination: restaurant},
-	{name: "Ice Cream with Pickled Cherries", type: "dessert", price: 110, destination: restaurant},
-	{name: "Bornholm Cheese with Caramelized Rye Bread", type: "dessert", price: 120, destination: restaurant},
+	{name: "Marzipan", category: "dessert", price: 110, destination: restaurant},
+	{name: "Ice Cream with Pickled Cherries", category: "dessert", price: 110, destination: restaurant},
+	{name: "Bornholm Cheese with Caramelized Rye Bread", category: "dessert", price: 120, destination: restaurant},
 ]
 
 MenuItem.create!(desserts)
@@ -1524,9 +1521,9 @@ MenuItem.create!(desserts)
 restaurant = Destination.find_by_name("NyhavnsFærgekro")
 
 appetizers = [
-	{name: "Whitefish Roe", type: "appetizer", price: 95, destination: restaurant},
-	{name: "Rejecocktail", type: "appetizer", price: 85, destination: restaurant},
-	{name: "Tartlets", type: "appetizer", price: 65, destination: restaurant}
+	{name: "Whitefish Roe", category: "appetizer", price: 95, destination: restaurant},
+	{name: "Rejecocktail", category: "appetizer", price: 85, destination: restaurant},
+	{name: "Tartlets", category: "appetizer", price: 65, destination: restaurant}
 ]
 
 MenuItem.create!(appetizers)
@@ -1536,17 +1533,17 @@ MenuItem.create!(appetizers)
 restaurant = Destination.find_by_name("Pluto")
 
 appetizers = [
-	{name: "Gillardeau Østers", type: "appetizer", price: 55, destination: restaurant},
-	{name: "Ventresca Tun", type: "appetizer", price: 70, destination: restaurant},
-	{name: "Charcuterie", type: "appetizer", price: 50, destination: restaurant},
+	{name: "Gillardeau Østers", category: "appetizer", price: 55, destination: restaurant},
+	{name: "Ventresca Tun", category: "appetizer", price: 70, destination: restaurant},
+	{name: "Charcuterie", category: "appetizer", price: 50, destination: restaurant},
 ]
 
 MenuItem.create!(appetizers)
 
 main_course = [
-	{name: "Torsk", type: "main_course", price: 135, destination: restaurant},
-	{name: "Pighvar", type: "main_course", price: 175, destination: restaurant},
-	{name: "Hummer Hotdog", type: "main_course", price: 195, destination: restaurant}
+	{name: "Torsk", category: "main_course", price: 135, destination: restaurant},
+	{name: "Pighvar", category: "main_course", price: 175, destination: restaurant},
+	{name: "Hummer Hotdog", category: "main_course", price: 195, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
@@ -1556,23 +1553,23 @@ MenuItem.create!(main_course)
 restaurant = Destination.find_by_name("Hot Buns")
 
 appetizers = [
-	{name: "Chicken Wings", type: "appetizer", price: 45, destination: restaurant},
-	{name: "Chili Cheese Tops", type: "appetizer", price: 45, destination: restaurant},
-	{name: "Kongerejer", type: "appetizer", price: 45, destination: restaurant}
+	{name: "Chicken Wings", category: "appetizer", price: 45, destination: restaurant},
+	{name: "Chili Cheese Tops", category: "appetizer", price: 45, destination: restaurant},
+	{name: "Kongerejer", category: "appetizer", price: 45, destination: restaurant}
 ]
 
 MenuItem.create!(appetizers)
 
 main_course = [
-	{name: "Veggie Burger", type: "main_course", price: 100, destination: restaurant},
-	{name: "The Dane Burger", type: "main_course", price: 130, destination: restaurant},
-	{name: "The Hangover Burger", type: "main_course", price: 160, destination: restaurant}
+	{name: "Veggie Burger", category: "main_course", price: 100, destination: restaurant},
+	{name: "The Dane Burger", category: "main_course", price: 130, destination: restaurant},
+	{name: "The Hangover Burger", category: "main_course", price: 160, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
 
 desserts = [
-	{name: "Sundae", type: "dessert", price: 50, destination: restaurant},
+	{name: "Sundae", category: "dessert", price: 50, destination: restaurant},
 ]
 
 MenuItem.create!(desserts)
@@ -1582,16 +1579,16 @@ MenuItem.create!(desserts)
 restaurant = Destination.find_by_name("Nyhavn Pizza")
 
 appetizers = [
-	{name: "Fries", type: "appetizer", price: 34, destination: restaurant},
-	{name: "Garlic Bread", type: "appetizer", price: 42, destination: restaurant},
+	{name: "Fries", category: "appetizer", price: 34, destination: restaurant},
+	{name: "Garlic Bread", category: "appetizer", price: 42, destination: restaurant},
 ]
 
 MenuItem.create!(appetizers)
 
 main_course = [
-	{name: "Nachos", type: "main_course", price: 60, destination: restaurant},
-	{name: "Pollo Burrito", type: "main_course", price: 89, destination: restaurant},
-	{name: "Falafel Durum", type: "main_course", price: 55, destination: restaurant}
+	{name: "Nachos", category: "main_course", price: 60, destination: restaurant},
+	{name: "Pollo Burrito", category: "main_course", price: 89, destination: restaurant},
+	{name: "Falafel Durum", category: "main_course", price: 55, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
@@ -1601,16 +1598,16 @@ MenuItem.create!(main_course)
 restaurant = Destination.find_by_name("Wok On")
 
 appetizers = [
-	{name: "Ebi Tempura", type: "appetizer", price: 55, destination: restaurant},
-	{name: "Spring Rolls", type: "appetizer", price: 35, destination: restaurant},
+	{name: "Ebi Tempura", category: "appetizer", price: 55, destination: restaurant},
+	{name: "Spring Rolls", category: "appetizer", price: 35, destination: restaurant},
 ]
 
 MenuItem.create!(appetizers)
 
 main_course = [
-	{name: "Tofu Rice Noodles", type: "main_course", price: 60, destination: restaurant},
-	{name: "Prawn Udon Noodles", type: "main_course", price: 65, destination: restaurant},
-	{name: "Eggplant with Mushrooms", type: "main_course", price: 51, destination: restaurant}
+	{name: "Tofu Rice Noodles", category: "main_course", price: 60, destination: restaurant},
+	{name: "Prawn Udon Noodles", category: "main_course", price: 65, destination: restaurant},
+	{name: "Eggplant with Mushrooms", category: "main_course", price: 51, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
@@ -1624,23 +1621,23 @@ MenuItem.create!(main_course)
 restaurant = Destination.find_by_name("Jensens Bøfhus")
 
 appetizers = [
-  {name: "Jensens vegetarian course", type: "appetizer", price: 75, destination: restaurant},
-  {name: "Cold-smoked salmon", type: "appetizer", price: 75, destination: restaurant},
-  {name: "Jensens steak salad", type: "appetizer", price: 75, destination: restaurant}
+  {name: "Jensens vegetarian course", category: "appetizer", price: 75, destination: restaurant},
+  {name: "Cold-smoked salmon", category: "appetizer", price: 75, destination: restaurant},
+  {name: "Jensens steak salad", category: "appetizer", price: 75, destination: restaurant}
 ]
   
 MenuItem.create!(appetizers)
   main_course = [
-  {name: "Ribeye", type: "main_course", price: 200, destination: restaurant},
-  {name: "Beef tenderloin", type: "main_course", price: 225, destination: restaurant},
-  {name: "Strip steak", type: "main_course", price: 250, destination: restaurant}
+  {name: "Ribeye", category: "main_course", price: 200, destination: restaurant},
+  {name: "Beef tenderloin", category: "main_course", price: 225, destination: restaurant},
+  {name: "Strip steak", category: "main_course", price: 250, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
   desserts = [
-  {name: "Belgian chocolate cake", type: "dessert", price: 50, destination: restaurant},
-  {name: "New York Style Cheesecake", type: "dessert", price: 50, destination: restaurant},
-  {name: "Coffee & sweet", type: "dessert", price: 50, destination: restaurant}
+  {name: "Belgian chocolate cake", category: "dessert", price: 50, destination: restaurant},
+  {name: "New York Style Cheesecake", category: "dessert", price: 50, destination: restaurant},
+  {name: "Coffee & sweet", category: "dessert", price: 50, destination: restaurant}
 ]
 
 MenuItem.create!(desserts)
@@ -1649,25 +1646,25 @@ MenuItem.create!(desserts)
 restaurant = Destination.find_by_name("Groeften")
 
 appetizers = [
-  {name: "Kartoffelsuppe", type: "appetizer", price: 95, destination: restaurant},
-  {name: "Græskarsuppe", type: "appetizer", price: 95, destination: restaurant},
-  {name: "75gr. søkogte rejer", type: "appetizer", price: 125, destination: restaurant}
+  {name: "Kartoffelsuppe", category: "appetizer", price: 95, destination: restaurant},
+  {name: "Græskarsuppe", category: "appetizer", price: 95, destination: restaurant},
+  {name: "75gr. søkogte rejer", category: "appetizer", price: 125, destination: restaurant}
 ]
 
 MenuItem.create!(appetizers)
 
 main_course = [
-  {name: "Grøftens Stjerneskud", type: "main_course", price: 165, destination: restaurant},
-  {name: "200g. hakkebøf", type: "main_course", price: 215, destination: restaurant},
-  {name: "Kokkens rørte tatar", type: "main_course", price: 179, destination: restaurant}
+  {name: "Grøftens Stjerneskud", category: "main_course", price: 165, destination: restaurant},
+  {name: "200g. hakkebøf", category: "main_course", price: 215, destination: restaurant},
+  {name: "Kokkens rørte tatar", category: "main_course", price: 179, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
 
 desserts = [
-  {name: "Gammeldags Æblekage", type: "dessert", price: 89, destination: restaurant},
-  {name: "Grøftens Citronfromage", type: "dessert", price: 89, destination: restaurant},
-  {name: "Chokolademousse", type: "dessert", price: 99, destination: restaurant}
+  {name: "Gammeldags Æblekage", category: "dessert", price: 89, destination: restaurant},
+  {name: "Grøftens Citronfromage", category: "dessert", price: 89, destination: restaurant},
+  {name: "Chokolademousse", category: "dessert", price: 99, destination: restaurant}
 ]
 
 MenuItem.create!(desserts)
@@ -1676,24 +1673,24 @@ MenuItem.create!(desserts)
 restaurant = Destination.find_by_name("Kebabish Vestebro")
 
 appetizers = [
-  {name: "Mix Salat", type: "appetizer", price: 35, destination: restaurant},
-  {name: "Chicken Salad", type: "appetizer", price: 45, destination: restaurant},
-  {name: "Homus", type: "appetizer", price: 15, destination: restaurant}
+  {name: "Mix Salat", category: "appetizer", price: 35, destination: restaurant},
+  {name: "Chicken Salad", category: "appetizer", price: 45, destination: restaurant},
+  {name: "Homus", category: "appetizer", price: 15, destination: restaurant}
 ]
 
 MenuItem.create!(appetizers)
 
 main_course = [
-  {name: "Seekh Kebab Ret", type: "main_course", price: 89, destination: restaurant},
-  {name: "Chicken Tikka Ret", type: "main_course", price: 89, destination: restaurant},
-  {name: "Lamb Tikka Ret", type: "main_course", price: 89, destination: restaurant}
+  {name: "Seekh Kebab Ret", category: "main_course", price: 89, destination: restaurant},
+  {name: "Chicken Tikka Ret", category: "main_course", price: 89, destination: restaurant},
+  {name: "Lamb Tikka Ret", category: "main_course", price: 89, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
 
 desserts = [
-  {name: "Kheer", type: "dessert", price: 35, destination: restaurant},
-  {name: " Falooda", type: "dessert", price: 35, destination: restaurant},
+  {name: "Kheer", category: "dessert", price: 35, destination: restaurant},
+  {name: " Falooda", category: "dessert", price: 35, destination: restaurant},
 ]
 
 MenuItem.create!(desserts)
@@ -1702,9 +1699,9 @@ MenuItem.create!(desserts)
 restaurant = Destination.find_by_name("Tommi’s")
 
 main_course = [
-  {name: "Burger", type: "main_course", price: 69, destination: restaurant},
-  {name: "Cheese Burger", type: "main_course", price: 74, destination: restaurant},
-  {name: "Veggie Burger", type: "main_course", price: 69, destination: restaurant}
+  {name: "Burger", category: "main_course", price: 69, destination: restaurant},
+  {name: "Cheese Burger", category: "main_course", price: 74, destination: restaurant},
+  {name: "Veggie Burger", category: "main_course", price: 69, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
@@ -1713,25 +1710,25 @@ MenuItem.create!(main_course)
 restaurant = Destination.find_by_name("Frascati")
 
 appetizers = [
-  {name: "Bruschetta Al Pomodoro E Basilico", type: "appetizer", price: 49, destination: restaurant},
-  {name: "Tris Di Bruschetta Fantasia", type: "appetizer", price: 69, destination: restaurant},
-  {name: "Mozzarella Di Bufala E Pomodoro", type: "appetizer", price: 95, destination: restaurant}
+  {name: "Bruschetta Al Pomodoro E Basilico", category: "appetizer", price: 49, destination: restaurant},
+  {name: "Tris Di Bruschetta Fantasia", category: "appetizer", price: 69, destination: restaurant},
+  {name: "Mozzarella Di Bufala E Pomodoro", category: "appetizer", price: 95, destination: restaurant}
 ]
 
 MenuItem.create!(appetizers)
 
 main_course = [
-  {name: "Ravioli Di Magro Al Pomodoro E Basilico", type: "main_course", price: 139, destination: restaurant},
-  {name: "Pizza Margherita", type: "main_course", price: 95, destination: restaurant},
-  {name: "Tagliatelle Al Salmone e Zucchine", type: "main_course", price: 149, destination: restaurant}
+  {name: "Ravioli Di Magro Al Pomodoro E Basilico", category: "main_course", price: 139, destination: restaurant},
+  {name: "Pizza Margherita", category: "main_course", price: 95, destination: restaurant},
+  {name: "Tagliatelle Al Salmone e Zucchine", category: "main_course", price: 149, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
 
 desserts = [
-  {name: "Tiramisu", type: "dessert", price: 65, destination: restaurant},
-  {name: "Tartufo Al Cioccolato", type: "dessert", price: 69, destination: restaurant},
-  {name: "Banana Split", type: "dessert", price: 65, destination: restaurant}
+  {name: "Tiramisu", category: "dessert", price: 65, destination: restaurant},
+  {name: "Tartufo Al Cioccolato", category: "dessert", price: 69, destination: restaurant},
+  {name: "Banana Split", category: "dessert", price: 65, destination: restaurant}
 ]
 
 MenuItem.create!(desserts)
@@ -1740,25 +1737,25 @@ MenuItem.create!(desserts)
 restaurant = Destination.find_by_name("Al-Diwan")
 
 appetizers = [
-  {name: "Soup", type: "appetizer", price: 10, destination: restaurant},
-  {name: "Samosa", type: "appetizer", price: 55, destination: restaurant},
-  {name: "Chicken Tikka", type: "appetizer", price: 49, destination: restaurant}
+  {name: "Soup", category: "appetizer", price: 10, destination: restaurant},
+  {name: "Samosa", category: "appetizer", price: 55, destination: restaurant},
+  {name: "Chicken Tikka", category: "appetizer", price: 49, destination: restaurant}
 ]
 
 MenuItem.create!(appetizers)
 
 main_course = [
-  {name: "Al-Diwan Lamb Jalfrezi", type: "main_course", price: 149, destination: restaurant},
-  {name: "Beef Bhuna", type: "main_course", price: 149, destination: restaurant},
-  {name: "Aloo Methi", type: "main_course", price: 99, destination: restaurant}
+  {name: "Al-Diwan Lamb Jalfrezi", category: "main_course", price: 149, destination: restaurant},
+  {name: "Beef Bhuna", category: "main_course", price: 149, destination: restaurant},
+  {name: "Aloo Methi", category: "main_course", price: 99, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
 
 desserts = [
-  {name: "Ice Cream", type: "dessert", price: 45, destination: restaurant},
-  {name: "Kulfr", type: "dessert", price: 55, destination: restaurant},
-  {name: "Chef's Special - Dessert Plate", type: "dessert", price: 75, destination: restaurant}
+  {name: "Ice Cream", category: "dessert", price: 45, destination: restaurant},
+  {name: "Kulfr", category: "dessert", price: 55, destination: restaurant},
+  {name: "Chef's Special - Dessert Plate", category: "dessert", price: 75, destination: restaurant}
 ]
 
 MenuItem.create!(desserts)
@@ -1767,27 +1764,28 @@ MenuItem.create!(desserts)
 restaurant = Destination.find_by_name("Neighborhood")
 
 appetizers = [
-  {name: "Pork Beet Terrine", type: "appetizer", price: 85, destination: restaurant},
-  {name: "Cod Ceviche", type: "appetizer", price: 85, destination: restaurant},
-  {name: "Mary's Oyster", type: "appetizer", price: 85, destination: restaurant}
+  {name: "Pork Beet Terrine", category: "appetizer", price: 85, destination: restaurant},
+  {name: "Cod Ceviche", category: "appetizer", price: 85, destination: restaurant},
+  {name: "Mary's Oyster", category: "appetizer", price: 85, destination: restaurant}
 ]
 
 MenuItem.create!(appetizers)
 
 main_course = [
-  {name: "Pizza", type: "main_course", price: 145, destination: restaurant},
-  {name: "Salad", type: "main_course", price: 125, destination: restaurant}
+  {name: "Pizza", category: "main_course", price: 145, destination: restaurant},
+  {name: "Salad", category: "main_course", price: 125, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
 
 desserts = [
-  {name: "Deconstructed Risalamande", type: "dessert", price: 85, destination: restaurant},
-  {name: "Carrot Cake", type: "dessert", price: 85, destination: restaurant},
-  {name: "Grandma's Favorite", type: "dessert", price: 85, destination: restaurant}
+  {name: "Deconstructed Risalamande", category: "dessert", price: 85, destination: restaurant},
+  {name: "Carrot Cake", category: "dessert", price: 85, destination: restaurant},
+  {name: "Grandma's Favorite", category: "dessert", price: 85, destination: restaurant}
 ]
 
 MenuItem.create!(desserts)
 
 
 
+p "done"
