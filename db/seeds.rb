@@ -1177,36 +1177,35 @@ appetizers = [
 MenuItem.create!(appetizers)
 
 main_course = [
-	{name: "Pesto Mozzarella Sandwich", type: "main_course", price: 60, destination: restaurant},
-	{name: "Risotto", type: "main_course", price: 105, destination: restaurant},
-	{name: "Fried Chicken Salad", type: "main_course", price: 115, destination: restaurant}
+	{name: "Biksemad Royal", type: "main_course", price: 150, destination: restaurant},
+	{name: "Cheeseburger", type: "main_course", price: 125, destination: restaurant},
+	{name: "Beef Tartare", type: "main_course", price: 100, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
 
 desserts = [
-	{name: "Rumbugs", type: "dessert", price: 30, destination: restaurant},
-	{name: "Leckerbaer Cookie", type: "dessert", price: 25, destination: restaurant},
-	{name: "Lemon Pie with Meringue", type: "dessert", price: 40, destination: restaurant}
+	{name: "Chocolate Mousse", type: "dessert", price: 50, destination: restaurant},
+	{name: "Coupe Royal", type: "dessert", price: 50, destination: restaurant},	
 ]
 
 MenuItem.create!(desserts)
 
 # ---------------------------------------4-------------------------------------
-restaurant = Destination.find_by_name("Plenum")
+restaurant = Destination.find_by_name("Mash")
 
 appetizers = [
-	{name: "Croissant", type: "appetizer", price: 18, destination: restaurant},
-	{name: "Truffle Chips", type: "appetizer", price: 30, destination: restaurant},
-	{name: "Peanuts and smoked almonds", type: "appetizer", price: 30, destination: restaurant}
+	{name: "Charcuterie", type: "appetizer", price: 115, destination: restaurant},
+	{name: "Grillet Carpaccio", type: "appetizer", price: 95, destination: restaurant},
+	{name: "Løgsuppe", type: "appetizer", price: 95, destination: restaurant}
 ]
 
 MenuItem.create!(appetizers)
 
 main_course = [
-	{name: "Pesto Mozzarella Sandwich", type: "main_course", price: 60, destination: restaurant},
-	{name: "Risotto", type: "main_course", price: 105, destination: restaurant},
-	{name: "Fried Chicken Salad", type: "main_course", price: 115, destination: restaurant}
+	{name: "Filet", type: "main_course", price: 265, destination: restaurant},
+	{name: "Mørbrad", type: "main_course", price: 315, destination: restaurant},
+	{name: "Mash Burger", type: "main_course", price: 115, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
@@ -1214,234 +1213,394 @@ MenuItem.create!(main_course)
 desserts = [
 	{name: "Rumbugs", type: "dessert", price: 30, destination: restaurant},
 	{name: "Leckerbaer Cookie", type: "dessert", price: 25, destination: restaurant},
-	{name: "Lemon Pie with Meringue", type: "dessert", price: 40, destination: restaurant}
+	{name: "Lemon Pie with Meringue", type: "dessert", price: 185, destination: restaurant}
 ]
 
 MenuItem.create!(desserts)
 
 # ---------------------------------------5-------------------------------------
 
-restaurant = Destination.find_by_name("Plenum")
+restaurant = Destination.find_by_name("Ravage")
 
 appetizers = [
-	{name: "Croissant", type: "appetizer", price: 18, destination: restaurant},
-	{name: "Truffle Chips", type: "appetizer", price: 30, destination: restaurant},
-	{name: "Peanuts and smoked almonds", type: "appetizer", price: 30, destination: restaurant}
+	{name: "Scallops", type: "appetizer", price: 111, destination: restaurant},
+	{name: "Duck Terrine", type: "appetizer", price: 126, destination: restaurant},
+	{name: "Moules Marinieres", type: "appetizer", price: 126, destination: restaurant}
 ]
 
 MenuItem.create!(appetizers)
 
 main_course = [
-	{name: "Pesto Mozzarella Sandwich", type: "main_course", price: 60, destination: restaurant},
-	{name: "Risotto", type: "main_course", price: 105, destination: restaurant},
-	{name: "Fried Chicken Salad", type: "main_course", price: 115, destination: restaurant}
+	{name: "Fish of the day", type: "main_course", price: 245, destination: restaurant},
+	{name: "Stuffed Quail", type: "main_course", price: 245, destination: restaurant},
+	{name: "Crispy Fried Pork Belly", type: "main_course", price: 215, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
 
 desserts = [
-	{name: "Rumbugs", type: "dessert", price: 30, destination: restaurant},
-	{name: "Leckerbaer Cookie", type: "dessert", price: 25, destination: restaurant},
-	{name: "Lemon Pie with Meringue", type: "dessert", price: 40, destination: restaurant}
+	{name: "Crème Brûlée", type: "dessert", price: 104, destination: restaurant},
+	{name: "Traditional Danish Rice Pudding", type: "dessert", price: 111, destination: restaurant},
+	{name: "Gateau Marcel", type: "dessert", price: 126, destination: restaurant}
 ]
 
 MenuItem.create!(desserts)
 
 # ---------------------------------------6-------------------------------------
 
-restaurant = Destination.find_by_name("Plenum")
+restaurant = Destination.find_by_name("Fish Market")
 
 appetizers = [
-	{name: "Croissant", type: "appetizer", price: 18, destination: restaurant},
-	{name: "Truffle Chips", type: "appetizer", price: 30, destination: restaurant},
-	{name: "Peanuts and smoked almonds", type: "appetizer", price: 30, destination: restaurant}
+	{name: "Ceviche", type: "appetizer", price: 125, destination: restaurant},
+	{name: "Bouillabaisse", type: "appetizer", price: 145, destination: restaurant},
+	{name: "Østers", type: "appetizer", price: 145, destination: restaurant}
 ]
 
 MenuItem.create!(appetizers)
 
 main_course = [
-	{name: "Pesto Mozzarella Sandwich", type: "main_course", price: 60, destination: restaurant},
-	{name: "Risotto", type: "main_course", price: 105, destination: restaurant},
-	{name: "Fried Chicken Salad", type: "main_course", price: 115, destination: restaurant}
+	{name: "Søtunge", type: "main_course", price: 245, destination: restaurant},
+	{name: "Hummer", type: "main_course", price: 375, destination: restaurant},
+	{name: "Oksemørbrad", type: "main_course", price: 285, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
 
 desserts = [
-	{name: "Rumbugs", type: "dessert", price: 30, destination: restaurant},
-	{name: "Leckerbaer Cookie", type: "dessert", price: 25, destination: restaurant},
-	{name: "Lemon Pie with Meringue", type: "dessert", price: 40, destination: restaurant}
+	{name: "Chocolat", type: "dessert", price: 95, destination: restaurant},
+	{name: "Sødt", type: "dessert", price: 45, destination: restaurant},
+	{name: "Profiteroles", type: "dessert", price: 95, destination: restaurant}
 ]
 
 MenuItem.create!(desserts)
 
 # ---------------------------------------7-------------------------------------
 
-restaurant = Destination.find_by_name("Plenum")
+restaurant = Destination.find_by_name("Union Kitchen")
 
 appetizers = [
-	{name: "Croissant", type: "appetizer", price: 18, destination: restaurant},
-	{name: "Truffle Chips", type: "appetizer", price: 30, destination: restaurant},
-	{name: "Peanuts and smoked almonds", type: "appetizer", price: 30, destination: restaurant}
+	{name: "Fishcake Balls", type: "appetizer", price: 99, destination: restaurant},
+	{name: "Truffle Fries", type: "appetizer", price: 69, destination: restaurant},
+	{name: "Green Salad", type: "appetizer", price: 55, destination: restaurant}
 ]
 
 MenuItem.create!(appetizers)
 
 main_course = [
-	{name: "Pesto Mozzarella Sandwich", type: "main_course", price: 60, destination: restaurant},
-	{name: "Risotto", type: "main_course", price: 105, destination: restaurant},
-	{name: "Fried Chicken Salad", type: "main_course", price: 115, destination: restaurant}
+	{name: "Spaghetti", type: "main_course", price: 75, destination: restaurant},
+	{name: "Bowl of Pulled Pork", type: "main_course", price: 132, destination: restaurant},
+	{name: "Croque Monsieur", type: "main_course", price: 115, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
 
 desserts = [
-	{name: "Rumbugs", type: "dessert", price: 30, destination: restaurant},
-	{name: "Leckerbaer Cookie", type: "dessert", price: 25, destination: restaurant},
-	{name: "Lemon Pie with Meringue", type: "dessert", price: 40, destination: restaurant}
+	{name: "Apple Crumble", type: "dessert", price: 75, destination: restaurant},
+	{name: "White Chocolate Cheesecake", type: "dessert", price: 69, destination: restaurant},
+	{name: "Sticky Toffee Pudding", type: "dessert", price: 75, destination: restaurant}
 ]
 
 MenuItem.create!(desserts)
 
 # ---------------------------------------8-------------------------------------
-restaurant = Destination.find_by_name("Plenum")
+restaurant = Destination.find_by_name("Hafnia")
 
 appetizers = [
-	{name: "Croissant", type: "appetizer", price: 18, destination: restaurant},
-	{name: "Truffle Chips", type: "appetizer", price: 30, destination: restaurant},
-	{name: "Peanuts and smoked almonds", type: "appetizer", price: 30, destination: restaurant}
+	{name: "Acai Bowl", type: "appetizer", price: 70, destination: restaurant},
+	{name: "Suppe", type: "appetizer", price: 80, destination: restaurant},
+	{name: "Lille Salat", type: "appetizer", price: 70, destination: restaurant}
 ]
 
 MenuItem.create!(appetizers)
 
 main_course = [
-	{name: "Pesto Mozzarella Sandwich", type: "main_course", price: 60, destination: restaurant},
-	{name: "Risotto", type: "main_course", price: 105, destination: restaurant},
-	{name: "Fried Chicken Salad", type: "main_course", price: 115, destination: restaurant}
+	{name: "Tunmousse Sandwich", type: "main_course", price: 70, destination: restaurant},
+	{name: "Quinoa Bowl", type: "main_course", price: 95, destination: restaurant},
+	{name: "Hafnia Burger", type: "main_course", price: 135, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
 
 desserts = [
-	{name: "Rumbugs", type: "dessert", price: 30, destination: restaurant},
-	{name: "Leckerbaer Cookie", type: "dessert", price: 25, destination: restaurant},
-	{name: "Lemon Pie with Meringue", type: "dessert", price: 40, destination: restaurant}
+	{name: "HJ RomKugle", type: "dessert", price: 30, destination: restaurant},
+	{name: "Granolabar", type: "dessert", price: 25, destination: restaurant},
+	{name: "Raw Cake", type: "dessert", price: 45, destination: restaurant}
 ]
 
 MenuItem.create!(desserts)
 
 # ---------------------------------------9-------------------------------------
 
-restaurant = Destination.find_by_name("Plenum")
-
-appetizers = [
-	{name: "Croissant", type: "appetizer", price: 18, destination: restaurant},
-	{name: "Truffle Chips", type: "appetizer", price: 30, destination: restaurant},
-	{name: "Peanuts and smoked almonds", type: "appetizer", price: 30, destination: restaurant}
-]
-
-MenuItem.create!(appetizers)
+restaurant = Destination.find_by_name("Pizza Huset")
 
 main_course = [
-	{name: "Pesto Mozzarella Sandwich", type: "main_course", price: 60, destination: restaurant},
-	{name: "Risotto", type: "main_course", price: 105, destination: restaurant},
-	{name: "Fried Chicken Salad", type: "main_course", price: 115, destination: restaurant}
+	{name: "Summer Sandwich", type: "main_course", price: 50, destination: restaurant},
+	{name: "Bolognese Pizza", type: "main_course", price: 62, destination: restaurant},
+	{name: "Truffle Pizza", type: "main_course", price: 72, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
-
-desserts = [
-	{name: "Rumbugs", type: "dessert", price: 30, destination: restaurant},
-	{name: "Leckerbaer Cookie", type: "dessert", price: 25, destination: restaurant},
-	{name: "Lemon Pie with Meringue", type: "dessert", price: 40, destination: restaurant}
-]
-
-MenuItem.create!(desserts)
 
 # ---------------------------------------10------------------------------------
 
-restaurant = Destination.find_by_name("Plenum")
+restaurant = Destination.find_by_name("Tonkin")
 
 appetizers = [
-	{name: "Croissant", type: "appetizer", price: 18, destination: restaurant},
-	{name: "Truffle Chips", type: "appetizer", price: 30, destination: restaurant},
-	{name: "Peanuts and smoked almonds", type: "appetizer", price: 30, destination: restaurant}
+	{name: "Nem Rán", type: "appetizer", price: 45, destination: restaurant},
+	{name: "Wontons", type: "appetizer", price: 45, destination: restaurant},
 ]
 
 MenuItem.create!(appetizers)
 
 main_course = [
-	{name: "Pesto Mozzarella Sandwich", type: "main_course", price: 60, destination: restaurant},
-	{name: "Risotto", type: "main_course", price: 105, destination: restaurant},
-	{name: "Fried Chicken Salad", type: "main_course", price: 115, destination: restaurant}
+	{name: "Bún Nam Bô", type: "main_course", price: 96, destination: restaurant},
+	{name: "Bô Kho", type: "main_course", price: 86, destination: restaurant},
+	{name: "Bánh Mì", type: "main_course", price: 58, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
 
 desserts = [
-	{name: "Rumbugs", type: "dessert", price: 30, destination: restaurant},
-	{name: "Leckerbaer Cookie", type: "dessert", price: 25, destination: restaurant},
-	{name: "Lemon Pie with Meringue", type: "dessert", price: 40, destination: restaurant}
+	{name: "Chè Thung - Kokosgrød", type: "dessert", price: 36, destination: restaurant},
+	{name: "Tonkin Chokolademousse", type: "dessert", price: 36, destination: restaurant},
 ]
 
 MenuItem.create!(desserts)
 
 # ---------------------------------------11------------------------------------
-restaurant = Destination.find_by_name("Plenum")
+restaurant = Destination.find_by_name("Fredco's Deli")
 
 appetizers = [
-	{name: "Croissant", type: "appetizer", price: 18, destination: restaurant},
-	{name: "Truffle Chips", type: "appetizer", price: 30, destination: restaurant},
-	{name: "Peanuts and smoked almonds", type: "appetizer", price: 30, destination: restaurant}
+	{name: "Soup", type: "appetizer", price: 55, destination: restaurant},
 ]
 
 MenuItem.create!(appetizers)
 
 main_course = [
-	{name: "Pesto Mozzarella Sandwich", type: "main_course", price: 60, destination: restaurant},
-	{name: "Risotto", type: "main_course", price: 105, destination: restaurant},
-	{name: "Fried Chicken Salad", type: "main_course", price: 115, destination: restaurant}
+	{name: "Pesto Chicken Salad", type: "main_course", price: 75, destination: restaurant},
+	{name: "Chicken Curry Sandwich", type: "main_course", price: 60, destination: restaurant},
 ]
 
 MenuItem.create!(main_course)
-
-desserts = [
-	{name: "Rumbugs", type: "dessert", price: 30, destination: restaurant},
-	{name: "Leckerbaer Cookie", type: "dessert", price: 25, destination: restaurant},
-	{name: "Lemon Pie with Meringue", type: "dessert", price: 40, destination: restaurant}
-]
-
-MenuItem.create!(desserts)
 
 # ---------------------------------------12------------------------------------
 
-restaurant = Destination.find_by_name("Plenum")
+restaurant = Destination.find_by_name("Wokshop")
 
 appetizers = [
-	{name: "Croissant", type: "appetizer", price: 18, destination: restaurant},
-	{name: "Truffle Chips", type: "appetizer", price: 30, destination: restaurant},
-	{name: "Peanuts and smoked almonds", type: "appetizer", price: 30, destination: restaurant}
+	{name: "Shrimp Chips", type: "appetizer", price: 40, destination: restaurant},
+	{name: "Rice Cakes", type: "appetizer", price: 45, destination: restaurant},
+	{name: "Crispy Beef", type: "appetizer", price: 75, destination: restaurant}
 ]
 
 MenuItem.create!(appetizers)
 
 main_course = [
-	{name: "Pesto Mozzarella Sandwich", type: "main_course", price: 60, destination: restaurant},
-	{name: "Risotto", type: "main_course", price: 105, destination: restaurant},
-	{name: "Fried Chicken Salad", type: "main_course", price: 115, destination: restaurant}
+	{name: "Chicken Coconut Soup - Tom Kha Gai", type: "main_course", price: 120, destination: restaurant},
+	{name: "Phad See-Iew Gai Noodles", type: "main_course", price: 135, destination: restaurant},
+	{name: "Red Duck Curry", type: "main_course", price: 159, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
 
 desserts = [
-	{name: "Rumbugs", type: "dessert", price: 30, destination: restaurant},
-	{name: "Leckerbaer Cookie", type: "dessert", price: 25, destination: restaurant},
-	{name: "Lemon Pie with Meringue", type: "dessert", price: 40, destination: restaurant}
+	{name: "Fried Banana with Ice Cream", type: "dessert", price: 75, destination: restaurant},
 ]
 
 MenuItem.create!(desserts)
 
+# ---------------------------------------13------------------------------------
 
+restaurant = Destination.find_by_name("Sticks n Sushi")
+
+appetizers = [
+	{name: "Spicy Misosuppe", type: "appetizer", price: 47, destination: restaurant},
+	{name: "Fried Cauliflower", type: "appetizer", price: 36, destination: restaurant},
+	{name: "Jerusalem Artichokes", type: "appetizer", price: 39, destination: restaurant}
+]
+
+MenuItem.create!(appetizers)
+
+main_course = [
+	{name: "Salmon Sushi Plate", type: "main_course", price: 189, destination: restaurant},
+	{name: "Nana Ban Plate", type: "main_course", price: 168, destination: restaurant},
+	{name: "Solo Sushi Plate", type: "main_course", price: 179, destination: restaurant}
+]
+
+MenuItem.create!(main_course)
+
+desserts = [
+	{name: "Match Fondant", type: "dessert", price: 30, destination: restaurant},
+	{name: "Marcel Chocolate Cake", type: "dessert", price: 30, destination: restaurant},
+	{name: "Dark Chocolate Balls", type: "dessert", price: 30, destination: restaurant},
+]
+
+MenuItem.create!(desserts)
+
+# ---------------------------------------14------------------------------------
+
+restaurant = Destination.find_by_name("Umami")
+
+appetizers = [
+	{name: "Rio Frio Organic Caviar", type: "appetizer", price: 400, destination: restaurant},
+	{name: "New Style Sashimi", type: "appetizer", price: 140, destination: restaurant},
+	{name: "Foi Gras", type: "appetizer", price: 160, destination: restaurant}
+]
+
+MenuItem.create!(appetizers)
+
+main_course = [
+	{name: "Lobster Tempura", type: "main_course", price: 270, destination: restaurant},
+	{name: "Canette Breast", type: "main_course", price: 160, destination: restaurant},
+	{name: "Miso Braised Short Rib", type: "main_course", price: 160, destination: restaurant}
+]
+
+MenuItem.create!(main_course)
+
+desserts = [
+	{name: "Umami Chocolate Dessert", type: "dessert", price: 120, destination: restaurant},
+	{name: "Créme Brûleé", type: "dessert", price: 90, destination: restaurant},
+	{name: "Matcha Panna Cotta", type: "dessert", price: 90, destination: restaurant},
+]
+
+MenuItem.create!(desserts)
+
+# ---------------------------------------15------------------------------------
+
+restaurant = Destination.find_by_name("Serenity Cupcake")
+
+desserts = [
+	{name: "8 Mini Cupcakes", type: "dessert", price: 144, destination: restaurant},
+	{name: "Cupcake", type: "dessert", price: 35, destination: restaurant},
+]
+
+MenuItem.create!(desserts)
+
+# ---------------------------------------16------------------------------------
+
+restaurant = Destination.find_by_name("Koefoed")
+
+appetizers = [
+	{name: "Chicken Confit", type: "appetizer", price: 125, destination: restaurant},
+	{name: "Burned Scallops", type: "appetizer", price: 145, destination: restaurant},
+	{name: "Salted Salmon", type: "appetizer", price: 95, destination: restaurant}
+]
+
+MenuItem.create!(appetizers)
+
+main_course = [
+	{name: "Breast of Pork", type: "main_course", price: 215, destination: restaurant},
+	{name: "Fried Cod", type: "main_course", price: 235, destination: restaurant},
+	{name: "Duck", type: "main_course", price: 255, destination: restaurant}
+]
+
+MenuItem.create!(main_course)
+
+desserts = [
+	{name: "Marzipan", type: "dessert", price: 110, destination: restaurant},
+	{name: "Ice Cream with Pickled Cherries", type: "dessert", price: 110, destination: restaurant},
+	{name: "Bornholm Cheese with Caramelized Rye Bread", type: "dessert", price: 120, destination: restaurant},
+]
+
+MenuItem.create!(desserts)
+
+# ---------------------------------------17------------------------------------
+
+restaurant = Destination.find_by_name("NyhavnsFærgekro")
+
+appetizers = [
+	{name: "Whitefish Roe", type: "appetizer", price: 95, destination: restaurant},
+	{name: "Rejecocktail", type: "appetizer", price: 85, destination: restaurant},
+	{name: "Tartlets", type: "appetizer", price: 65, destination: restaurant}
+]
+
+MenuItem.create!(appetizers)
+
+# ---------------------------------------18------------------------------------
+
+restaurant = Destination.find_by_name("Pluto")
+
+appetizers = [
+	{name: "Gillardeau Østers", type: "appetizer", price: 55, destination: restaurant},
+	{name: "Ventresca Tun", type: "appetizer", price: 70, destination: restaurant},
+	{name: "Charcuterie", type: "appetizer", price: 50, destination: restaurant},
+]
+
+MenuItem.create!(appetizers)
+
+main_course = [
+	{name: "Torsk", type: "main_course", price: 135, destination: restaurant},
+	{name: "Pighvar", type: "main_course", price: 175, destination: restaurant},
+	{name: "Hummer Hotdog", type: "main_course", price: 195, destination: restaurant}
+]
+
+MenuItem.create!(main_course)
+
+# ---------------------------------------19------------------------------------
+
+restaurant = Destination.find_by_name("Hot Buns")
+
+appetizers = [
+	{name: "Chicken Wings", type: "appetizer", price: 45, destination: restaurant},
+	{name: "Chili Cheese Tops", type: "appetizer", price: 45, destination: restaurant},
+	{name: "Kongerejer", type: "appetizer", price: 45, destination: restaurant}
+]
+
+MenuItem.create!(appetizers)
+
+main_course = [
+	{name: "Veggie Burger", type: "main_course", price: 100, destination: restaurant},
+	{name: "The Dane Burger", type: "main_course", price: 130, destination: restaurant},
+	{name: "The Hangover Burger", type: "main_course", price: 160, destination: restaurant}
+]
+
+MenuItem.create!(main_course)
+
+desserts = [
+	{name: "Sundae", type: "dessert", price: 50, destination: restaurant},
+]
+
+MenuItem.create!(desserts)
+
+# ---------------------------------------20------------------------------------
+
+restaurant = Destination.find_by_name("Nyhavn Pizza")
+
+appetizers = [
+	{name: "Fries", type: "appetizer", price: 34, destination: restaurant},
+	{name: "Garlic Bread", type: "appetizer", price: 42, destination: restaurant},
+]
+
+MenuItem.create!(appetizers)
+
+main_course = [
+	{name: "Nachos", type: "main_course", price: 60, destination: restaurant},
+	{name: "Pollo Burrito", type: "main_course", price: 89, destination: restaurant},
+	{name: "Falafel Durum", type: "main_course", price: 55, destination: restaurant}
+]
+
+MenuItem.create!(main_course)
+
+# ---------------------------------------21------------------------------------
+
+restaurant = Destination.find_by_name("Wok On")
+
+appetizers = [
+	{name: "Ebi Tempura", type: "appetizer", price: 55, destination: restaurant},
+	{name: "Spring Rolls", type: "appetizer", price: 35, destination: restaurant},
+]
+
+MenuItem.create!(appetizers)
+
+main_course = [
+	{name: "Tofu Rice Noodles", type: "main_course", price: 60, destination: restaurant},
+	{name: "Prawn Udon Noodles", type: "main_course", price: 65, destination: restaurant},
+	{name: "Eggplant with Mushrooms", type: "main_course", price: 51, destination: restaurant}
+]
+
+MenuItem.create!(main_course)
+
+# --------------------------------------KGS. NYTORV END------------------------
 
 
 
