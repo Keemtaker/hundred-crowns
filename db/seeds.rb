@@ -117,8 +117,8 @@ MenuItem.create(name: "Short Straw", type: "beer", price: 50, destination: bar)
 MenuItem.create!(beer)
 cocktail = [
 MenuItem.create(name: "Gin Fizz", type: "cocktail", price: 100, destination: bar)
-MenuItem.create(name: "G.N. (GRAPE NATIONS)", type: "cocktail", price: 100, destination: bar)
-MenuItem.create(name: "JULEP & CO.", type: "cocktail", price: 100, destination: bar)
+MenuItem.create(name: "G.N. (Grape Nations)", type: "cocktail", price: 100, destination: bar)
+MenuItem.create(name: "Julep & Co.", type: "cocktail", price: 100, destination: bar)
 ]
 MenuItem.create!(cocktail)
 
@@ -238,23 +238,23 @@ MenuItem.create(name: "2015 Mas Pouperas Côtes du Rhone Magnum Rose", type: "wi
 ]
 MenuItem.create!(wine)
 cocktail = [
-MenuItem.create(name: "FOUR ROSES OLD-FASHIONED", type: "cocktail", price: 130, destination: bar)
-MenuItem.create(name: "NEGRONI", type: "cocktail", price: 130, destination: bar)
-MenuItem.create(name: "ESPRESSO MARTINI", type: "cocktail", price: 130, destination: bar)
+MenuItem.create(name: "Four Roses Old Fashioned", type: "cocktail", price: 130, destination: bar)
+MenuItem.create(name: "Negroni", type: "cocktail", price: 130, destination: bar)
+MenuItem.create(name: "Espresso Martini", type: "cocktail", price: 130, destination: bar)
 ]
 MenuItem.create!(cocktail)
 
 #-------------------------------------------------------------------------------
 bar = Destination.find_by_name("Brønnum")
 beer = [
-MenuItem.create(name: "COPPER-KEEPER", type: "beer", price: 60, destination: bar)
-MenuItem.create(name: "SEASONAL BEER", type: "beer", price: 60, destination: bar)
-MenuItem.create(name: "BLONDE", type: "beer", price: 60, destination: bar)
+MenuItem.create(name: "Copper-Keeper", type: "beer", price: 60, destination: bar)
+MenuItem.create(name: "Seasonal Beer", type: "beer", price: 60, destination: bar)
+MenuItem.create(name: "Blonde", type: "beer", price: 60, destination: bar)
 ]
 MenuItem.create!(beer)
 wine = [
-MenuItem.create(name: "SAUVIGNON BLANC LE BLANC DE LA MARIEE", type: "wine", price: 80, destination: bar)
-MenuItem.create(name: "GAMAY GAMAY SANS TRA LA LA", type: "wine", price: 80, destination: bar)
+MenuItem.create(name: "Sauvignon Blac Le Blac De La Mariee", type: "wine", price: 80, destination: bar)
+MenuItem.create(name: "Gamay Gamay Sans Tra La La", type: "wine", price: 80, destination: bar)
 ]
 MenuItem.create!(wine)
 cocktail = [
@@ -300,27 +300,27 @@ MenuItem.create!(cocktail)
 #-------------------------------------------------------------------------------
 bar = Destination.find_by_name("Balthazar")
 beer = [
-MenuItem.create(name: "KRONENBOURG 1664", type: "beer", price: 55, destination: bar)
+MenuItem.create(name: "Kronenbourg 1664", type: "beer", price: 55, destination: bar)
 ]
 MenuItem.create!(beer)
 wine = [
-MenuItem.create(name: "2014 MACON BLANC VILLAGES FAIVELEY", type: "wine", price: 85, destination: bar)
-MenuItem.create(name: "2013 BOURGOGNE ROUGE ,VIEILLES VIGNES", type: "wine", price: 85, destination: bar)
+MenuItem.create(name: "2014 Macon Blanc Villages Faiveley", type: "wine", price: 85, destination: bar)
+MenuItem.create(name: "2013 Bourgogne Rouge, Vieilles Vignes", type: "wine", price: 85, destination: bar)
 ]
 MenuItem.create!(wine)
 cocktail = [
-MenuItem.create(name: "MIRACLES", type: "cocktail", price: 145, destination: bar)
-MenuItem.create(name: "ESPRESSO MARTINI", type: "cocktail", price: 155, destination: bar)
-MenuItem.create(name: "DOWNTOWN ABBEY", type: "cocktail", price: 145, destination: bar)
+MenuItem.create(name: "Miracles", type: "cocktail", price: 145, destination: bar)
+MenuItem.create(name: "Espresso Martini", type: "cocktail", price: 155, destination: bar)
+MenuItem.create(name: "Downtown Abbey", type: "cocktail", price: 145, destination: bar)
 ]
 MenuItem.create!(cocktail)
 
 #-------------------------------------------------------------------------------
 bar = Destination.find_by_name("Fugu")
 beer = [
-MenuItem.create(name: "ROYAL ØKO", type: "beer", price: 50, destination: bar)
-MenuItem.create(name: "HEINEKEN", type: "beer", price: 50, destination: bar)
-MenuItem.create(name: "BEER OF THE SEASON", type: "beer", price: 60, destination: bar)
+MenuItem.create(name: "Royal Øko", type: "beer", price: 50, destination: bar)
+MenuItem.create(name: "Heineken", type: "beer", price: 50, destination: bar)
+MenuItem.create(name: "Beer of the Season", type: "beer", price: 60, destination: bar)
 ]
 MenuItem.create!(beer)
 wine = [
@@ -330,9 +330,9 @@ MenuItem.create(name: "I am Rose", type: "wine", price: 70, destination: bar)
 ]
 MenuItem.create!(wine)
 cocktail = [
-MenuItem.create(name: "ESPRESSO MARTINI", type: "cocktail", price: 85, destination: bar)
-MenuItem.create(name: "DOCTOR CUCUMBER", type: "cocktail", price: 85, destination: bar)
-MenuItem.create(name: "PECAN OLD FASHIONED", type: "cocktail", price: 85, destination: bar)
+MenuItem.create(name: "Espresso Martini", type: "cocktail", price: 85, destination: bar)
+MenuItem.create(name: "Doctor Cucumber", type: "cocktail", price: 85, destination: bar)
+MenuItem.create(name: "Pecan Old Fashioned", type: "cocktail", price: 85, destination: bar)
 ]
 MenuItem.create!(cocktail)
 
@@ -413,15 +413,15 @@ MenuItem.create!(wine)
 #-------------------------------------------------------------------------------
 bar = Destination.find_by_name("The bird & The Churchkey")
 beer = [
-MenuItem.create(name: "HEINEKENr", type: "beer", price: 50, destination: bar)
-MenuItem.create(name: "ROYAL ØKO", type: "beer", price: 50, destination: bar)
-MenuItem.create(name: "ROYAL ØKO CLASSIC", type: "beer", price: 50, destination: bar)
+MenuItem.create(name: "Heineken", type: "beer", price: 50, destination: bar)
+MenuItem.create(name: "Royal Øko", type: "beer", price: 50, destination: bar)
+MenuItem.create(name: "Royal Øko Classic", type: "beer", price: 50, destination: bar)
 ]
 MenuItem.create!(beer)
 cocktail = [
 MenuItem.create(name: "42-00", type: "cocktail", price: 95, destination: bar)
-MenuItem.create(name: "MR. HENRIK HAMMER", type: "cocktail", price: 95, destination: bar)
-MenuItem.create(name: "THE NEOCLASSIC", type: "cocktail", price: 95, destination: bar)
+MenuItem.create(name: "Mr. Henrik Hammer", type: "cocktail", price: 95, destination: bar)
+MenuItem.create(name: "The Neoclassic", type: "cocktail", price: 95, destination: bar)
 ]
 MenuItem.create!(cocktail)
 
@@ -464,15 +464,15 @@ MenuItem.create!(cocktail)
 #-------------------------------------------------------------------------------
 bar = Destination.find_by_name("Nyhavn 17")
 beer = [
-MenuItem.create(name: "NYHAVN 17 ALE", type: "beer", price: 38, destination: bar)
-MenuItem.create(name: "CARLSBERG PILSNER", type: "beer", price: 32, destination: bar)
-MenuItem.create(name: "TUBORG CLASSIC", type: "beer", price: 34, destination: bar)
+MenuItem.create(name: "Nyhavn 17 Ale", type: "beer", price: 38, destination: bar)
+MenuItem.create(name: "Carlsberg Pilsner", type: "beer", price: 32, destination: bar)
+MenuItem.create(name: "Turborg Classic", type: "beer", price: 34, destination: bar)
 ]
 MenuItem.create!(beer)
 wine = [
-MenuItem.create(name: "BESTHEIM, RAYON DE LUNE, ALSACE, 2016", type: "wine", price: 95, destination: bar)
-MenuItem.create(name: "VERANZA, TINTO, VALLE DE LA CINCA, 2015", type: "wine", price: 85, destination: bar)
-MenuItem.create(name: "RAIMAT CLAMOR ROSADO, CATALONIEN", type: "wine", price: 80, destination: bar)
+MenuItem.create(name: "Bestheim, Roayon de Lune, Alsace, 2016", type: "wine", price: 95, destination: bar)
+MenuItem.create(name: "Veranza, Tinto, Valle De La Cinca, 2015", type: "wine", price: 85, destination: bar)
+MenuItem.create(name: "Raimat Clamor Rosado, Catalonien", type: "wine", price: 80, destination: bar)
 ]
 MenuItem.create!(wine)
 
@@ -551,8 +551,8 @@ MenuItem.create!(cocktail)
 #-------------------------------------------------------------------------------
 bar = Destination.find_by_name("PatePate")
 wine = [
-MenuItem.create(name: "lopez de haro VINTaE · Rosado ", type: "wine", price: 75, destination: bar)
-MenuItem.create(name: "LE MANPÒT BLANC DOMAINE BASSAC", type: "wine", price: 85, destination: bar)
+MenuItem.create(name: "lopez de haro Vintae · Rosado ", type: "wine", price: 75, destination: bar)
+MenuItem.create(name: "Le Manpòt Blanc Domaine Bassac", type: "wine", price: 85, destination: bar)
 MenuItem.create(name: "Plan de dieu Domaine Durieu ", type: "wine", price: 85, destination: bar)
 ]
 MenuItem.create!(wine)
@@ -560,9 +560,9 @@ MenuItem.create!(wine)
 #-------------------------------------------------------------------------------
 bar = Destination.find_by_name("BarbBar")
 beer = [
-MenuItem.create(name: "HEINEKEN - EXTRA COLD", type: "beer", price: 32, destination: bar)
-MenuItem.create(name: "ROYAL PILSNER ORGANIC", type: "beer", price: 32, destination: bar)
-MenuItem.create(name: "ROYAL CLASSIC ORGANIC", type: "beer", price: 32, destination: bar)
+MenuItem.create(name: "Heineken - Extra Cold", type: "beer", price: 32, destination: bar)
+MenuItem.create(name: "Royal Pilsner Organic", type: "beer", price: 32, destination: bar)
+MenuItem.create(name: "Royal Classic Organic", type: "beer", price: 32, destination: bar)
 ]
 MenuItem.create!(beer)
 cocktail = [
@@ -1187,25 +1187,25 @@ MenuItem.create!(main_course)
 restaurant = Destination.find_by_name("Frascati")
 
 appetizers = [
-  {name: "BRUSCHETTA AL POMODORO E BASILICO", type: "appetizer", price: 49, destination: restaurant},
-  {name: "TRIS DI BRUSCHETTE FANTASIA", type: "appetizer", price: 69, destination: restaurant},
-  {name: "MOZZARELLA DI BUFALA E POMODORO", type: "appetizer", price: 95, destination: restaurant}
+  {name: "Bruschetta Al Pomodoro E Basilico", type: "appetizer", price: 49, destination: restaurant},
+  {name: "Tris Di Bruschetta Fantasia", type: "appetizer", price: 69, destination: restaurant},
+  {name: "Mozzarella Di Bufala E Pomodoro", type: "appetizer", price: 95, destination: restaurant}
 ]
 
 MenuItem.create!(appetizers)
 
 main_course = [
-  {name: "RAVIOLI DI MAGRO AL POMODORO E BASILICO", type: "main_course", price: 139, destination: restaurant},
-  {name: "PIZZA MARGHERITA", type: "main_course", price: 95, destination: restaurant},
-  {name: "TAGLIATELLE AL SALMONE E ZUCCHINE", type: "main_course", price: 149, destination: restaurant}
+  {name: "Ravioli Di Magro Al Pomodoro E Basilico", type: "main_course", price: 139, destination: restaurant},
+  {name: "Pizza Margherita", type: "main_course", price: 95, destination: restaurant},
+  {name: "Tagliatelle Al Salmone e Zucchine", type: "main_course", price: 149, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
 
 desserts = [
-  {name: "TIRAMISU", type: "dessert", price: 65, destination: restaurant},
-  {name: "TARTUFO AL CIOCCOLATO", type: "dessert", price: 69, destination: restaurant},
-  {name: "BANANA SPLIT", type: "dessert", price: 65, destination: restaurant}
+  {name: "Tiramisu", type: "dessert", price: 65, destination: restaurant},
+  {name: "Tartufo Al Cioccolato", type: "dessert", price: 69, destination: restaurant},
+  {name: "Banana Split", type: "dessert", price: 65, destination: restaurant}
 ]
 
 MenuItem.create!(desserts)
@@ -1214,25 +1214,25 @@ MenuItem.create!(desserts)
 restaurant = Destination.find_by_name("Al-Diwan")
 
 appetizers = [
-  {name: "SOUP", type: "appetizer", price: 10, destination: restaurant},
-  {name: "SAMOSA", type: "appetizer", price: 55, destination: restaurant},
-  {name: "CHICKEN TIKKA", type: "appetizer", price: 49, destination: restaurant}
+  {name: "Soup", type: "appetizer", price: 10, destination: restaurant},
+  {name: "Samosa", type: "appetizer", price: 55, destination: restaurant},
+  {name: "Chicken Tikka", type: "appetizer", price: 49, destination: restaurant}
 ]
 
 MenuItem.create!(appetizers)
 
 main_course = [
-  {name: "AL-DIWAN LAMB JALFREZI “HOUSE SPECIALITY”", type: "main_course", price: 149, destination: restaurant},
-  {name: "BEEF BHUNA", type: "main_course", price: 149, destination: restaurant},
-  {name: "ALOO METHI", type: "main_course", price: 99, destination: restaurant}
+  {name: "Al-Diwan Lamb Jalfrezi", type: "main_course", price: 149, destination: restaurant},
+  {name: "Beef Bhuna", type: "main_course", price: 149, destination: restaurant},
+  {name: "Aloo Methi", type: "main_course", price: 99, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
 
 desserts = [
-  {name: "ICE CREAM", type: "dessert", price: 45, destination: restaurant},
-  {name: "KULFI", type: "dessert", price: 55, destination: restaurant},
-  {name: "CHEF ́S SPECIAL - DESSERT PLATE", type: "dessert", price: 75, destination: restaurant}
+  {name: "Ice Cream", type: "dessert", price: 45, destination: restaurant},
+  {name: "Kulfr", type: "dessert", price: 55, destination: restaurant},
+  {name: "Chef's Special - Dessert Plate", type: "dessert", price: 75, destination: restaurant}
 ]
 
 MenuItem.create!(desserts)
@@ -1241,9 +1241,9 @@ MenuItem.create!(desserts)
 restaurant = Destination.find_by_name("Neighborhood")
 
 appetizers = [
-  {name: "PORK BEET TERRINE", type: "appetizer", price: 85, destination: restaurant},
-  {name: "COD CEVICHE", type: "appetizer", price: 85, destination: restaurant},
-  {name: "MARY’S OYSTER", type: "appetizer", price: 85, destination: restaurant}
+  {name: "Pork Beet Terrine", type: "appetizer", price: 85, destination: restaurant},
+  {name: "Cod Ceviche", type: "appetizer", price: 85, destination: restaurant},
+  {name: "Mary's Oyster", type: "appetizer", price: 85, destination: restaurant}
 ]
 
 MenuItem.create!(appetizers)
@@ -1256,9 +1256,9 @@ main_course = [
 MenuItem.create!(main_course)
 
 desserts = [
-  {name: "DECONSTRUCTED RISALAMANDE", type: "dessert", price: 85, destination: restaurant},
-  {name: "CARROT CAKE", type: "dessert", price: 85, destination: restaurant},
-  {name: "GRANDMA’S FAVORITE", type: "dessert", price: 85, destination: restaurant}
+  {name: "Deconstructed Risalamande", type: "dessert", price: 85, destination: restaurant},
+  {name: "Carrot Cake", type: "dessert", price: 85, destination: restaurant},
+  {name: "Grandma's Favorite", type: "dessert", price: 85, destination: restaurant}
 ]
 
 MenuItem.create!(desserts)
