@@ -1,6 +1,13 @@
 class DestinationsController < ApplicationController
   def index
-    @destinations = Destination.all
+    @categories = params[:destination][:category]
+    @price = params[:destination][:price].to_f
+    location = "Copenhagen"
+    @destinations = Destination.near(location, 3)
+    @destinations_and_menu_items = @destinations.first(5).map do |destination|
+      { destination => destination.filtered_menu_items(@categories, @price)}
+    end
+    raise
   end
 
   def show
