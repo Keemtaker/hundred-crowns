@@ -1,5 +1,5 @@
 class Destination < ApplicationRecord
-  has_many :menu_items
+  has_many :menu_items, dependent: :destroy
   has_attachment :photo
 
 

@@ -3,7 +3,7 @@ class CreateDestinations < ActiveRecord::Migration[5.0]
     create_table :destinations do |t|
       t.string :name
       t.string :address
-      t.string :type
+      t.string :category
       t.integer :open_hours
       t.integer :close_hours
       t.float :longitude
