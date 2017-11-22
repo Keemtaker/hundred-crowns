@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 20171122113158) do
+ActiveRecord::Schema.define(version: 20171122102043) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,25 +33,23 @@ ActiveRecord::Schema.define(version: 20171122113158) do
   create_table "destinations", force: :cascade do |t|
     t.string   "name"
     t.string   "address"
+    t.string   "category"
     t.integer  "open_hours"
     t.integer  "close_hours"
     t.float    "longitude"
     t.float    "latitude"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.string   "category"
   end
 
   create_table "menu_items", force: :cascade do |t|
     t.string   "name"
+    t.string   "category"
     t.float    "price"
-
+    t.integer  "destination_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
-    t.string   "category"
-    t.integer  "destination_id"
+    t.index ["destination_id"], name: "index_menu_items_on_destination_id", using: :btree
   end
-
-  add_foreign_key "menu_items", "destinations"
 
 end
