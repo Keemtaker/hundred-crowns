@@ -1,9 +1,13 @@
 
-<% @destinations.each do |destination| %>
-    <h3><%= destination.name %></h3>
-    <%=  destination.search_menu_items().each do |menu_item| %>
-		
-   	<% end %>
+<% @destinations_and_menu_items.each do |destination, menu_items| %>
+    <h3><%= destination.first.first.name %></h3>
+    
+	<%#= menu_items.each { |menu_item| <p>"#{menu_item.name} #{menu_item.price}"</p> } %>
+    <% menu_items.first.first.each do |menu_item|%>
+	 	<%= menu_item.name %>
+	 	<%= menu_item.price %>
+ 	<% end %>    	
+
 
 <% end %>
 
