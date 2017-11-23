@@ -2,9 +2,11 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 </head>
 
-<div class="container">
-  <div class="row">
+<div class="container background">
+  <div class="wrapper">
+  <!-- <div class="row"> -->
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <img <%= image_tag "logo.png" %>
       <div class="form-show">
         <h1>100 Crowns</h1>
         <p>Get What you Want.</p>
@@ -13,7 +15,7 @@
 
         <div class="form-group">
           <input type="hidden" name="destination[category][]" value="">
-          
+
         <div class="category-choices">
           <input class="hidden" type="checkbox" value="beer" name="destination[category][]" id="destination_category_beers">
           <label class="category-choice" for="destination_category_beers">
@@ -52,7 +54,8 @@
       <% end %>
     </div>
   </div>
-</div>
+  </div>
+<!-- </div> -->
 </div>
 
 
