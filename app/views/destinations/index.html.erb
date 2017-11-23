@@ -1,28 +1,28 @@
 
-        <% @destinations_and_menu_items.each do |hash| %>
-        <% hash.each do |destination, menu_items| %>
+<% @destinations_and_menu_items.each do |hash| %>
+<% hash.each do |destination, menu_items| %>
 <div class="container">
   <div class="col-xs-12 col-sm-4">
     <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(' <%= cl_image_path destination.photo.path, width: 300, crop: :fill %> ');">
 
       <div class="card-description">
         <div class="card-content">
-        <h3><%= destination.name %></h3>
-        <ul>
-          <%  menu_items.each do |menu_item| %>
-          <li><p>
-            <%= "#{menu_item.name} | #{menu_item.price.to_i} kroner"  %>
-          </p></li>
-          <% end %>
-        </ul>
+          <h3><%= destination.name %></h3>
+          <ul>
+            <%  menu_items.each do |menu_item| %>
+            <li><p>
+              <%= "#{menu_item.name} | #{menu_item.price.to_i} kroner"  %>
+            </p></li>
+            <% end %>
+          </ul>
         </div>
 
-        </div>
       </div>
     </div>
   </div>
-        <% end %>
-        <% end %>
+</div>
+<% end %>
+<% end %>
 
 
 
