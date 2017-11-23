@@ -772,7 +772,7 @@ restaurant_list = [
   { name: "Nino's Pizza", address: "Guldbergsgade 18, 2200 København N", category: "Restaurant", open_hours: 17, close_hours: 22 },
   { name: "Nicecream", address: "Elmegade 30, 2200 København N", category: "Restaurant", open_hours: 17, close_hours: 22 },
   { name: "Rita's Smørrebrød", address: "Fælledvej 11, Norrebro", category: "Restaurant", open_hours: 17, close_hours: 22 },
-  
+
   # Kgs. Nytorv---------------------------------
   { name: "Fiat", address: "Kongens Nytorv 18, 1050 København K", category: "Restaurant", open_hours: 17, close_hours: 22 },
   { name: "Geist", address: "Kongens Nytorv 8, 1050 København K", category: "Restaurant", open_hours: 17, close_hours: 22 },
@@ -808,6 +808,11 @@ restaurant_list = [
 ]
 
 Destination.create!(restaurant_list)
+
+Destination.all.each do |destination|
+  destination.photo_url = "/Users/nicklasvang/code/ashleeste/seed_images/#{destination.name}.jpg"
+  destination.save
+end
 
 # --------------------------------------NORREBRO--------------------------------
 
@@ -1130,7 +1135,7 @@ appetizers = [
 	{name: "Crab Bruschetta", category: "appetizer", price: 165, destination: restaurant},
 	{name: "Endivia Salad", category: "appetizer", price: 125, destination: restaurant}
 ]
- 
+
 MenuItem.create!(appetizers)
 
 main_course = [
@@ -1138,7 +1143,7 @@ main_course = [
 	{name: "Wild Garlic Skewers", category: "main_course", price: 215, destination: restaurant},
 	{name: "Steak ala Fiorentina", category: "main_course", price: 348, destination: restaurant}
 ]
- 
+
  MenuItem.create!(main_course)
 
   desserts = [
@@ -1198,7 +1203,7 @@ MenuItem.create!(main_course)
 
 desserts = [
 	{name: "Chocolate Mousse", category: "dessert", price: 50, destination: restaurant},
-	{name: "Coupe Royal", category: "dessert", price: 50, destination: restaurant},	
+	{name: "Coupe Royal", category: "dessert", price: 50, destination: restaurant},
 ]
 
 MenuItem.create!(desserts)
@@ -1613,8 +1618,8 @@ main_course = [
 MenuItem.create!(main_course)
 
 # --------------------------------------KGS. NYTORV END------------------------
-    
-  
+
+
 #-------------------------------VESTERBRO START--------------------------------------
 
 #-------------------------------------------------------------------------------
@@ -1625,7 +1630,7 @@ appetizers = [
   {name: "Cold-smoked salmon", category: "appetizer", price: 75, destination: restaurant},
   {name: "Jensens steak salad", category: "appetizer", price: 75, destination: restaurant}
 ]
-  
+
 MenuItem.create!(appetizers)
   main_course = [
   {name: "Ribeye", category: "main_course", price: 200, destination: restaurant},
