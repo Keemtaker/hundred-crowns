@@ -1,82 +1,20 @@
 <div class="container">
-  <div class="map-wrapper">
-    <div class="map-title">
-      <% if @destination.photo? %>
-          <%= cl_image_tag @destination.photo.path, width: 200, height: 300, crop: :fill %>
-      <% end %>
-
-      <h1><%= @destination.name %></h1>
+  <div class="card">
+    <% if @destination.photo? %>
+    <%= cl_image_tag @destination.photo.path, width: 200, height: 300, crop: :fill %>
+  <% end %>
+   <div class="card-description">
+    <h1><%= @destination.name %></h1>
     </div>
-    <div id="map" style= "height: 80vh; width: 700px;"></div>
   </div>
+  <p><%= @destination.address %></p>
+  <p><%= link_to "DalleValle", "http://cafedallevalle.dk/en/menu/", target: :_blank %></p>
+  <p><%= "Opening hours: #{@destination.open_hours} CET" %></p>
+  <p><%= "Closing hours:  #{@destination.close_hours} CET" %></p>
 
-<% content_for(:after_js) do %>
-<script type="text/javascript">
-  var handler = Gmaps.build('Google');
-  var styles = [
-    {
-        "featureType": "all",
-        "stylers": [
-            {
-                "saturation": 0
-            },
-            {
-                "hue": "#e7ecf0"
-            }
-        ]
-    },
-    {
-        "featureType": "road",
-        "stylers": [
-            {
-                "saturation": -70
-            }
-        ]
-    },
-    {
-        "featureType": "transit",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "poi",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "water",
-        "stylers": [
-            {
-                "visibility": "simplified"
-            },
-            {
-                "saturation": -60
-            }
-        ]
-    }
-];
 
-  handler.buildMap({
-    provider: {
-      styles: styles
-    },
-    internal: { id: 'map' } }, function() {
-    markers = handler.addMarkers(<%= raw @hash.to_json %>);
-    handler.bounds.extendWith(markers);
-    handler.fitMapToBounds();
-    if (markers.length == 0) {
-      handle.getMap().setZoom(2);
-    } else if (markers.length == 1) {
-      handler.getMap().setZoom(14);
-    }
-  });
-</script>
-<% end %>
+  <div id="map" style= "height: 80vh; width: 700px;"></div>
 </div>
+
+<%= render 'snazzymap' %>
 
