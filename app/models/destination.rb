@@ -13,4 +13,8 @@ class Destination < ApplicationRecord
   validates :open_hours, presence: true, numericality: {only_integer: true}
   validates :close_hours, presence: true, numericality: {only_integer: true}
 
+  def filtered_menu_items(categories, price)
+  	self.menu_items.where('category IN (?)', categories).where('price <= (?)', price)
+  end
 end
+
