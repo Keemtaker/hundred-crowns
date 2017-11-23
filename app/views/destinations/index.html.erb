@@ -1,4 +1,18 @@
 
+<% @destinations_and_menu_items.each do |hash| %>
+    <% hash.each do |destination, menu_items| %>
+      <h3><%= destination.name %></h3>
+      <ul>
+      <%  menu_items.each do |menu_item| %>
+        <li><p>
+          <%= "#{menu_item.name} | #{menu_item.price.to_i} kroner"  %>
+        </p></li>
+      <% end %>
+      </ul>
+      <% end %>
+<% end %>    
+
+<% @destinations.each do |destination| %>
 <div class="container">
   <div class="row">
     <% @destinations.each do |destination| %>
@@ -14,5 +28,6 @@
     <% end %>
   </div>
 </div>
+
 
 

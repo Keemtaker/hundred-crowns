@@ -63,7 +63,7 @@ bar_list = [
   { name: "Fleisch", address: "Slagterboderne 7, 1716 København V", category: "Bar", open_hours: 16, close_hours: 02 },
   { name: "Jernbane Cafeen", address: "Reventlowsgade 16, 1651 København V", category: "Bar", open_hours: 16, close_hours: 02 },
   { name: "Duck and Cover", address: "Dannebrogsgade 6, 1660 København V", category: "Bar", open_hours: 16, close_hours: 02 },
-  { name: "Kolsters Tolv Haner", address: "Rantzausgade 56, 2200 København N", category: "Bar", open_hours: 16, close_hours: 02 },
+  { name: "Kølsters Tolv Haner", address: "Rantzausgade 56, 2200 København N", category: "Bar", open_hours: 16, close_hours: 02 },
   { name: "Nimb Vinotek", address: "Bernstorffsgade 5, 1577 København V", category: "Bar", open_hours: 16, close_hours: 02 },
   { name: "Brewpub ", address: "Vestergade 29, 1456 København K", category: "Bar", open_hours: 16, close_hours: 02 },
   { name: "Nimb Bar", address: "Bernstorffsgade 5, 1577 København V", category: "Bar", open_hours: 16, close_hours: 02 },
@@ -85,9 +85,9 @@ beer = [
 MenuItem.create!(beer)
 
 wine = [
-{name: "Postales Del Fin Del Mundo", category: "wine", price: 40, destination: bar},
-{name: "Petit Chablis", category: "wine", price: 40, destination: bar},
-{name: "Château Pesquiè Rosé", category: "wine", price: 60, destination: bar}
+  {name: "Postales Del Fin Del Mundo", category: "wine", price: 40, destination: bar},
+  {name: "Petit Chablis", category: "wine", price: 40, destination: bar},
+  {name: "Château Pesquiè Rosé", category: "wine", price: 60, destination: bar}
 ]
 
 MenuItem.create!(wine)
@@ -96,13 +96,13 @@ MenuItem.create!(wine)
 bar = Destination.find_by_name("Bo-Bi Bar")
 
 beer = [
-{name: "beer", category: "beer", price: 40, destination: bar}
+  {name: "beer", category: "beer", price: 40, destination: bar}
 ]
 
 MenuItem.create!(beer)
 
 wine = [
-{name: "wine", category: "wine", price: 30, destination: bar}
+  {name: "wine", category: "wine", price: 30, destination: bar}
 ]
 
 MenuItem.create!(wine)
@@ -810,7 +810,7 @@ restaurant_list = [
 Destination.create!(restaurant_list)
 
 Destination.all.each do |destination|
-  destination.photo_url = "/Users/nicklasvang/code/ashleeste/seed_images/#{destination.name}.jpg"
+  destination.photo_url = "/Users/nicklasvang/code/ashleeste/seed_images/#{destination.name}.png"
   destination.save
 end
 

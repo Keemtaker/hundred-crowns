@@ -4,27 +4,29 @@ class DestinationsController < ApplicationController
     @price = params[:destination][:price].to_f
     location = "Copenhagen"
     @destinations = Destination.near(location, 3)
-    @destinations_and_menu_items = @destinations.first(5).map do |destination|
-      { destination => destination.filtered_menu_items(@categories, @price)}
-    end
+
+
+    @destinations_and_menu_items = @destinations.map do |destination|
+      { destination => destination.filtered_menu_items(@categories, @price) }
+    end.reject { |hash| hash.values.first.empty? }
   end
 
   def show
     @destination = Destination.find(params[:id])
     @destination_coordinates = { lat: @destination.latitude, lng: @destination.longitude }
-      @destination_coordinates = Destination.where.not(latitude: nil, longitude: nil)
-        @hash = Gmaps4rails.build_markers(@destination) do |destination, marker|
-          marker.lat destination.latitude
-          marker.lng destination.longitude
-       end
+    @destination_coordinates = Destination.where.not(latitude: nil, longitude: nil)
+    @hash = Gmaps4rails.build_markers(@destination) do |destination, marker|
+      marker.lat destination.latitude
+      marker.lng destination.longitude
+    end
   end
 
   def map
     @destinations = Destination.where.not(latitude: nil, longitude: nil)
-      @hash = Gmaps4rails.build_markers(@destinations) do |destination, marker|
+    @hash = Gmaps4rails.build_markers(@destinations) do |destination, marker|
       marker.lat destination.latitude
       marker.lng destination.longitude
-      end
+    end
   end
 
   def destination_params
