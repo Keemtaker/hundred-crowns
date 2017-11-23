@@ -1,14 +1,15 @@
 
-<% @destinations_and_menu_items.each do |destination, menu_items| %>
-    <h3><%= destination.first.first.name %></h3>
-    
-	<%#= menu_items.each { |menu_item| <p>"#{menu_item.name} #{menu_item.price}"</p> } %>
-    <% menu_items.first.first.each do |menu_item|%>
-	 	<%= menu_item.name %>
-	 	<%= menu_item.price %>
- 	<% end %>    	
-
-
+<% @destinations.each do |destination| %>
+<div class="container">
+  <div class="col-xs-12 col-sm-4">
+    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(' <%= image_path 'gilt.png' %> ');">
+      <div class="card-description">
+        <h2><%= destination.name %></h2>
+      </div>
+      <a class="card-link" href="#" ></a>
+    </div>
+  </div>
+</div>
 <% end %>
 
 
