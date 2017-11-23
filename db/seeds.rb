@@ -85,9 +85,9 @@ beer = [
 MenuItem.create!(beer)
 
 wine = [
-{name: "Postales Del Fin Del Mundo", category: "wine", price: 40, destination: bar},
-{name: "Petit Chablis", category: "wine", price: 40, destination: bar},
-{name: "Château Pesquiè Rosé", category: "wine", price: 60, destination: bar}
+  {name: "Postales Del Fin Del Mundo", category: "wine", price: 40, destination: bar},
+  {name: "Petit Chablis", category: "wine", price: 40, destination: bar},
+  {name: "Château Pesquiè Rosé", category: "wine", price: 60, destination: bar}
 ]
 
 MenuItem.create!(wine)
@@ -96,13 +96,13 @@ MenuItem.create!(wine)
 bar = Destination.find_by_name("Bo-Bi Bar")
 
 beer = [
-{name: "beer", category: "beer", price: 40, destination: bar}
+  {name: "beer", category: "beer", price: 40, destination: bar}
 ]
 
 MenuItem.create!(beer)
 
 wine = [
-{name: "wine", category: "wine", price: 30, destination: bar}
+  {name: "wine", category: "wine", price: 30, destination: bar}
 ]
 
 MenuItem.create!(wine)

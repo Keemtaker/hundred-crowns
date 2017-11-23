@@ -4,10 +4,9 @@ class DestinationsController < ApplicationController
     @price = params[:destination][:price].to_f
     location = "Copenhagen"
     @destinations = Destination.near(location, 3)
-    @destinations_and_menu_items = @destinations.first(5).map do |destination|
-      { destination => destination.filtered_menu_items(@categories, @price)}
-    end
-    raise
+    @destinations_and_menu_items = @destinations.map do |destination|
+      { destination => destination.filtered_menu_items(@categories, @price) }
+    end.reject { |hash| hash.values.first.empty? }
   end
 
   def show
@@ -29,7 +28,7 @@ class DestinationsController < ApplicationController
   end
 
   def destination_params
-     params.require(:product).permit(:name, :address, :type, :open_hours, :close_hours, :photo)
+     params.require(:product).permit(:name, :address, :category, :open_hours, :close_hours, :photo)
   end
 end
 
