@@ -796,7 +796,7 @@ restaurant_list = [
   { name: "Wok On", address: "Gothersgade 15", category: "Restaurant", open_hours: 17, close_hours: 22 },
 
   #VERSTERBRO
-  { name: "Madklubben", address: "Vesterbrogade 62, 1620 København V", category: "Restaurant", open_hours: 17, close_hours: 22 },
+  { name: "Madklubbenn", address: "Vesterbrogade 62, 1620 København V", category: "Restaurant", open_hours: 17, close_hours: 22 },
   { name: "Jensens Bøfhus", address: "Vesterbrogade 11A, 1620 København V", category: "Restaurant", open_hours: 17, close_hours: 22 },
   { name: "Groeften", address: "Vesterbrogade 3, 1620 København V", category: "Restaurant", open_hours: 17, close_hours: 22 },
   { name: "Kebabish Vestebro", address: "Vesterbrogade 13, 1620 København V", category: "Restaurant", open_hours: 17, close_hours: 22 },
@@ -810,8 +810,8 @@ restaurant_list = [
 Destination.create!(restaurant_list)
 
 Destination.all.each do |destination|
-  destination.photo_url = "/Users/nicklasvang/code/ashleeste/seed_images/#{destination.name}.png"
   destination.save
+  destination.photo_url = "/Users/nicklasvang/code/ashleeste/hundred-crowns/app/assets/images/#{destination.name.gsub(" ","")}.png"
 end
 
 # --------------------------------------NORREBRO--------------------------------
