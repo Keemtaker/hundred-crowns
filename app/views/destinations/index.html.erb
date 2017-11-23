@@ -10,14 +10,18 @@
       </div>
       <div class="card-description">
         <div class="card-content">
+          <div class="card-title">
           <h4><%= destination.name %></h4>
+          </div>
+          <div class="destination-description">
           <ul>
             <%  menu_items.each do |menu_item| %>
-            <li><p>
+            <p>
               <%= "#{menu_item.name} | #{menu_item.price.to_i} kroner"  %>
-            </p></li>
+            </p>
             <% end %>
           </ul>
+          </div>
           </div>
         </div>
     </div>
