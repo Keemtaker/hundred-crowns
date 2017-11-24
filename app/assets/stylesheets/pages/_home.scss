@@ -3,9 +3,20 @@
 // BACKGROUND COLOR
 .background {
   margin: auto 10px;
-  width: auto;
+  width: 100vw;
   height: 100vh;
   background-color: #2F3B46;
+}
+
+// LOGO
+
+.logo {
+  position: relative;
+  top: 70px;
+  left: 40px;
+  height: 50px;
+  width: 70px;
+  transform: rotate(-10deg);
 }
 
 // SEARCH FORM
