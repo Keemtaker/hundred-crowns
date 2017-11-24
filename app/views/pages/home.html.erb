@@ -11,7 +11,7 @@
         <h1>100 Crowns</h1>
         <p>Get What you Want.</p>
         <%= simple_form_for :destination, url: destinations_path, :method => :get do |f| %>
-        <%= f.input :price, placeholder: "DKK", :autofocus => true %>
+        <%= f.input :price, placeholder: "DKK", :autofocus => true, label: false %>
 
         <div class="form-group">
           <input type="hidden" name="destination[category][]" value="">
