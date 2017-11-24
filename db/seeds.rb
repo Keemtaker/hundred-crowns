@@ -822,8 +822,7 @@ Destination.create!(restaurant_list)
 
 Destination.all.each do |destination|
   destination.save
-  # destination.photo_url = "/Users/AshleeStephenson1/code/ashleeste/hundred-crowns/app/assets/images/#{destination.name.gsub(" ","")}.png"
-  image_path destination.name.gsub(" ","")
+  destination.photo_url = "./app/assets/images/#{destination.name.gsub(" ","")}.png"
 end
 
 # --------------------------------------NORREBRO--------------------------------
