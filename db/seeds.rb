@@ -22,7 +22,7 @@ bar_list = [
   { name: "The Barking Dog", address: "Sankt Hans Gade 19, Norrebro", category: "Bar", open_hours: 16, close_hours: 02 },
   { name: "Mexibar", address: "Elmesgade 27, Norrebro", category: "Bar", open_hours: 16, close_hours: 02 },
   { name: "Mikkeller & Friends", address: "Stefansgade 35, Norrebro", category: "Bar", open_hours: 16, close_hours: 02 },
-  { name: "Gilt", address: "Rantzausgade 39, Norrebro", category: "Bar", open_hours: 16, close_hours: 02 },
+  { name: "gilt", address: "Rantzausgade 39, Norrebro", category: "Bar", open_hours: 16, close_hours: 02 },
   { name: "Brus", address: "Guldbergsgade 29 F, Norrebro", category: "Bar", open_hours: 16, close_hours: 02 },
   { name: "Himmeriget", address: "Aboulevard 27, Norrebro", category: "Bar", open_hours: 16, close_hours: 02 },
   { name: "Antidote", address: "Jægerborggade 56, Norrebro", category: "Bar", open_hours: 16, close_hours: 02 },
