@@ -1,14 +1,47 @@
 
 <%= render 'layouts/banner' %>
+<%= render 'layouts/mobilebanner' %>
+
+<h2><%= @destination.address %></h2>
+<h2><%= @destinations_and_menu_items.menu_item %></h2>
+
+<h2><%= link_to "DalleValle", "http://cafedallevalle.dk/en/menu/", target: :_blank %></h2>
+<h3><%= "Opening hours: #{@destination.open_hours}:00 CET" %></h3>
+<h3><%= "Closing hours:  #{@destination.close_hours}:00 CET" %></h3>
 
 
 
 
 
-<p><%= @destination.address %></p>
-<p><%= link_to "DalleValle", "http://cafedallevalle.dk/en/menu/", target: :_blank %></p>
-<p><%= "Opening hours: #{@destination.open_hours} CET" %></p>
-<p><%= "Closing hours:  #{@destination.close_hours} CET" %></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
