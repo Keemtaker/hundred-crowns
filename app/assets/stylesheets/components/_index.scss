@@ -5,7 +5,7 @@
 .card {
   height: 175px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  // text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
   background-position: center;
   color: white;
@@ -16,7 +16,6 @@
 .card-img {
   height: 120px;
   background-position: center;
-
 }
 
 .card-user {
@@ -51,8 +50,10 @@
 
 .card-title {
   // margin-right: 150px;
-  float: left;
-  margin-left: 5px;
+  // float: left;
+  // margin-left: 5px;
+  text-align: center;
+  padding-top: 70px;
 }
 
 .card-content p {
