@@ -4,32 +4,31 @@
 <div class="container">
   <div class="col-xs-12 col-sm-4">
     <div class="card">
-    <!-- <div class="card-info"></div> -->
-    <div class="card-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(' <%= image_path "#{destination.name.gsub(' ', '')}.png", width: 300, crop: :fill %> ');">
 
+      <!-- <div class="card-info"></div> -->
+      <div class="card-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(' <%= cl_image_path destination.photo.path, width: 300, crop: :fill %> ');">
+          <div class="card-title">
+            <h4><%= destination.name %></h4>
+          </div>
+        
       </div>
       <div class="card-description">
         <div class="card-content">
 
-          <div class="card-title">
-          <h4><%= destination.name %></h4>
-          </div>
           <div class="destination-description">
-          <ul>
-            <%  menu_items.each do |menu_item| %>
-            <p>
-              <%= "#{menu_item.name} | #{menu_item.price.to_i} kroner"  %>
-            </p>
-            <% end %>
-          </ul>
-          </div>
+            <ul>
+              <% menu_items.each do |menu_item| %>
+              <p>
+                <%= "#{menu_item.name} | #{menu_item.price.to_i} kroner"  %>
+              </p>
+              <% end %>
+            </ul>
           </div>
         </div>
+      </div>
     </div>
   </div>
 </div>
-
-
 <% end %>
 <% end %>
 
