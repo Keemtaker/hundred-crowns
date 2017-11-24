@@ -1,20 +1,76 @@
+
+<%= render 'layouts/banner' %>
+<%= render 'layouts/mobilebanner' %>
+
+<div class="wrapper menu-row">
+<h3><%= "Menu items at #{@destination.name} " %></h3>
 <div class="container">
-  <div class="card">
-    <% if @destination.photo? %>
-    <%= cl_image_tag @destination.photo.path, width: 200, height: 300, crop: :fill %>
-  <% end %>
-   <div class="card-description">
-    <h1><%= @destination.name %></h1>
-    </div>
-  </div>
-  <p><%= @destination.address %></p>
-  <p><%= link_to "DalleValle", "http://cafedallevalle.dk/en/menu/", target: :_blank %></p>
-  <p><%= "Opening hours: #{@destination.open_hours} CET" %></p>
-  <p><%= "Closing hours:  #{@destination.close_hours} CET" %></p>
+ <div class="row">
+  <% @destination.menu_items.each do |menu_item| %>
+  <div class="col-xs-6 col-md-4 col-lg-3">
+   <ul>
+    <li>
+      <%= "#{menu_item.name} | #{menu_item.price.to_i} kroner"  %>
+    </li>
+  </ul>
+</div>
+<% end %>
+</div>
+</div>
+
+<h4>
+  <%= "Opening hours: #{@destination.open_hours}:00 - #{@destination.close_hours}:00" %>
+</h4>
+<p>
+  <i class="fa fa-map-marker big-icon" aria-hidden="true"></i>
+  <%= @destination.address %>
+<p>
+</div>
 
 
-  <div id="map" style= "height: 80vh; width: 700px;"></div>
+<div id="map" style= "height: 80vh; width: 700px;"></div>
 </div>
 
 <%= render 'snazzymap' %>
+
+
+
+
+<!-- <h2>
+  <i class="fa fa-external-link big-icon" aria-hidden="true"></i>
+  <%= link_to "DalleValle", "http://cafedallevalle.dk/en/menu/", target: :_blank %>
+</h2>
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
