@@ -8,7 +8,7 @@ end
 p "creating"
 
 # --------------------------------------------------PLACES---------------------------------------------------------------
-
+ p "creating Norrebro bars"
 # BARS
 # Nørrebro
 bar_list = [
@@ -31,7 +31,9 @@ bar_list = [
   { name: "Dupong", address: "Griffenfeldsgade 52, Norrebro", category: "Bar", open_hours: 16, close_hours: 02 },
   { name: "Brewers Inc", address: "Gormsgade 25, Norrebro", category: "Bar", open_hours: 16, close_hours: 02 },
   { name: "Nørrebro Bryghus", address: "Ryesgade 3, 2200 København N", category: "Bar", open_hours: 16, close_hours: 02 },
+  
   #Kgs. Nytorv
+
   { name: "1105", address: "Kristen Bernikows Gade 4, 1105 København K", category: "Bar", open_hours: 16, close_hours: 02 },
   { name: "Cafe Viktor", address: "Ny Østergade 8, 1101 København K", category: "Bar", open_hours: 16, close_hours: 02 },
   { name: "Brønnum", address: "August Bournonvilles Passage 1, 1055 København K", category: "Bar", open_hours: 16, close_hours: 02 },
@@ -53,7 +55,9 @@ bar_list = [
   { name: "Wessels Kro", address: "Sværtegade 7, 1118 København K", category: "Bar", open_hours: 16, close_hours: 02 },
   { name: "Bar O", address: "Pilestræde 12, 1112 København K", category: "Bar", open_hours: 16, close_hours: 02 },
   { name: "Europa 1989", address: "Amagertorv 1, 1160 København K", category: "Bar", open_hours: 16, close_hours: 02 },
+  
   #Vesterbro
+
   { name: "Old English", address: "Vesterbrogade 2B, 1620 København V", category: "Bar", open_hours: 16, close_hours: 02 },
   { name: "Curfew", address: "Stenosgade 1, 1616 København V", category: "Bar", open_hours: 16, close_hours: 02 },
   { name: "PatePateDk", address: "Slagterboderne 1, 1716 København V", category: "Bar", open_hours: 16, close_hours: 02 },
@@ -73,6 +77,8 @@ bar_list = [
 Destination.create!(bar_list)
 
 # MENU ITEMS
+
+p "creating bar menu items"
 #-------------------------------------------------------------------------------
 bar = Destination.find_by_name("Kind of Blue")
 
@@ -755,6 +761,9 @@ MenuItem.create!(wine)
 
 # --------------------------------------------------RESTAURANTS--------------------------------------------------------
 # Norrebro-------------------
+
+  p "creating Norrebro restaurants"
+
 restaurant_list = [
   { name: "Bæst", address: "Guldbergsgade 29, DK-2200 Copenhagen N", category: "Restaurant", open_hours: 17, close_hours: 22 },
   { name: "Fætter Fætter", address: "Griffenfeldsgade 17, 2200 Copenhagen N", category: "Restaurant", open_hours: 17, close_hours: 22 },
@@ -774,6 +783,7 @@ restaurant_list = [
   { name: "Rita's Smørrebrød", address: "Fælledvej 11, Norrebro", category: "Restaurant", open_hours: 17, close_hours: 22 },
 
   # Kgs. Nytorv---------------------------------
+
   { name: "Fiat", address: "Kongens Nytorv 18, 1050 København K", category: "Restaurant", open_hours: 17, close_hours: 22 },
   { name: "Geist", address: "Kongens Nytorv 8, 1050 København K", category: "Restaurant", open_hours: 17, close_hours: 22 },
   { name: "Madklubben", address: "Kongens Nytorv 26, 1050 København K", category: "Restaurant", open_hours: 17, close_hours: 22 },
@@ -796,6 +806,7 @@ restaurant_list = [
   { name: "Wok On", address: "Gothersgade 15", category: "Restaurant", open_hours: 17, close_hours: 22 },
 
   #VERSTERBRO
+
   { name: "Madklubbenn", address: "Vesterbrogade 62, 1620 København V", category: "Restaurant", open_hours: 17, close_hours: 22 },
   { name: "Jensens Bøfhus", address: "Vesterbrogade 11A, 1620 København V", category: "Restaurant", open_hours: 17, close_hours: 22 },
   { name: "Groeften", address: "Vesterbrogade 3, 1620 København V", category: "Restaurant", open_hours: 17, close_hours: 22 },
@@ -811,10 +822,12 @@ Destination.create!(restaurant_list)
 
 Destination.all.each do |destination|
   destination.save
-  destination.photo_url = "/Users/AshleeStephenson1/code/ashleeste/hundred-crowns/app/assets/images/#{destination.name.gsub(" ","")}.png"
+  destination.photo_url = "./app/assets/images/#{destination.name.gsub(" ","")}.png"
 end
 
 # --------------------------------------NORREBRO--------------------------------
+
+  p "creating Norrebro menu items"
 
 # ---------------------------------------1--------------------------------------
 
@@ -1125,6 +1138,8 @@ main_course = [
 MenuItem.create!(main_course)
 
 # --------------------------------------KGS. NYTORV--------------------------------
+
+p "creating Kgs. Nytorv menu items"
 
 # ---------------------------------------1-------------------------------------
 
@@ -1621,6 +1636,8 @@ MenuItem.create!(main_course)
 
 
 #-------------------------------VESTERBRO START--------------------------------------
+
+p "creating Vesterbro menu items"
 
 #-------------------------------------------------------------------------------
 restaurant = Destination.find_by_name("Jensens Bøfhus")
