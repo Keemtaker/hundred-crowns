@@ -1,4 +1,4 @@
-
+<%= link_to "Search again", root_path, class: "btn btn-primary"  %>
 <% @destinations_and_menu_items.each do |hash| %>
 <% hash.each do |destination, menu_items| %>
 <div class="container">
@@ -15,14 +15,13 @@
       <div class="card-description">
         <div class="card-content">
 
-          <div class="destination-description">
-            <ul>
+          <div class="card-destination-description">
               <% menu_items.each do |menu_item| %>
               <p>
                 <%= "#{menu_item.category} | #{menu_item.price.to_i} kroner"  %>
               </p>
               <% end %>
-            </ul>
+            
           </div>
         </div>
       </div>
@@ -31,5 +30,7 @@
 </div>
 <% end %>
 <% end %>
+
+
 
 

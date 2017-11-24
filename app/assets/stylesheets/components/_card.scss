@@ -1,13 +1,13 @@
 .card {
   height: 175px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  // text-shadow: 0 1px 1px rgba(0,0,0,0.6);
   background-size: cover !important;
   background-position: center;
   color: white;
   position: relative;
   margin: 10px;
 }
+
 
 .card-img{
   height: 140px;
@@ -16,6 +16,7 @@
 }
 
 .card-user{
+
   position: absolute;
   right: 10px;
   top: 10px;
@@ -52,8 +53,6 @@ color: #41423D !important;
 .destination-description{
   float: right;
   text-align: center;
- 
-}
 
 .card-title {
   // margin-right: 150px;
@@ -65,7 +64,6 @@ color: #41423D !important;
 
 .card-content p {
 font-size: 10px;
-
 }
 
 .card-link {

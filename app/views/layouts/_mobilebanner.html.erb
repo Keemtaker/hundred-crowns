@@ -1,0 +1,12 @@
+<!-- show page renders this when screen is on mobile, else it renders the normal banner.-->
+
+<div class="container hidden-lg hidden-md">
+    <div id="banner">
+      <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('<%= cl_image_path @destination.photo.path, width: 300, crop: :fill %> ');">
+        <div class="banner-content">
+
+          <h1><%= @destination.name %></h1>
+        </div>
+      </div>
+    </div>
+  </div>
