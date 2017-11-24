@@ -13,6 +13,12 @@
   margin: 10px;
 }
 
+.card-img {
+  height: 120px;
+  background-position: center;
+
+}
+
 .card-user {
   position: absolute;
   right: 10px;
@@ -40,6 +46,23 @@
 
 .card-content {
   margin-bottom: 4px;
+  color: #303541;
+}
+
+.card-title {
+  // margin-right: 150px;
+  float: left;
+  margin-left: 5px;
+}
+
+.card-content p {
+font-size: 10px;
+
+}
+
+.destination-description {
+  float: right;
+  text-align: center;
 }
 
 .card-link {
