@@ -842,11 +842,12 @@ appetizers = [
 MenuItem.create!(appetizers)
 
 main_course = [
-	{ name: "Margherita Pizza", category: "main_course", price: 85, destination: restaurant },
-	{ name: "Grilled chicken wings", category: "main_course", price: 130, destination: restaurant },
-	{ name: "Grilled Polenta", category: "main_course", price: 95, destination: restaurant }
+	{ name: "Margherita Pizza", category: "entree", price: 85, destination: restaurant },
+	{ name: "Grilled chicken wings", category: "entree", price: 130, destination: restaurant },
+	{ name: "Grilled Polenta", category: "entree", price: 95, destination: restaurant }
 ]
 
+MenuItem.create!(main_course)
 
 # ---------------------------------------2--------------------------------------
 
@@ -861,9 +862,9 @@ appetizers = [
 MenuItem.create!(appetizers)
 
 main_course = [
-	{name: "Veggie Toast", category: "main_course", price: 95, destination: restaurant},
-	{name: "Toast Experience", category: "main_course", price: 95, destination: restaurant},
-	{name: "When in Rome", category: "main_course", price: 255, destination: restaurant}
+	{name: "Veggie Toast", category: "entree", price: 95, destination: restaurant},
+	{name: "Toast Experience", category: "entree", price: 95, destination: restaurant},
+	{name: "When in Rome", category: "entree", price: 255, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
@@ -885,9 +886,9 @@ appetizers = [
 MenuItem.create!(appetizers)
 
 main_course = [
-	{name: "Sidecar Brunch", category: "main_course", price: 149, destination: restaurant},
-	{name: "Veggie Brunch", category: "main_course", price: 169, destination: restaurant},
-	{name: "Skyttegade Brunch", category: "main_course", price: 169, destination: restaurant}
+	{name: "Sidecar Brunch", category: "entree", price: 149, destination: restaurant},
+	{name: "Veggie Brunch", category: "entree", price: 169, destination: restaurant},
+	{name: "Skyttegade Brunch", category: "entree", price: 169, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
@@ -904,8 +905,8 @@ appetizers = [
 MenuItem.create!(appetizers)
 
 main_course = [
-	{name: "Pesto Pasta", category: "main_course", price: 120, destination: restaurant},
-	{name: "Braised Lamb Pasta", category: "main_course", price: 120, destination: restaurant}
+	{name: "Pesto Pasta", category: "entree", price: 120, destination: restaurant},
+	{name: "Braised Lamb Pasta", category: "entree", price: 120, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
@@ -929,9 +930,9 @@ appetizers = [
 MenuItem.create!(appetizers)
 
 main_course = [
-	{name: "Shio Ramen", category: "main_course", price: 100, destination: restaurant},
-	{name: "Spicy Miso Ramen", category: "main_course", price: 115, destination: restaurant},
-	{name: "No-Meat Ramen", category: "main_course", price: 100, destination: restaurant}
+	{name: "Shio Ramen", category: "entree", price: 100, destination: restaurant},
+	{name: "Spicy Miso Ramen", category: "entree", price: 115, destination: restaurant},
+	{name: "No-Meat Ramen", category: "entree", price: 100, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
@@ -948,9 +949,9 @@ appetizers = [
 MenuItem.create!(appetizers)
 
 main_course = [
-	{name: "Vegetarian Curry", category: "main_course", price: 119, destination: restaurant},
-	{name: "Saag Paneer", category: "main_course", price: 119, destination: restaurant},
-	{name: "Lamb Masala", category: "main_course", price: 139, destination: restaurant}
+	{name: "Vegetarian Curry", category: "entree", price: 119, destination: restaurant},
+	{name: "Saag Paneer", category: "entree", price: 119, destination: restaurant},
+	{name: "Lamb Masala", category: "entree", price: 139, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
@@ -973,9 +974,9 @@ appetizers = [
 MenuItem.create!(appetizers)
 
 main_course = [
-	{name: "Burger", category: "main_course", price: 35, destination: restaurant},
-	{name: "Vegetarburger", category: "main_course", price: 40, destination: restaurant},
-	{name: "Befsandwich", category: "main_course", price: 30, destination: restaurant}
+	{name: "Burger", category: "entree", price: 35, destination: restaurant},
+	{name: "Vegetarburger", category: "entree", price: 40, destination: restaurant},
+	{name: "Befsandwich", category: "entree", price: 30, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
@@ -991,9 +992,9 @@ appetizers = [
 MenuItem.create!(appetizers)
 
 main_course = [
-	{name: "Bun Thang Soup", category: "main_course", price: 88, destination: restaurant},
-	{name: "Bún - Noodle Salad", category: "main_course", price: 84, destination: restaurant},
-	{name: "Dâu Phu Cà Ri Sandwich", category: "main_course", price: 52, destination: restaurant}
+	{name: "Bun Thang Soup", category: "entree", price: 88, destination: restaurant},
+	{name: "Bún - Noodle Salad", category: "entree", price: 84, destination: restaurant},
+	{name: "Dâu Phu Cà Ri Sandwich", category: "entree", price: 52, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
@@ -1014,9 +1015,9 @@ appetizers = [
 MenuItem.create!(appetizers)
 
 main_course = [
-	{name: "Pesto Hummus Sandwich", category: "main_course", price: 52, destination: restaurant},
-	{name: "Pastrami Mozzarella Toast", category: "main_course", price: 49, destination: restaurant},
-	{name: "Grøntsagssuppe", category: "main_course", price: 42, destination: restaurant}
+	{name: "Pesto Hummus Sandwich", category: "entree", price: 52, destination: restaurant},
+	{name: "Pastrami Mozzarella Toast", category: "entree", price: 49, destination: restaurant},
+	{name: "Grøntsagssuppe", category: "entree", price: 42, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
@@ -1039,9 +1040,9 @@ appetizers = [
 MenuItem.create!(appetizers)
 
 main_course = [
-	{name: "Bacon YoBurger", category: "main_course", price: 104, destination: restaurant},
-	{name: "Avocado YoBurger", category: "main_course", price: 104, destination: restaurant},
-	{name: "Portobello Burger", category: "main_course", price: 104, destination: restaurant}
+	{name: "Bacon YoBurger", category: "entree", price: 104, destination: restaurant},
+	{name: "Avocado YoBurger", category: "entree", price: 104, destination: restaurant},
+	{name: "Portobello Burger", category: "entree", price: 104, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
@@ -1058,9 +1059,9 @@ appetizers = [
 MenuItem.create!(appetizers)
 
 main_course = [
-	{name: "Pesto Mozzarella Sandwich", category: "main_course", price: 60, destination: restaurant},
-	{name: "Risotto", category: "main_course", price: 105, destination: restaurant},
-	{name: "Fried Chicken Salad", category: "main_course", price: 115, destination: restaurant}
+	{name: "Pesto Mozzarella Sandwich", category: "entree", price: 60, destination: restaurant},
+	{name: "Risotto", category: "entree", price: 105, destination: restaurant},
+	{name: "Fried Chicken Salad", category: "entree", price: 115, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
@@ -1077,9 +1078,9 @@ MenuItem.create!(desserts)
 restaurant = Destination.find_by_name("Nordic Noodles")
 
 main_course = [
-	{name: "Green Curry", category: "main_course", price: 85, destination: restaurant},
-	{name: "Rice Noodles", category: "main_course", price: 45, destination: restaurant},
-	{name: "Udon Noodles", category: "main_course", price: 45, destination: restaurant}
+	{name: "Green Curry", category: "entree", price: 85, destination: restaurant},
+	{name: "Rice Noodles", category: "entree", price: 45, destination: restaurant},
+	{name: "Udon Noodles", category: "entree", price: 45, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
@@ -1096,9 +1097,9 @@ appetizers = [
 MenuItem.create!(appetizers)
 
 main_course = [
-	{name: "Pepperoni Pizza", category: "main_course", price: 50, destination: restaurant},
-	{name: "Lasagna", category: "main_course", price: 62, destination: restaurant},
-	{name: "Bresaola Sandwich", category: "main_course", price: 50, destination: restaurant}
+	{name: "Pepperoni Pizza", category: "entree", price: 50, destination: restaurant},
+	{name: "Lasagna", category: "entree", price: 62, destination: restaurant},
+	{name: "Bresaola Sandwich", category: "entree", price: 50, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
@@ -1107,9 +1108,9 @@ MenuItem.create!(main_course)
 restaurant = Destination.find_by_name("Smag")
 
 main_course = [
-	{name: "Turkey Sandwich", category: "main_course", price: 60, destination: restaurant},
-	{name: "Salmon Sandwich", category: "main_course", price: 60, destination: restaurant},
-	{name: "Veggie Sandwich", category: "main_course", price: 60, destination: restaurant}
+	{name: "Turkey Sandwich", category: "entree", price: 60, destination: restaurant},
+	{name: "Salmon Sandwich", category: "entree", price: 60, destination: restaurant},
+	{name: "Veggie Sandwich", category: "entree", price: 60, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
@@ -1119,9 +1120,9 @@ MenuItem.create!(main_course)
 restaurant = Destination.find_by_name("Rita's Smørrebrød")
 
 main_course = [
-	{name: "Tartar Smørrebrød", category: "main_course", price: 80, destination: restaurant},
-	{name: "Pariserbøf Smørrebrød", category: "main_course", price: 87, destination: restaurant},
-	{name: "Meatball Smørrebrød", category: "main_course", price: 20, destination: restaurant}
+	{name: "Tartar Smørrebrød", category: "entree", price: 80, destination: restaurant},
+	{name: "Pariserbøf Smørrebrød", category: "entree", price: 87, destination: restaurant},
+	{name: "Meatball Smørrebrød", category: "entree", price: 20, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
@@ -1130,9 +1131,9 @@ MenuItem.create!(main_course)
 restaurant = Destination.find_by_name("Grisen")
 
 main_course = [
-	{name: "PorkRoast Sandwich", category: "main_course", price: 99, destination: restaurant},
-	{name: "BofSandwich", category: "main_course", price: 99, destination: restaurant},
-	{name: "Jumbo Burger", category: "main_course", price: 99, destination: restaurant}
+	{name: "PorkRoast Sandwich", category: "entree", price: 99, destination: restaurant},
+	{name: "BofSandwich", category: "entree", price: 99, destination: restaurant},
+	{name: "Jumbo Burger", category: "entree", price: 99, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
@@ -1154,9 +1155,9 @@ appetizers = [
 MenuItem.create!(appetizers)
 
 main_course = [
-	{name: "Proscuitto Pizze", category: "main_course", price: 155, destination: restaurant},
-	{name: "Wild Garlic Skewers", category: "main_course", price: 215, destination: restaurant},
-	{name: "Steak ala Fiorentina", category: "main_course", price: 348, destination: restaurant}
+	{name: "Proscuitto Pizze", category: "entree", price: 155, destination: restaurant},
+	{name: "Wild Garlic Skewers", category: "entree", price: 215, destination: restaurant},
+	{name: "Steak ala Fiorentina", category: "entree", price: 348, destination: restaurant}
 ]
 
  MenuItem.create!(main_course)
@@ -1182,9 +1183,9 @@ appetizers = [
 MenuItem.create!(appetizers)
 
 main_course = [
-	{name: "Charred Beef Tenderloin", category: "main_course", price: 250, destination: restaurant},
-	{name: "Crisphy Artichokes with Suckling Pig", category: "main_course", price: 225, destination: restaurant},
-	{name: "Heart of Lamb", category: "main_course", price: 175, destination: restaurant}
+	{name: "Charred Beef Tenderloin", category: "entree", price: 250, destination: restaurant},
+	{name: "Crisphy Artichokes with Suckling Pig", category: "entree", price: 225, destination: restaurant},
+	{name: "Heart of Lamb", category: "entree", price: 175, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
@@ -1209,9 +1210,9 @@ appetizers = [
 MenuItem.create!(appetizers)
 
 main_course = [
-	{name: "Biksemad Royal", category: "main_course", price: 150, destination: restaurant},
-	{name: "Cheeseburger", category: "main_course", price: 125, destination: restaurant},
-	{name: "Beef Tartare", category: "main_course", price: 100, destination: restaurant}
+	{name: "Biksemad Royal", category: "entree", price: 150, destination: restaurant},
+	{name: "Cheeseburger", category: "entree", price: 125, destination: restaurant},
+	{name: "Beef Tartare", category: "entree", price: 100, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
@@ -1235,9 +1236,9 @@ appetizers = [
 MenuItem.create!(appetizers)
 
 main_course = [
-	{name: "Filet", category: "main_course", price: 265, destination: restaurant},
-	{name: "Mørbrad", category: "main_course", price: 315, destination: restaurant},
-	{name: "Mash Burger", category: "main_course", price: 115, destination: restaurant}
+	{name: "Filet", category: "entree", price: 265, destination: restaurant},
+	{name: "Mørbrad", category: "entree", price: 315, destination: restaurant},
+	{name: "Mash Burger", category: "entree", price: 115, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
@@ -1263,9 +1264,9 @@ appetizers = [
 MenuItem.create!(appetizers)
 
 main_course = [
-	{name: "Fish of the day", category: "main_course", price: 245, destination: restaurant},
-	{name: "Stuffed Quail", category: "main_course", price: 245, destination: restaurant},
-	{name: "Crispy Fried Pork Belly", category: "main_course", price: 215, destination: restaurant}
+	{name: "Fish of the day", category: "entree", price: 245, destination: restaurant},
+	{name: "Stuffed Quail", category: "entree", price: 245, destination: restaurant},
+	{name: "Crispy Fried Pork Belly", category: "entree", price: 215, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
@@ -1291,9 +1292,9 @@ appetizers = [
 MenuItem.create!(appetizers)
 
 main_course = [
-	{name: "Søtunge", category: "main_course", price: 245, destination: restaurant},
-	{name: "Hummer", category: "main_course", price: 375, destination: restaurant},
-	{name: "Oksemørbrad", category: "main_course", price: 285, destination: restaurant}
+	{name: "Søtunge", category: "entree", price: 245, destination: restaurant},
+	{name: "Hummer", category: "entree", price: 375, destination: restaurant},
+	{name: "Oksemørbrad", category: "entree", price: 285, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
@@ -1319,9 +1320,9 @@ appetizers = [
 MenuItem.create!(appetizers)
 
 main_course = [
-	{name: "Spaghetti", category: "main_course", price: 75, destination: restaurant},
-	{name: "Bowl of Pulled Pork", category: "main_course", price: 132, destination: restaurant},
-	{name: "Croque Monsieur", category: "main_course", price: 115, destination: restaurant}
+	{name: "Spaghetti", category: "entree", price: 75, destination: restaurant},
+	{name: "Bowl of Pulled Pork", category: "entree", price: 132, destination: restaurant},
+	{name: "Croque Monsieur", category: "entree", price: 115, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
@@ -1346,9 +1347,9 @@ appetizers = [
 MenuItem.create!(appetizers)
 
 main_course = [
-	{name: "Tunmousse Sandwich", category: "main_course", price: 70, destination: restaurant},
-	{name: "Quinoa Bowl", category: "main_course", price: 95, destination: restaurant},
-	{name: "Hafnia Burger", category: "main_course", price: 135, destination: restaurant}
+	{name: "Tunmousse Sandwich", category: "entree", price: 70, destination: restaurant},
+	{name: "Quinoa Bowl", category: "entree", price: 95, destination: restaurant},
+	{name: "Hafnia Burger", category: "entree", price: 135, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
@@ -1366,9 +1367,9 @@ MenuItem.create!(desserts)
 restaurant = Destination.find_by_name("Pizza Huset")
 
 main_course = [
-	{name: "Summer Sandwich", category: "main_course", price: 50, destination: restaurant},
-	{name: "Bolognese Pizza", category: "main_course", price: 62, destination: restaurant},
-	{name: "Truffle Pizza", category: "main_course", price: 72, destination: restaurant}
+	{name: "Summer Sandwich", category: "entree", price: 50, destination: restaurant},
+	{name: "Bolognese Pizza", category: "entree", price: 62, destination: restaurant},
+	{name: "Truffle Pizza", category: "entree", price: 72, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
@@ -1385,9 +1386,9 @@ appetizers = [
 MenuItem.create!(appetizers)
 
 main_course = [
-	{name: "Bún Nam Bô", category: "main_course", price: 96, destination: restaurant},
-	{name: "Bô Kho", category: "main_course", price: 86, destination: restaurant},
-	{name: "Bánh Mì", category: "main_course", price: 58, destination: restaurant}
+	{name: "Bún Nam Bô", category: "entree", price: 96, destination: restaurant},
+	{name: "Bô Kho", category: "entree", price: 86, destination: restaurant},
+	{name: "Bánh Mì", category: "entree", price: 58, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
@@ -1409,8 +1410,8 @@ appetizers = [
 MenuItem.create!(appetizers)
 
 main_course = [
-	{name: "Pesto Chicken Salad", category: "main_course", price: 75, destination: restaurant},
-	{name: "Chicken Curry Sandwich", category: "main_course", price: 60, destination: restaurant},
+	{name: "Pesto Chicken Salad", category: "entree", price: 75, destination: restaurant},
+	{name: "Chicken Curry Sandwich", category: "entree", price: 60, destination: restaurant},
 ]
 
 MenuItem.create!(main_course)
@@ -1428,9 +1429,9 @@ appetizers = [
 MenuItem.create!(appetizers)
 
 main_course = [
-	{name: "Chicken Coconut Soup - Tom Kha Gai", category: "main_course", price: 120, destination: restaurant},
-	{name: "Phad See-Iew Gai Noodles", category: "main_course", price: 135, destination: restaurant},
-	{name: "Red Duck Curry", category: "main_course", price: 159, destination: restaurant}
+	{name: "Chicken Coconut Soup - Tom Kha Gai", category: "entree", price: 120, destination: restaurant},
+	{name: "Phad See-Iew Gai Noodles", category: "entree", price: 135, destination: restaurant},
+	{name: "Red Duck Curry", category: "entree", price: 159, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
@@ -1454,9 +1455,9 @@ appetizers = [
 MenuItem.create!(appetizers)
 
 main_course = [
-	{name: "Salmon Sushi Plate", category: "main_course", price: 189, destination: restaurant},
-	{name: "Nana Ban Plate", category: "main_course", price: 168, destination: restaurant},
-	{name: "Solo Sushi Plate", category: "main_course", price: 179, destination: restaurant}
+	{name: "Salmon Sushi Plate", category: "entree", price: 189, destination: restaurant},
+	{name: "Nana Ban Plate", category: "entree", price: 168, destination: restaurant},
+	{name: "Solo Sushi Plate", category: "entree", price: 179, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
@@ -1482,9 +1483,9 @@ appetizers = [
 MenuItem.create!(appetizers)
 
 main_course = [
-	{name: "Lobster Tempura", category: "main_course", price: 270, destination: restaurant},
-	{name: "Canette Breast", category: "main_course", price: 160, destination: restaurant},
-	{name: "Miso Braised Short Rib", category: "main_course", price: 160, destination: restaurant}
+	{name: "Lobster Tempura", category: "entree", price: 270, destination: restaurant},
+	{name: "Canette Breast", category: "entree", price: 160, destination: restaurant},
+	{name: "Miso Braised Short Rib", category: "entree", price: 160, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
@@ -1521,9 +1522,9 @@ appetizers = [
 MenuItem.create!(appetizers)
 
 main_course = [
-	{name: "Breast of Pork", category: "main_course", price: 215, destination: restaurant},
-	{name: "Fried Cod", category: "main_course", price: 235, destination: restaurant},
-	{name: "Duck", category: "main_course", price: 255, destination: restaurant}
+	{name: "Breast of Pork", category: "entree", price: 215, destination: restaurant},
+	{name: "Fried Cod", category: "entree", price: 235, destination: restaurant},
+	{name: "Duck", category: "entree", price: 255, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
@@ -1561,9 +1562,9 @@ appetizers = [
 MenuItem.create!(appetizers)
 
 main_course = [
-	{name: "Torsk", category: "main_course", price: 135, destination: restaurant},
-	{name: "Pighvar", category: "main_course", price: 175, destination: restaurant},
-	{name: "Hummer Hotdog", category: "main_course", price: 195, destination: restaurant}
+	{name: "Torsk", category: "entree", price: 135, destination: restaurant},
+	{name: "Pighvar", category: "entree", price: 175, destination: restaurant},
+	{name: "Hummer Hotdog", category: "entree", price: 195, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
@@ -1581,9 +1582,9 @@ appetizers = [
 MenuItem.create!(appetizers)
 
 main_course = [
-	{name: "Veggie Burger", category: "main_course", price: 100, destination: restaurant},
-	{name: "The Dane Burger", category: "main_course", price: 130, destination: restaurant},
-	{name: "The Hangover Burger", category: "main_course", price: 160, destination: restaurant}
+	{name: "Veggie Burger", category: "entree", price: 100, destination: restaurant},
+	{name: "The Dane Burger", category: "entree", price: 130, destination: restaurant},
+	{name: "The Hangover Burger", category: "entree", price: 160, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
@@ -1606,9 +1607,9 @@ appetizers = [
 MenuItem.create!(appetizers)
 
 main_course = [
-	{name: "Nachos", category: "main_course", price: 60, destination: restaurant},
-	{name: "Pollo Burrito", category: "main_course", price: 89, destination: restaurant},
-	{name: "Falafel Durum", category: "main_course", price: 55, destination: restaurant}
+	{name: "Nachos", category: "entree", price: 60, destination: restaurant},
+	{name: "Pollo Burrito", category: "entree", price: 89, destination: restaurant},
+	{name: "Falafel Durum", category: "entree", price: 55, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
@@ -1625,9 +1626,9 @@ appetizers = [
 MenuItem.create!(appetizers)
 
 main_course = [
-	{name: "Tofu Rice Noodles", category: "main_course", price: 60, destination: restaurant},
-	{name: "Prawn Udon Noodles", category: "main_course", price: 65, destination: restaurant},
-	{name: "Eggplant with Mushrooms", category: "main_course", price: 51, destination: restaurant}
+	{name: "Tofu Rice Noodles", category: "entree", price: 60, destination: restaurant},
+	{name: "Prawn Udon Noodles", category: "entree", price: 65, destination: restaurant},
+	{name: "Eggplant with Mushrooms", category: "entree", price: 51, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
@@ -1650,9 +1651,9 @@ appetizers = [
 
 MenuItem.create!(appetizers)
   main_course = [
-  {name: "Ribeye", category: "main_course", price: 200, destination: restaurant},
-  {name: "Beef tenderloin", category: "main_course", price: 225, destination: restaurant},
-  {name: "Strip steak", category: "main_course", price: 250, destination: restaurant}
+  {name: "Ribeye", category: "entree", price: 200, destination: restaurant},
+  {name: "Beef tenderloin", category: "entree", price: 225, destination: restaurant},
+  {name: "Strip steak", category: "entree", price: 250, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
@@ -1676,9 +1677,9 @@ appetizers = [
 MenuItem.create!(appetizers)
 
 main_course = [
-  {name: "Grøftens Stjerneskud", category: "main_course", price: 165, destination: restaurant},
-  {name: "200g. hakkebøf", category: "main_course", price: 215, destination: restaurant},
-  {name: "Kokkens rørte tatar", category: "main_course", price: 179, destination: restaurant}
+  {name: "Grøftens Stjerneskud", category: "entree", price: 165, destination: restaurant},
+  {name: "200g. hakkebøf", category: "entree", price: 215, destination: restaurant},
+  {name: "Kokkens rørte tatar", category: "entree", price: 179, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
@@ -1703,9 +1704,9 @@ appetizers = [
 MenuItem.create!(appetizers)
 
 main_course = [
-  {name: "Seekh Kebab Ret", category: "main_course", price: 89, destination: restaurant},
-  {name: "Chicken Tikka Ret", category: "main_course", price: 89, destination: restaurant},
-  {name: "Lamb Tikka Ret", category: "main_course", price: 89, destination: restaurant}
+  {name: "Seekh Kebab Ret", category: "entree", price: 89, destination: restaurant},
+  {name: "Chicken Tikka Ret", category: "entree", price: 89, destination: restaurant},
+  {name: "Lamb Tikka Ret", category: "entree", price: 89, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
@@ -1721,9 +1722,9 @@ MenuItem.create!(desserts)
 restaurant = Destination.find_by_name("Tommi’s")
 
 main_course = [
-  {name: "Burger", category: "main_course", price: 69, destination: restaurant},
-  {name: "Cheese Burger", category: "main_course", price: 74, destination: restaurant},
-  {name: "Veggie Burger", category: "main_course", price: 69, destination: restaurant}
+  {name: "Burger", category: "entree", price: 69, destination: restaurant},
+  {name: "Cheese Burger", category: "entree", price: 74, destination: restaurant},
+  {name: "Veggie Burger", category: "entree", price: 69, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
@@ -1740,9 +1741,9 @@ appetizers = [
 MenuItem.create!(appetizers)
 
 main_course = [
-  {name: "Ravioli Di Magro Al Pomodoro E Basilico", category: "main_course", price: 139, destination: restaurant},
-  {name: "Pizza Margherita", category: "main_course", price: 95, destination: restaurant},
-  {name: "Tagliatelle Al Salmone e Zucchine", category: "main_course", price: 149, destination: restaurant}
+  {name: "Ravioli Di Magro Al Pomodoro E Basilico", category: "entree", price: 139, destination: restaurant},
+  {name: "Pizza Margherita", category: "entree", price: 95, destination: restaurant},
+  {name: "Tagliatelle Al Salmone e Zucchine", category: "entree", price: 149, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
@@ -1767,9 +1768,9 @@ appetizers = [
 MenuItem.create!(appetizers)
 
 main_course = [
-  {name: "Al-Diwan Lamb Jalfrezi", category: "main_course", price: 149, destination: restaurant},
-  {name: "Beef Bhuna", category: "main_course", price: 149, destination: restaurant},
-  {name: "Aloo Methi", category: "main_course", price: 99, destination: restaurant}
+  {name: "Al-Diwan Lamb Jalfrezi", category: "entree", price: 149, destination: restaurant},
+  {name: "Beef Bhuna", category: "entree", price: 149, destination: restaurant},
+  {name: "Aloo Methi", category: "entree", price: 99, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
@@ -1794,8 +1795,8 @@ appetizers = [
 MenuItem.create!(appetizers)
 
 main_course = [
-  {name: "Pizza", category: "main_course", price: 145, destination: restaurant},
-  {name: "Salad", category: "main_course", price: 125, destination: restaurant}
+  {name: "Pizza", category: "entree", price: 145, destination: restaurant},
+  {name: "Salad", category: "entree", price: 125, destination: restaurant}
 ]
 
 MenuItem.create!(main_course)
