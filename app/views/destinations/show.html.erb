@@ -2,20 +2,21 @@
 <%= render 'layouts/banner' %>
 <%= render 'layouts/mobilebanner' %>
 
-<div class="wrapper menu-row col-xs-12 col-md-4 col-lg-3">
+<div class="wrapper menu-row">
+
   <h3><%= "Menu items at #{@destination.name} " %></h3>
   <div class="container">
    <div class="row">
     <% @destination.menu_items.each do |menu_item| %>
-    <ul>
-      <li> <p>
-
-        <%= "#{menu_item.name} | #{menu_item.price.to_i} kroner" %>
-
-      </p> </li>
+    <div class="col-xs-6 col-md-4 col-lg-3">
+     <ul>
+      <li>
+        <%= "#{menu_item.name} | #{menu_item.price.to_i} kroner"  %>
+      </li>
     </ul>
-    <% end %>
   </div>
+  <% end %>
+</div>
 </div>
 
 <!-- facebook share button -->
@@ -29,15 +30,34 @@
   <i class="fa fa-map-marker big-icon" aria-hidden="true"></i>
   <%= @destination.address %>
   <p>
-
-    <div id="map" style= "height: 80vh; width: 100vw;"></div>
   </div>
 
-  <%= render 'snazzymap' %>
 
-<!-- <h2>
-  <i class="fa fa-external-link big-icon" aria-hidden="true"></i>
-  <%= link_to "DalleValle", "http://cafedallevalle.dk/en/menu/", target: :_blank %>
-</h2>
--->
+  <div id="map" style= "height: 80vh; width: 700px;"></div>
 </div>
+
+<%= render 'maplink', collection: @markers %>
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

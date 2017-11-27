@@ -1,60 +1,61 @@
+
 <% content_for(:after_js) do %>
 <script type="text/javascript">
-  var handler = Gmaps.build('Google');
-  var styles = [
-    {
-        "featureType": "all",
-        "stylers": [
-            {
-                "saturation": 0
-            },
-            {
-                "hue": "#e7ecf0"
-            }
-        ]
-    },
-    {
-        "featureType": "road",
-        "stylers": [
-            {
-                "saturation": -70
-            }
-        ]
-    },
-    {
-        "featureType": "transit",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "poi",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "water",
-        "stylers": [
-            {
-                "visibility": "simplified"
-            },
-            {
-                "saturation": -60
-            }
-        ]
-    }
+var handler = Gmaps.build('Google');
+var styles = [
+{
+  "featureType": "all",
+  "stylers": [
+  {
+    "saturation": 0
+  },
+  {
+    "hue": "#e7ecf0"
+  }
+  ]
+},
+{
+  "featureType": "road",
+  "stylers": [
+  {
+    "saturation": -70
+  }
+  ]
+},
+{
+  "featureType": "transit",
+  "stylers": [
+  {
+    "visibility": "off"
+  }
+  ]
+},
+{
+  "featureType": "poi",
+  "stylers": [
+  {
+    "visibility": "off"
+  }
+  ]
+},
+{
+  "featureType": "water",
+  "stylers": [
+  {
+    "visibility": "simplified"
+  },
+  {
+    "saturation": -60
+  }
+  ]
+}
 ];
 
-  handler.buildMap({
-    provider: {
-      styles: styles
-    },
-    internal: { id: 'map' } }, function() {
+handler.buildMap({
+  provider: {
+    styles: styles
+  },
+  internal: { id: 'map' } }, function() {
     markers = handler.addMarkers(<%= raw @hash.to_json %>);
     handler.bounds.extendWith(markers);
     handler.fitMapToBounds();
