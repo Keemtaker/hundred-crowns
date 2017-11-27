@@ -1,5 +1,10 @@
 
 // BACKGROUND COLOR
+.container{
+  width:100vw;
+  height: 100vh;
+}
+
 .background {
   margin: 0;
   padding: 0;
@@ -53,7 +58,7 @@
 
 // FILTER BUTTONS
 .category-choices {
-  display: flex;
+  // display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   margin: 70px 0;
@@ -62,8 +67,9 @@
 .category-choice {
   flex: 0 0 30%;
   background: #CFCFD3;
-  padding: 20px;
+  padding: 27px 15px 24px 10px;
   font-size: 15px;
+  margin: 5px 5px 5px 2px;
   // margin-top: 30px;
 
   width:100px; /* or whatever width you want. */
