@@ -2,21 +2,27 @@
 <%= render 'layouts/banner' %>
 <%= render 'layouts/mobilebanner' %>
 
-<div class="wrapper menu-row">
+<div class="wrapper menu-row col-xs-12 col-md-4 col-lg-3">
 
   <h3><%= "Menu items at #{@destination.name} " %></h3>
   <div class="container">
    <div class="row">
-    <% @destination.menu_items.each do |menu_item| %>
-    <div class="col-xs-6 col-md-4 col-lg-3">
-     <ul>
-      <li>
-        <%= "#{menu_item.name} | #{menu_item.price.to_i} kroner"  %>
-      </li>
-    </ul>
-  </div>
-  <% end %>
-</div>
+
+    <%  %w(appetizer entree dessert beer wine cocktail).each do |cat| %>
+
+    <h3><%= cat.capitalize %></h3>
+    <% @destination.menu_items.where(category: cat).each do |menu_item| %>
+    <ul>
+      <li> <p>
+
+       <%= "#{menu_item.name} | #{menu_item.price.to_i} kroner" %>
+
+     </p> </li>
+   </ul>
+   <% end %>
+   <% end %>
+
+ </div>
 </div>
 
 <!-- facebook share button -->
@@ -38,7 +44,7 @@
 
 <%= render 'maplink', collection: @markers %>
 
-
+</div>
     
 
 
