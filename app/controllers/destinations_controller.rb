@@ -23,9 +23,15 @@ class DestinationsController < ApplicationController
 
   def map
     @destinations = Destination.where.not(latitude: nil, longitude: nil)
-    @hash = Gmaps4rails.build_markers(@destinations) do |destination, marker|
-      marker.lat destination.latitude
-      marker.lng destination.longitude
+    @destinations.each do |destination|
+    (@markers ||= []).push [
+                            destination.id,
+                            destination.latitude,
+                            destination.longitude
+                            ]
+#     @hash = Gmaps4rails.build_markers(@destinations) do |destination, marker|
+#       marker.lat destination.latitude
+#       marker.lng destination.longitude
     end
   end
 
