@@ -13,8 +13,8 @@
 
 .logo {
   position: relative;
-  top: 70px;
-  left: 40px;
+  top: 80px;
+  left: 20px;
   height: 50px;
   width: 70px;
   transform: rotate(-10deg);
@@ -22,12 +22,12 @@
 
 // SEARCH FORM
 .form-show {
-  margin-top: 50px;
+  margin-top: 60px;
   padding: 20px;
   h1 {
     text-align: center;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 40px;
     margin-bottom: 5px;
     margin-top: 0;
     color: #CFCFD3;
@@ -35,16 +35,18 @@
   p {
     text-align: center;
     font-weight: bold;
-    font-size: 15px;
+    font-size: 20px;
     margin-bottom: 50px;
     margin-top: 0;
     color: #CFCFD3;
   }
   .btn {
     width: 100%;
-    padding: 10px;
+    padding: 15px;
     font-weight: bold;
     border-radius: 5px;
+    font-size: 20px;
+    margin-top: 40px;
   }
   .control-label{
     color: #CFCFD3 !important; // some color
@@ -55,17 +57,19 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin: 20px 0;
+  margin: 70px 0;
 }
 
 .category-choice {
   flex: 0 0 30%;
   background: #CFCFD3;
   padding: 20px;
+  font-size: 15px;
+  // margin-top: 30px;
 
-  // width:180px; /* or whatever width you want. */
-  // max-width:180px; /* or whatever width you want. */
-  // display: inline-block;
+  width:100px; /* or whatever width you want. */
+  max-width:100px; /* or whatever width you want. */
+  display: inline-block;
 
   border-radius: 5px;
   opacity: 0.4;
