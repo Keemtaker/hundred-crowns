@@ -8,7 +8,7 @@ end
 p "creating"
 
 # --------------------------------------------------PLACES---------------------------------------------------------------
-
+ p "creating Norrebro bars"
 # BARS
 # Nørrebro
 bar_list = [
@@ -22,7 +22,7 @@ bar_list = [
   { name: "The Barking Dog", address: "Sankt Hans Gade 19, Norrebro", category: "Bar", open_hours: 16, close_hours: 02 },
   { name: "Mexibar", address: "Elmesgade 27, Norrebro", category: "Bar", open_hours: 16, close_hours: 02 },
   { name: "Mikkeller & Friends", address: "Stefansgade 35, Norrebro", category: "Bar", open_hours: 16, close_hours: 02 },
-  { name: "Gilt", address: "Rantzausgade 39, Norrebro", category: "Bar", open_hours: 16, close_hours: 02 },
+  { name: "gilt", address: "Rantzausgade 39, Norrebro", category: "Bar", open_hours: 16, close_hours: 02 },
   { name: "Brus", address: "Guldbergsgade 29 F, Norrebro", category: "Bar", open_hours: 16, close_hours: 02 },
   { name: "Himmeriget", address: "Aboulevard 27, Norrebro", category: "Bar", open_hours: 16, close_hours: 02 },
   { name: "Antidote", address: "Jægerborggade 56, Norrebro", category: "Bar", open_hours: 16, close_hours: 02 },
@@ -31,7 +31,9 @@ bar_list = [
   { name: "Dupong", address: "Griffenfeldsgade 52, Norrebro", category: "Bar", open_hours: 16, close_hours: 02 },
   { name: "Brewers Inc", address: "Gormsgade 25, Norrebro", category: "Bar", open_hours: 16, close_hours: 02 },
   { name: "Nørrebro Bryghus", address: "Ryesgade 3, 2200 København N", category: "Bar", open_hours: 16, close_hours: 02 },
+  
   #Kgs. Nytorv
+
   { name: "1105", address: "Kristen Bernikows Gade 4, 1105 København K", category: "Bar", open_hours: 16, close_hours: 02 },
   { name: "Cafe Viktor", address: "Ny Østergade 8, 1101 København K", category: "Bar", open_hours: 16, close_hours: 02 },
   { name: "Brønnum", address: "August Bournonvilles Passage 1, 1055 København K", category: "Bar", open_hours: 16, close_hours: 02 },
@@ -53,7 +55,9 @@ bar_list = [
   { name: "Wessels Kro", address: "Sværtegade 7, 1118 København K", category: "Bar", open_hours: 16, close_hours: 02 },
   { name: "Bar O", address: "Pilestræde 12, 1112 København K", category: "Bar", open_hours: 16, close_hours: 02 },
   { name: "Europa 1989", address: "Amagertorv 1, 1160 København K", category: "Bar", open_hours: 16, close_hours: 02 },
+  
   #Vesterbro
+
   { name: "Old English", address: "Vesterbrogade 2B, 1620 København V", category: "Bar", open_hours: 16, close_hours: 02 },
   { name: "Curfew", address: "Stenosgade 1, 1616 København V", category: "Bar", open_hours: 16, close_hours: 02 },
   { name: "PatePateDk", address: "Slagterboderne 1, 1716 København V", category: "Bar", open_hours: 16, close_hours: 02 },
@@ -63,7 +67,7 @@ bar_list = [
   { name: "Fleisch", address: "Slagterboderne 7, 1716 København V", category: "Bar", open_hours: 16, close_hours: 02 },
   { name: "Jernbane Cafeen", address: "Reventlowsgade 16, 1651 København V", category: "Bar", open_hours: 16, close_hours: 02 },
   { name: "Duck and Cover", address: "Dannebrogsgade 6, 1660 København V", category: "Bar", open_hours: 16, close_hours: 02 },
-  { name: "Kolsters Tolv Haner", address: "Rantzausgade 56, 2200 København N", category: "Bar", open_hours: 16, close_hours: 02 },
+  { name: "Kølsters Tolv Haner", address: "Rantzausgade 56, 2200 København N", category: "Bar", open_hours: 16, close_hours: 02 },
   { name: "Nimb Vinotek", address: "Bernstorffsgade 5, 1577 København V", category: "Bar", open_hours: 16, close_hours: 02 },
   { name: "Brewpub ", address: "Vestergade 29, 1456 København K", category: "Bar", open_hours: 16, close_hours: 02 },
   { name: "Nimb Bar", address: "Bernstorffsgade 5, 1577 København V", category: "Bar", open_hours: 16, close_hours: 02 },
@@ -73,6 +77,8 @@ bar_list = [
 Destination.create!(bar_list)
 
 # MENU ITEMS
+
+p "creating bar menu items"
 #-------------------------------------------------------------------------------
 bar = Destination.find_by_name("Kind of Blue")
 
@@ -85,9 +91,9 @@ beer = [
 MenuItem.create!(beer)
 
 wine = [
-{name: "Postales Del Fin Del Mundo", category: "wine", price: 40, destination: bar},
-{name: "Petit Chablis", category: "wine", price: 40, destination: bar},
-{name: "Château Pesquiè Rosé", category: "wine", price: 60, destination: bar}
+  {name: "Postales Del Fin Del Mundo", category: "wine", price: 40, destination: bar},
+  {name: "Petit Chablis", category: "wine", price: 40, destination: bar},
+  {name: "Château Pesquiè Rosé", category: "wine", price: 60, destination: bar}
 ]
 
 MenuItem.create!(wine)
@@ -96,13 +102,13 @@ MenuItem.create!(wine)
 bar = Destination.find_by_name("Bo-Bi Bar")
 
 beer = [
-{name: "beer", category: "beer", price: 40, destination: bar}
+  {name: "beer", category: "beer", price: 40, destination: bar}
 ]
 
 MenuItem.create!(beer)
 
 wine = [
-{name: "wine", category: "wine", price: 30, destination: bar}
+  {name: "wine", category: "wine", price: 30, destination: bar}
 ]
 
 MenuItem.create!(wine)
@@ -755,6 +761,9 @@ MenuItem.create!(wine)
 
 # --------------------------------------------------RESTAURANTS--------------------------------------------------------
 # Norrebro-------------------
+
+  p "creating Norrebro restaurants"
+
 restaurant_list = [
   { name: "Bæst", address: "Guldbergsgade 29, DK-2200 Copenhagen N", category: "Restaurant", open_hours: 17, close_hours: 22 },
   { name: "Fætter Fætter", address: "Griffenfeldsgade 17, 2200 Copenhagen N", category: "Restaurant", open_hours: 17, close_hours: 22 },
@@ -772,8 +781,9 @@ restaurant_list = [
   { name: "Nino's Pizza", address: "Guldbergsgade 18, 2200 København N", category: "Restaurant", open_hours: 17, close_hours: 22 },
   { name: "Nicecream", address: "Elmegade 30, 2200 København N", category: "Restaurant", open_hours: 17, close_hours: 22 },
   { name: "Rita's Smørrebrød", address: "Fælledvej 11, Norrebro", category: "Restaurant", open_hours: 17, close_hours: 22 },
-  
+
   # Kgs. Nytorv---------------------------------
+
   { name: "Fiat", address: "Kongens Nytorv 18, 1050 København K", category: "Restaurant", open_hours: 17, close_hours: 22 },
   { name: "Geist", address: "Kongens Nytorv 8, 1050 København K", category: "Restaurant", open_hours: 17, close_hours: 22 },
   { name: "Madklubben", address: "Kongens Nytorv 26, 1050 København K", category: "Restaurant", open_hours: 17, close_hours: 22 },
@@ -796,7 +806,8 @@ restaurant_list = [
   { name: "Wok On", address: "Gothersgade 15", category: "Restaurant", open_hours: 17, close_hours: 22 },
 
   #VERSTERBRO
-  { name: "Madklubben", address: "Vesterbrogade 62, 1620 København V", category: "Restaurant", open_hours: 17, close_hours: 22 },
+
+  { name: "Madklubbenn", address: "Vesterbrogade 62, 1620 København V", category: "Restaurant", open_hours: 17, close_hours: 22 },
   { name: "Jensens Bøfhus", address: "Vesterbrogade 11A, 1620 København V", category: "Restaurant", open_hours: 17, close_hours: 22 },
   { name: "Groeften", address: "Vesterbrogade 3, 1620 København V", category: "Restaurant", open_hours: 17, close_hours: 22 },
   { name: "Kebabish Vestebro", address: "Vesterbrogade 13, 1620 København V", category: "Restaurant", open_hours: 17, close_hours: 22 },
@@ -809,7 +820,14 @@ restaurant_list = [
 
 Destination.create!(restaurant_list)
 
+Destination.all.each do |destination|
+  destination.save
+  destination.photo_url = "./app/assets/images/#{destination.name.gsub(" ","")}.png"
+end
+
 # --------------------------------------NORREBRO--------------------------------
+
+  p "creating Norrebro menu items"
 
 # ---------------------------------------1--------------------------------------
 
@@ -1121,6 +1139,8 @@ MenuItem.create!(main_course)
 
 # --------------------------------------KGS. NYTORV--------------------------------
 
+p "creating Kgs. Nytorv menu items"
+
 # ---------------------------------------1-------------------------------------
 
 restaurant = Destination.find_by_name("Fiat")
@@ -1130,7 +1150,7 @@ appetizers = [
 	{name: "Crab Bruschetta", category: "appetizer", price: 165, destination: restaurant},
 	{name: "Endivia Salad", category: "appetizer", price: 125, destination: restaurant}
 ]
- 
+
 MenuItem.create!(appetizers)
 
 main_course = [
@@ -1138,7 +1158,7 @@ main_course = [
 	{name: "Wild Garlic Skewers", category: "main_course", price: 215, destination: restaurant},
 	{name: "Steak ala Fiorentina", category: "main_course", price: 348, destination: restaurant}
 ]
- 
+
  MenuItem.create!(main_course)
 
   desserts = [
@@ -1198,7 +1218,7 @@ MenuItem.create!(main_course)
 
 desserts = [
 	{name: "Chocolate Mousse", category: "dessert", price: 50, destination: restaurant},
-	{name: "Coupe Royal", category: "dessert", price: 50, destination: restaurant},	
+	{name: "Coupe Royal", category: "dessert", price: 50, destination: restaurant},
 ]
 
 MenuItem.create!(desserts)
@@ -1613,9 +1633,11 @@ main_course = [
 MenuItem.create!(main_course)
 
 # --------------------------------------KGS. NYTORV END------------------------
-    
-  
+
+
 #-------------------------------VESTERBRO START--------------------------------------
+
+p "creating Vesterbro menu items"
 
 #-------------------------------------------------------------------------------
 restaurant = Destination.find_by_name("Jensens Bøfhus")
@@ -1625,7 +1647,7 @@ appetizers = [
   {name: "Cold-smoked salmon", category: "appetizer", price: 75, destination: restaurant},
   {name: "Jensens steak salad", category: "appetizer", price: 75, destination: restaurant}
 ]
-  
+
 MenuItem.create!(appetizers)
   main_course = [
   {name: "Ribeye", category: "main_course", price: 200, destination: restaurant},

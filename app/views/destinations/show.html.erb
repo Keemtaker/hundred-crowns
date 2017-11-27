@@ -1,82 +1,76 @@
+
+<%= render 'layouts/banner' %>
+<%= render 'layouts/mobilebanner' %>
+
+<div class="wrapper menu-row">
+<h3><%= "Menu items at #{@destination.name} " %></h3>
 <div class="container">
-  <div class="map-wrapper">
-    <div class="map-title">
-      <% if @destination.photo? %>
-          <%= cl_image_tag @destination.photo.path, width: 200, height: 300, crop: :fill %>
-      <% end %>
-
-      <h1><%= @destination.name %></h1>
-    </div>
-    <div id="map" style= "height: 80vh; width: 700px;"></div>
-  </div>
-
-<% content_for(:after_js) do %>
-<script type="text/javascript">
-  var handler = Gmaps.build('Google');
-  var styles = [
-    {
-        "featureType": "all",
-        "stylers": [
-            {
-                "saturation": 0
-            },
-            {
-                "hue": "#e7ecf0"
-            }
-        ]
-    },
-    {
-        "featureType": "road",
-        "stylers": [
-            {
-                "saturation": -70
-            }
-        ]
-    },
-    {
-        "featureType": "transit",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "poi",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "water",
-        "stylers": [
-            {
-                "visibility": "simplified"
-            },
-            {
-                "saturation": -60
-            }
-        ]
-    }
-];
-
-  handler.buildMap({
-    provider: {
-      styles: styles
-    },
-    internal: { id: 'map' } }, function() {
-    markers = handler.addMarkers(<%= raw @hash.to_json %>);
-    handler.bounds.extendWith(markers);
-    handler.fitMapToBounds();
-    if (markers.length == 0) {
-      handle.getMap().setZoom(2);
-    } else if (markers.length == 1) {
-      handler.getMap().setZoom(14);
-    }
-  });
-</script>
+ <div class="row">
+  <% @destination.menu_items.each do |menu_item| %>
+  <div class="col-xs-6 col-md-4 col-lg-3">
+   <ul>
+    <li>
+      <%= "#{menu_item.name} | #{menu_item.price.to_i} kroner"  %>
+    </li>
+  </ul>
+</div>
 <% end %>
 </div>
+</div>
+
+<h4>
+  <%= "Opening hours: #{@destination.open_hours}:00 - #{@destination.close_hours}:00" %>
+</h4>
+<p>
+  <i class="fa fa-map-marker big-icon" aria-hidden="true"></i>
+  <%= @destination.address %>
+<p>
+</div>
+
+
+<div id="map" style= "height: 80vh; width: 700px;"></div>
+</div>
+
+<%= render 'snazzymap' %>
+
+
+
+
+<!-- <h2>
+  <i class="fa fa-external-link big-icon" aria-hidden="true"></i>
+  <%= link_to "DalleValle", "http://cafedallevalle.dk/en/menu/", target: :_blank %>
+</h2>
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

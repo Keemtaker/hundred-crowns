@@ -13,4 +13,13 @@ class Destination < ApplicationRecord
   validates :open_hours, presence: true, numericality: {only_integer: true}
   validates :close_hours, presence: true, numericality: {only_integer: true}
 
+  def filtered_menu_items(categories, price)
+    categories.map do |category|
+  	  self.menu_items.
+      where('category = (?)', category).
+      where('price <= (?)', price).
+      order(:price).first
+    end.compact
+  end
 end
+
