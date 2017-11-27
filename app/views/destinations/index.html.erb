@@ -14,7 +14,7 @@
       </div>
       <div class="card-description">
           <div class="card-location">
-            2.5km
+            <%= destination.distance_from("Ahornsgade 15, 2200 Copenhagen").round(1) %> km
           </div>
         <div class="card-content">
           <% menu_items.each do |menu_item| %>
