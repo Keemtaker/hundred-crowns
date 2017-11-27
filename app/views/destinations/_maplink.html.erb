@@ -1,0 +1,52 @@
+<% content_for(:after_js) do %>
+<script type="text/javascript">
+  function redirect_user_to_address(e) {
+    window.open('https://www.google.com/maps/dir/?api=1&destination=' + e, '_blank');
+        // console.log(this);
+      }
+
+      $(document).ready(function() {
+        function initMap() {
+        // Display a map on the #map
+        var map = new google.maps.Map(document.getElementById('map'), {});
+        // Define bounds
+        var bounds = new google.maps.LatLngBounds();
+
+        // Multiple markers
+        var markers = <%= raw @markers.to_json %>
+
+        for( i = 0; i < markers.length; i++) {
+          var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
+          bounds.extend(position);
+          var marker = new google.maps.Marker({
+            position: {lat: markers[i][1], lng: markers[i][2]},
+            map: map,
+            title: "marker id:" + markers[i][0]
+          })
+          ;
+        // Add an event listener to each marker
+        google.maps.event.addListener(marker, 'click', (function(marker, i) {
+         return function() {
+           redirect_user_to_address(marker.position);
+         }
+       })(marker, i));
+        // Center the map fitting all displayed markers
+        map.fitBounds(bounds);
+        zoomChangeBoundsListener = google.maps.event.addListenerOnce(map, 'bounds_changed', function(event) {
+          if (markers.length === 0){
+            this.setZoom(2);
+          } else if (markers.length === 1) {
+            this.setZoom(14);
+          }
+        });
+        setTimeout(function() {google.maps.event.removeListener(zoomChangeBoundsListener)}, 2000);
+
+
+      }
+    }
+    initMap();
+  });
+
+
+</script>
+<% end %>

@@ -3,18 +3,18 @@
 <%= render 'layouts/mobilebanner' %>
 
 <div class="wrapper menu-row">
-<h3><%= "Menu items at #{@destination.name} " %></h3>
-<div class="container">
- <div class="row">
-  <% @destination.menu_items.each do |menu_item| %>
-  <div class="col-xs-6 col-md-4 col-lg-3">
-   <ul>
-    <li>
-      <%= "#{menu_item.name} | #{menu_item.price.to_i} kroner"  %>
-    </li>
-  </ul>
-</div>
-<% end %>
+  <h3><%= "Menu items at #{@destination.name} " %></h3>
+  <div class="container">
+   <div class="row">
+    <% @destination.menu_items.each do |menu_item| %>
+    <div class="col-xs-6 col-md-4 col-lg-3">
+     <ul>
+      <li>
+        <%= "#{menu_item.name} | #{menu_item.price.to_i} kroner"  %>
+      </li>
+    </ul>
+  </div>
+  <% end %>
 </div>
 </div>
 
@@ -28,23 +28,18 @@
 <p>
   <i class="fa fa-map-marker big-icon" aria-hidden="true"></i>
   <%= @destination.address %>
-<p>
+  <p>
+  </div>
+
+
+  <div id="map" style= "height: 80vh; width: 700px;"></div>
 </div>
 
-
-<div id="map" style= "height: 80vh; width: 700px;"></div>
-</div>
-
-<%= render 'snazzymap' %>
+<%= render 'maplink', collection: @markers %>
 
 
 
 
-<!-- <h2>
-  <i class="fa fa-external-link big-icon" aria-hidden="true"></i>
-  <%= link_to "DalleValle", "http://cafedallevalle.dk/en/menu/", target: :_blank %>
-</h2>
- -->
 
 
 
