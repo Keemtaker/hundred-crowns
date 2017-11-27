@@ -7,18 +7,37 @@
   <%= csrf_meta_tags %>
   <%= action_cable_meta_tag %>
   <%= stylesheet_link_tag 'application', media: 'all' %>
+
+  <!-- facebook meta data  -->
+  <meta property="og:url" content="https://hundred-crowns.herokuapp.com/" />
+  <meta property="og:type"          content="website" />
+  <meta property="og:title"         content="Hundred-Crowns" />
+  <meta property="og:description"   content="Get what you want" />
+  <meta property="og:image"         content="https://images.unsplash.com/photo-1477763858572-cda7deaa9bc5?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&s=7e90587eaf005cf6358d42c03970d4fe" />
+  <meta property="fb:app_id" content="374024879688601" />
+
 </head>
-  <body>
+<body>
   <%= render 'layouts/navbar' %>
   <%= yield %>
   <%= render 'layouts/footer' %>
 
-    <%= javascript_include_tag "https://maps.google.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>
-    <%= javascript_include_tag "https://cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/markerclusterer/src/markerclusterer_compiled.js" %>
-    <%= javascript_include_tag "https://cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/infobox/src/infobox_packed.js" %>
+  <%= javascript_include_tag "https://maps.google.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>
+  <%= javascript_include_tag "https://cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/markerclusterer/src/markerclusterer_compiled.js" %>
+  <%= javascript_include_tag "https://cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/infobox/src/infobox_packed.js" %>
 
   <%= javascript_include_tag 'application' %>
   <%= yield(:after_js) %>
   <%= cloudinary_js_config %>
+
+  <!-- facebook share button Javascript SDK -->
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.11&appId=374024879688601';
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
 </body>
 </html>
