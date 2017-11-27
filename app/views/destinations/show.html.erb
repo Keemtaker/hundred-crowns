@@ -6,16 +6,24 @@
   <h3><%= "Menu items at #{@destination.name} " %></h3>
   <div class="container">
    <div class="row">
-    <% @destination.menu_items.each do |menu_item| %>
+
+    <%  %w(appetizer entree dessert beer wine cocktail).each do |cat| %>
+
+    <h3><%= cat.capitalize %></h3>
+    <% @destination.menu_items.where(category: cat).each do |menu_item| %>
     <ul>
       <li> <p>
 
-        <%= "#{menu_item.name} | #{menu_item.price.to_i} kroner" %>
+       <%= "#{menu_item.name} | #{menu_item.price.to_i} kroner" %>
 
-      </p> </li>
-    </ul>
-    <% end %>
-  </div>
+     </p> </li>
+   </ul>
+   <% end %>
+   <% end %>
+
+
+
+ </div>
 </div>
 
 <!-- facebook share button -->
