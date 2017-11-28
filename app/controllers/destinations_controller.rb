@@ -2,7 +2,9 @@ class DestinationsController < ApplicationController
   def index
     @categories = params[:destination][:category]
     @price = params[:destination][:price].to_f
+    @price = 100 if @price.zero?
     location = "Copenhagen"
+    @categories = ["beer", "wine"] if @categories == [""] 
     @destinations = Destination.near(location, 3)
 
 
@@ -12,10 +14,11 @@ class DestinationsController < ApplicationController
   end
 
   def show
+
     @destination = Destination.find(params[:id])
     @destination_cordinates = { lat: @destination.latitude, lng: @destination.longitude }
     @markers = [[@destination.id, @destination.latitude, @destination.longitude]]
-  end
+    end
 
   def map
     @destinations = Destination.where.not(latitude: nil, longitude: nil)
