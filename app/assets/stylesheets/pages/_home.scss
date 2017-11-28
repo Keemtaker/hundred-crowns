@@ -1,18 +1,22 @@
 
 // BACKGROUND COLOR
-// .container{
-//   width:100vw;
-//   height: 100vh;
-
-// }
-
-.background {
-  margin: 0;
-  padding: 0;
-  width: 100vw;
-  height: 100vh;
+ .wrapper{
   background-color: #2F3B46;
-}
+  // margin: auto;
+ }
+
+ .container{
+  margin: 0 auto;
+  // width: 400px;
+  height: 100vh;
+  width:100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  
+
+ }
+
 
 #destination_price{
   padding: 10px;
@@ -22,6 +26,7 @@
   font-size: 14px;
   background-color: #D8D6D8;
   color: #B59535;
+  border-radius: 4px;
 
    &:hover {
     opacity: 1;
@@ -32,26 +37,19 @@
 // LOGO
 .logo {
   position: relative;
-  top: 75px;
-  left: 30px;
+  top: 35px;
+  left: 40px;
   height: 50px;
   width: 70px;
   transform: rotate(-10deg);
 }
 
-.form-group{
-  margin: 0px auto;
-}
-
-.fa{
-  padding-top: 3px;
-}
-
 // SEARCH FORM
 .form-show {
-  margin-top: 42px;
+  // margin-top: 42px;
+  flex: 1 0 30%;
   padding: 20px;
-  h1 {
+    h1 {
     text-align: center;
     font-weight: bold;
     font-size: 40px;
@@ -67,6 +65,17 @@
     margin-top: 0;
     color: #CFCFD3;
   }
+
+.form-group{
+  // margin: 0px auto;
+  // display: flex;
+  // align-items: center;
+}
+
+.fa{
+  padding-top: 3px;
+}
+
   .btn {
     width: 100%;
     padding: 15px;
@@ -83,23 +92,23 @@
 // FILTER BUTTONS
 .category-choices {
   // display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  margin: 35px 0;
+  // justify-content: space-between;
+  // align-items: center;
+  // flex-wrap: wrap;
+  // margin: 35px 0;
 }
 
 .category-choice {
-  flex: 0 0 30%;
   background: #CFCFD3;
   padding: 27px 15px 24px 10px;
   font-size: 14px;
   margin: 5px 0px 5px 3px;
   // margin-top: 30px;
 
-  width:100px; /* or whatever width you want. */
+  // width:100px; /* or whatever width you want. */
   max-width:100px; /* or whatever width you want. */
 
-  display: inline-block;
+  // display: inline-block;
   border-radius: 5px;
   opacity: 0.4;
   text-align: center;
