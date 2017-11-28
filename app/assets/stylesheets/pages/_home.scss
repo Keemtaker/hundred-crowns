@@ -1,9 +1,10 @@
 
 // BACKGROUND COLOR
-.container{
-  width:100vw;
-  height: 100vh;
-}
+// .container{
+//   width:100vw;
+//   height: 100vh;
+
+// }
 
 .background {
   margin: 0;
@@ -13,19 +14,42 @@
   background-color: #2F3B46;
 }
 
+#destination_price{
+  padding: 10px;
+  text-align: center;
+  font-style: italic;
+  height: 59px;
+  font-size: 14px;
+  background-color: #D8D6D8;
+  color: #B59535;
+
+   &:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
+}
+
 // LOGO
 .logo {
   position: relative;
-  top: 80px;
-  left: 20px;
+  top: 75px;
+  left: 30px;
   height: 50px;
   width: 70px;
   transform: rotate(-10deg);
 }
 
+.form-group{
+  margin: 0px auto;
+}
+
+.fa{
+  padding-top: 3px;
+}
+
 // SEARCH FORM
 .form-show {
-  margin-top: 60px;
+  margin-top: 42px;
   padding: 20px;
   h1 {
     text-align: center;
@@ -39,7 +63,7 @@
     text-align: center;
     font-weight: bold;
     font-size: 20px;
-    margin-bottom: 50px;
+    margin-bottom: 25px;
     margin-top: 0;
     color: #CFCFD3;
   }
@@ -49,7 +73,7 @@
     font-weight: bold;
     border-radius: 5px;
     font-size: 20px;
-    margin-top: 40px;
+    // margin-top: 40px;
   }
   .control-label{
     color: #CFCFD3 !important; // some color
@@ -61,15 +85,15 @@
   // display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin: 70px 0;
+  margin: 35px 0;
 }
 
 .category-choice {
   flex: 0 0 30%;
   background: #CFCFD3;
   padding: 27px 15px 24px 10px;
-  font-size: 15px;
-  margin: 5px 5px 5px 2px;
+  font-size: 14px;
+  margin: 5px 0px 5px 3px;
   // margin-top: 30px;
 
   width:100px; /* or whatever width you want. */
