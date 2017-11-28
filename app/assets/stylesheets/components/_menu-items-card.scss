@@ -1,0 +1,25 @@
+.category-collection {
+	background: #F4F4F4;
+	border-top-style: solid;
+	border-color: #B59535;
+	border-radius: 2px;
+	border-width: 1px;
+}
+
+
+.menu-item-card {
+  // background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 3px;
+}
+
+.fa-eercast{
+	color: #B59535;
+}
+
+.fa-facebook-square{
+	color: #3b5998;
+	font-size: 20px;
+}

@@ -2,60 +2,55 @@
 <%= render 'layouts/banner' %>
 <%= render 'layouts/mobilebanner' %>
 
-<div class="wrapper menu-row col-xs-12 col-md-4 col-lg-3">
 
   <!-- MENU -->
-
-  <div class="container ">
-    <div class="panel-heading panel-margin"> <h3><%= "Menu items at #{@destination.name} " %></h3></div>
-    <div class="row">
-      <div class="panel panel-default panel-box">
-
-        <table class="table table-lines">
-
-        <% %w(appetizer entree dessert beer wine cocktail).each do |cat| %>
-
-        <% if @destination.menu_items.find { |menu_item| menu_item.category == cat } %>
-          <thead>
-            <tr>
-              <th><h4><%= cat.capitalize %></h4></th>
-              <th><h4>DKK</h4></th>
-            </tr>
-          </thead>
-
-          <tbody>
-        <% @destination.menu_items.where(category: cat).each do |menu_item| %>
-            <tr>
-              <td><p><%= "#{menu_item.name}" %></p></td>
-              <td><p><%= "#{menu_item.price.to_i}" %></p></td>
-            </tr>
+<div class="wrapper">
+  <h3 class='text-center'><%= "Menu items at #{@destination.name} " %></h3>
+  <% %w(appetizer entree dessert beer wine cocktail).each do |cat| %>
+    <% if @destination.menu_items.find { |menu_item| menu_item.category == cat } %>
+      <div class="category-collection">
+        <h4 class="text-center"><%= cat.capitalize %></h4>
+        <div class="container">
+          <div class="row">    
+            <% @destination.menu_items.where(category: cat).each do |menu_item| %>
+              <div class="col-xs-12 col-sm-3 col-md-2">
+                <div class="menu-item-card">
+                  <p><i class="fa fa-eercast" aria-hidden="true"></i><%= "#{menu_item.name}" %></p>
+                  <p><%= "#{menu_item.price.to_i} DKK" %></p>
+                </div>
+              </div>
             <% end %>
           <% end %>
-        <% end %>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
+        </div> <!-- close row -->
+      </div> <!-- close container -->
+    </div> <!-- close category-collection -->
+  <% end %>
+</div> <!-- close wrapper -->
 
   <!-- facebook share button -->
 
-  <div class="fb-share-button" data-href="https://hundred-crowns.herokuapp.com/" data-layout="button_count" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fhundred-crowns.herokuapp.com%2F&amp;src=sdkpreparse">Share</a></div>
+<div class="container">
+  <div class="row">
+  <div class="fa fa-facebook-square" data-href="https://hundred-crowns.herokuapp.com/" data-layout="button_count" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fhundred-crowns.herokuapp.com%2F&amp;src=sdkpreparse">Share</a></div>
 
   <!-- opening hours -->
+  <div class="col-xs-12">
+
   <h4>
     <%= "Opening hours: #{@destination.open_hours}:00 - #{@destination.close_hours}:00" %>
   </h4>
 
   <!-- GOOGLE MAPS -->
   <p>
-    <i class="fa fa-map-marker big-icon" aria-hidden="true"></i>
+    <i class="fa fa-map-signs" aria-hidden="true"></i>
     <%= @destination.address %>
     <p>
+      </div>
+      </div>
+      </div>
 
       <div id="map" style= "height: 80vh; width: 100vw;"></div>
 
       <%= render 'maplink', collection: @markers %>
 
-    </div>
 
