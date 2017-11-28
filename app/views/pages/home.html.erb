@@ -5,11 +5,14 @@
   <div class="wrapper">
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-offset-8">
+    <div class="col-md-9 col-md-offset-1 col-xs-12">
+      <div class="home-form-card">
       <img <%= image_tag "100-crowns_logo.png", class: "logo" %>
       <div class="form-show">
         <h1>100 Crowns</h1>
-        <p>Get What you Want.</p>
+        <p>Get What you Want
+        <i class="fa fa-circle" aria-hidden="true"></i>
+        </p>
         <%= simple_form_for :destination, url: destinations_path, :method => :get do |f| %>
         <%= f.input :price, placeholder: "What would you like to spend?", :autofocus => true, label: false %>
 
@@ -60,6 +63,7 @@
       <%= f.submit "Search", class: "btn btn-danger" %>
       <% end %>
     </div>
+  </div>
   </div>
   </div>
 </div>
