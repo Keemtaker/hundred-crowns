@@ -4,23 +4,29 @@
 
 <div class="wrapper menu-row col-xs-12 col-md-4 col-lg-3">
 
+<!-- MENU -->
+
   <h3><%= "Menu items at #{@destination.name} " %></h3>
   <div class="container">
    <div class="row">
 
     <%  %w(appetizer entree dessert beer wine cocktail).each do |cat| %>
+  <% if @destination.menu_items.find { |menu_item| menu_item.category == cat } %>
 
-    <h3><%= cat.capitalize %></h3>
-    <% @destination.menu_items.where(category: cat).each do |menu_item| %>
-    <ul>
-      <li> <p>
 
-       <%= "#{menu_item.name} | #{menu_item.price.to_i} kroner" %>
+      <h3><%= cat.capitalize %></h3>
+      <% @destination.menu_items.where(category: cat).each do |menu_item| %>
 
-     </p> </li>
-   </ul>
-   <% end %>
-   <% end %>
+      <ul>
+        <li> <p>
+
+        <%= "#{menu_item.name} | #{menu_item.price.to_i} kroner" %>
+
+        </p> </li>
+      </ul>
+    <% end %>
+    <% end %>
+  <% end %>
 
  </div>
 </div>
@@ -37,31 +43,11 @@
   <%= @destination.address %>
   <p>
 
+<!-- GOOGLE MAPS -->
 
   <div id="map" style= "height: 80vh; width: 100vw;"></div>
 
 <%= render 'maplink', collection: @markers %>
 
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
