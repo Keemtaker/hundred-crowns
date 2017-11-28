@@ -1,16 +1,10 @@
 
 // BACKGROUND COLOR
- .wrapper{
+ .home-wrapper{
   background-color: #2F3B46;
   width:100vw;
   height: 100vh;
   margin: 0 auto;
- }
-
- .home-form-card {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
  }
 
 #destination_price{
@@ -32,8 +26,8 @@
 // LOGO
 .logo {
   position: relative;
-  top: 35px;
-  left: 40px;
+  top: 17px;
+  left: -116px;
   height: 50px;
   width: 70px;
   transform: rotate(-10deg);
@@ -51,6 +45,7 @@
     margin-bottom: 5px;
     margin-top: 0;
     color: #CFCFD3;
+    position: relative;
   }
   p {
     text-align: center;
@@ -89,8 +84,15 @@
   }
 }
 
+.home-header {
+  // width: 583px;
+}
+
 // FILTER BUTTONS
 .category-choices {
+  display: flex;
+  justify-content: space-between;
+  align-items: center
   // display: flex;
   // justify-content: space-between;
   // align-items: center;
@@ -102,11 +104,13 @@
   background: #CFCFD3;
   padding: 27px 15px 24px 10px;
   font-size: 14px;
-  margin: 5px 0px 5px 3px;
+  //margin: 5px 0px 5px 3px;
   // margin-top: 30px;
+  max-width: 33%;
+  height: 117px;
 
   // width:100px; /* or whatever width you want. */
-  max-width:100px; /* or whatever width you want. */
+  flex: 1 0 auto; /* or whatever width you want. */
 
   // display: inline-block;
   border-radius: 5px;
