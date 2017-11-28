@@ -4,14 +4,14 @@
 
 <div class="container background">
   <div class="wrapper">
-  <!-- <div class="row"> -->
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-6 col-sm-offset-4">
       <img <%= image_tag "100-crowns_logo.png", class: "logo" %>
       <div class="form-show">
         <h1>100 Crowns</h1>
         <p>Get What you Want.</p>
         <%= simple_form_for :destination, url: destinations_path, :method => :get do |f| %>
-        <%= f.input :price, placeholder: "DKK", :autofocus => true, label: false %>
+        <%= f.input :price, placeholder: "What would you like to spend?", :autofocus => true, label: false %>
 
         <div class="form-group">
           <input type="hidden" name="destination[category][]" value="">
@@ -19,31 +19,38 @@
         <div class="category-choices">
           <input class="hidden" type="checkbox" value="beer" name="destination[category][]" id="destination_category_beers">
           <label class="category-choice" for="destination_category_beers">
-           Beer
+           <i class="fa fa-beer fa-3x" aria-hidden="true"></i>
+            Beer
          </label>
 
          <input class="hidden" type="checkbox" value="wine" name="destination[category][]" id="destination_category_wines">
          <label class="category-choice" for="destination_category_wines">
+          <i class="fa fa-glass fa-3x" aria-hidden="true"></i>
           Wine
         </label>
 
         <input class="hidden" type="checkbox" value="cocktail" name="destination[category][]" id="destination_category_cocktails">
         <label class="category-choice" for="destination_category_cocktails">
+          <i class="fa fa-flask fa-3x" aria-hidden="true"></i>
           Cocktails
         </label>
 
         <input class="hidden" type="checkbox" value="appetizer" name="destination[category][]" id="destination_category_apps">
         <label class="category-choice" for="destination_category_apps">
+        <i class="fa fa-rocket fa-3x" aria-hidden="true"></i>
           Appetizers
         </label>
 
         <input class="hidden" type="checkbox" value="entree" name="destination[category][]" id="destination_category_mains">
         <label class="category-choice" for="destination_category_mains">
+          <i class="fa fa-cutlery fa-3x" aria-hidden="true"></i>
           Entrees
         </label>
 
         <input class="hidden" type="checkbox" value="dessert" name="destination[category][]" id="destination_category_desserts">
         <label class="category-choice" for="destination_category_desserts">
+          <i class="fa fa-birthday-cake fa-3x" aria-hidden="true"></i>
+
           Dessert
         </label>
 
@@ -55,7 +62,7 @@
     </div>
   </div>
   </div>
-<!-- </div> -->
+</div>
 </div>
 
 
