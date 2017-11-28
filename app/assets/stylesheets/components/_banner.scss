@@ -1,22 +1,24 @@
 .banner {
-  width: 100%;
+  width: 100vw;
   padding: 0 7%;
   display: table;
   margin: 0;
   max-width: none;
   background-color: #373B44;
-  height: 40vh;
+  height: 25vh;
   color: white;
   text-align: center;
   background-size: cover !important;
-  background-position: center;
+  background-repeat:   no-repeat;
+  background-position: center center;
+
   // display: flex;
   // align-items: center;
   // justify-content: center;
 }
 .banner h1 {
   font-family: 'Varela Round', sans-serif;
-  font-size: 50px;
+  font-size: 40px;
   font-weight: bold;
   text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
 }
