@@ -7,7 +7,6 @@ class DestinationsController < ApplicationController
     @categories = ["beer", "wine"] if @categories == [""]
     @destinations = Destination.near(location, 3)
 
-
     @destinations_and_menu_items = @destinations.map do |destination|
       { destination => destination.filtered_menu_items(@categories, @price) }
     end.reject { |hash| hash.values.first.empty? }

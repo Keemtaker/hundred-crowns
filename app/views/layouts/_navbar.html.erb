@@ -41,11 +41,14 @@
   <div class="navbar-wagon-item hidden-md hidden-lg">
     <div class="map-link">
       <% if params[:controller] == 'destinations' && params[:action] == 'map' %>
-        <i class="fa fa-list"></i>
+        <%= link_to url_for :back do %>
+          <i id="list" class="fa fa-list"></i>
+        <% end %>
       <% else %>
         <%= link_to map_path(destinations: @destinations_and_menu_items.map { |destination_to_menu| destination_to_menu.keys }.flatten.map(&:id)) do %>
           <i class="fa fa-map-marker" aria-hidden="true"></i>
         <% end %>
+
       <% end %>
     </div>
   </div>
