@@ -31,7 +31,7 @@ bar_list = [
   { name: "Dupong", address: "Griffenfeldsgade 52, Norrebro", category: "Bar", open_hours: 16, close_hours: 02 },
   { name: "Brewers Inc", address: "Gormsgade 25, Norrebro", category: "Bar", open_hours: 16, close_hours: 02 },
   { name: "Nørrebro Bryghus", address: "Ryesgade 3, 2200 København N", category: "Bar", open_hours: 16, close_hours: 02 },
-  
+
   #Kgs. Nytorv
 
   { name: "1105", address: "Kristen Bernikows Gade 4, 1105 København K", category: "Bar", open_hours: 16, close_hours: 02 },
@@ -55,7 +55,7 @@ bar_list = [
   { name: "Wessels Kro", address: "Sværtegade 7, 1118 København K", category: "Bar", open_hours: 16, close_hours: 02 },
   { name: "Bar O", address: "Pilestræde 12, 1112 København K", category: "Bar", open_hours: 16, close_hours: 02 },
   { name: "Europa 1989", address: "Amagertorv 1, 1160 København K", category: "Bar", open_hours: 16, close_hours: 02 },
-  
+
   #Vesterbro
 
   { name: "Old English", address: "Vesterbrogade 2B, 1620 København V", category: "Bar", open_hours: 16, close_hours: 02 },
@@ -815,7 +815,7 @@ restaurant_list = [
   { name: "Frascati", address: "Vesterbrogade 9, 1620 København V", category: "Restaurant", open_hours: 17, close_hours: 22 },
   { name: "Al-Diwan", address: "Vesterbrogade 94, 1620 København V", category: "Restaurant", open_hours: 17, close_hours: 22 },
   { name: "Sticks n Sushi", address: "Istedgade 62, 1650 København V", category: "Restaurant", open_hours: 17, close_hours: 22 },
-  { name: "Neighborhood", address: "Istegade 27", category: "Restaurant", open_hours: 17, close_hours: 22 }
+  { name: "Neighborhood", address: "Istegade 27, 1650 København V", category: "Restaurant", open_hours: 17, close_hours: 22 }
 ]
 
 Destination.create!(restaurant_list)
