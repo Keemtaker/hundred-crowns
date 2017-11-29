@@ -4,7 +4,7 @@
   <title>We're sorry, but something went wrong (500)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
-  .rails-default-error-page {
+  /*.rails-default-error-page {
     background-color: #EFEFEF;
     color: #2E2F30;
     text-align: center;
@@ -50,6 +50,75 @@
     border-top-color: #DADADA;
     color: #666;
     box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+  }*/
+
+  body {
+  background-color: #f4f4f4;
+}
+
+#wrapper {
+  /* Set font size to adjust the size of the egg */
+  font-size: 16px;
+  width: 32em;
+  height: 25em;
+  margin: 15% auto;
+}
+
+  /* This is the shadow for both eggs */
+  #wrapper:after {
+    content: "";
+    width: 105%;
+    height: 3em;
+    display: block;
+    position: relative;
+    background-color: transparent;
+    top: 0.875em;
+    left: 3em;
+    border-radius: 70%/100%;
+    box-shadow: 0 100px 3em 0 rgba(52, 52, 52, .2);
+  }
+
+#egg-whole {
+  width: 18.75em;
+  height: 25em;
+  background-color: #FFFFFF;
+  position: relative;
+  z-index: 1;
+  box-shadow: inset -1.5em -3.5em 5.1875em 0.625em rgba(0,0,0,.1);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  border-left: 1px solid rgba(150, 150, 150,.2);
+  float: left;
+}
+
+/* I built this "yolk-first" because I was having trouble getting the yolk positioned correctly. So here it is. The downside is that the positioning for the open egg is based on the yolk, not the shell. */
+#egg-half { /* yolk */
+  margin: 15% auto;
+  width: 11.5em;
+  height: 11.5em;
+  border-radius: 50%;
+  background-color: #fff;
+  position: relative;
+  z-index: 2;
+  box-shadow: inset 0 -0.625em 0.875em 0.625em #EFCC1F,
+  inset -2.5em -5em 5.5em 3.5em #F8D517;
+  left: 0em;
+  top: 47%;
+}
+
+  #egg-half:before { /* body */
+    content: "";
+    display: block;
+    width: 25em;
+    height: 9.375em;
+    background-color: #FFF;
+    border-radius: 0 0 70% 45%/0 0 110% 100%;
+    position: absolute;
+    z-index: 2;
+    top: 4.5em;
+    left: -4em;
+    border-left: 1px solid rgba(150, 150, 150,.2);
+    border-top: 1px solid rgba(80, 80, 80,.1);
+    box-shadow: inset -1.5em -4.5em 6.1875em 0.625em rgba(0,0,0,.1);
   }
   </style>
 </head>
@@ -58,9 +127,14 @@
   <!-- This file lives in public/500.html -->
   <div class="dialog">
     <div>
-      <h1>We're sorry, but something went wrong.</h1>
+
+      <h1>Well this is embarrassing.</h1>
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
+    <p>It appears there has been an error. Please stand by while we fix it.</p>
+    <div id=wrapper>
+  <div id=egg-whole></div>
+  <div id=egg-half></div>
+</div>
   </div>
 </body>
 </html>
