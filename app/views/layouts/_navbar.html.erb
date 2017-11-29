@@ -44,11 +44,14 @@
         <%= link_to url_for :back do %>
           <i id="list" class="fa fa-list"></i>
         <% end %>
-      <% else %>
+      <% elsif params[:controller] == 'destinations' && params[:action] == 'index' %>
         <%= link_to map_path(destinations: @destinations_and_menu_items.map { |destination_to_menu| destination_to_menu.keys }.flatten.map(&:id)) do %>
           <i class="fa fa-map-marker" aria-hidden="true"></i>
         <% end %>
-
+      <% else %>
+        <%= link_to url_for :back do %>
+          <i id="back-symbol" class="fa fa-chevron-left"></i>
+        <% end %>
       <% end %>
     </div>
   </div>
