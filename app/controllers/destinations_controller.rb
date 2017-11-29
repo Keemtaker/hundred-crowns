@@ -18,7 +18,7 @@ class DestinationsController < ApplicationController
     @destination = Destination.find(params[:id])
     @destination_cordinates = { lat: @destination.latitude, lng: @destination.longitude }
     @markers = [[@destination.id, @destination.latitude, @destination.longitude]]
-    end
+  end
 
   def map
     @destinations = Destination.where.not(latitude: nil, longitude: nil)
@@ -34,8 +34,8 @@ class DestinationsController < ApplicationController
 #       marker.lat destination.latitude
 #       marker.lng destination.longitude
 
-def destination_params
- params.require(:product).permit(:name, :address, :category, :open_hours, :close_hours, :photo)
-end
+  def destination_params
+   params.require(:product).permit(:name, :address, :category, :open_hours, :close_hours, :photo)
+  end
 end
 
