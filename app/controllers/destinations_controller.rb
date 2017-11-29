@@ -4,7 +4,7 @@ class DestinationsController < ApplicationController
     @price = params[:destination][:price].to_f
     @price = 100 if @price.zero?
     location = "Copenhagen"
-    @categories = ["beer", "wine"] if @categories == [""] 
+    @categories = ["beer", "wine"] if @categories == [""]
     @destinations = Destination.near(location, 3)
 
 
@@ -14,28 +14,24 @@ class DestinationsController < ApplicationController
   end
 
   def show
-
     @destination = Destination.find(params[:id])
     @destination_cordinates = { lat: @destination.latitude, lng: @destination.longitude }
     @markers = [[@destination.id, @destination.latitude, @destination.longitude]]
-    end
+  end
 
   def map
-    @destinations = Destination.where.not(latitude: nil, longitude: nil)
-    @destinations.each do |destination|
-      (@markers ||= []).push [
-        destination.id,
-        destination.latitude,
-        destination.longitude
-      ]
+    @destination_ids = params[:destinations]
+    @destination_ids.each do |destination_id|
+      destination = Destination.find(destination_id)
+      (@markers ||= []).push([destination.id, destination.latitude, destination.longitude])
     end
   end
 #     @hash = Gmaps4rails.build_markers(@destinations) do |destination, marker|
 #       marker.lat destination.latitude
 #       marker.lng destination.longitude
 
-def destination_params
- params.require(:product).permit(:name, :address, :category, :open_hours, :close_hours, :photo)
-end
+  def destination_params
+    params.require(:product).permit(:name, :address, :category, :open_hours, :close_hours, :photo)
+  end
 end
 

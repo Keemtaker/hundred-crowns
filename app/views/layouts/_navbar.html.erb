@@ -15,7 +15,7 @@
 
   <div class="map-link">
     <%= link_to map_path do %>
-    <i class="fa fa-search" aria-hidden="true"></i>
+    <i class="fa fa-map-marker" aria-hidden="true"></i>
     <% end %>
   </div>
 
@@ -40,8 +40,12 @@
   <!-- Map Button -->
   <div class="navbar-wagon-item hidden-md hidden-lg">
     <div class="map-link">
-      <%= link_to map_path do %>
-      <i class="fa fa-map-marker" aria-hidden="true"></i>
+      <% if params[:controller] == 'destinations' && params[:action] == 'map' %>
+        <i class="fa fa-list"></i>
+      <% else %>
+        <%= link_to map_path(destinations: @destinations_and_menu_items.map { |destination_to_menu| destination_to_menu.keys }.flatten.map(&:id)) do %>
+          <i class="fa fa-map-marker" aria-hidden="true"></i>
+        <% end %>
       <% end %>
     </div>
   </div>
