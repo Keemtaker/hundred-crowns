@@ -10,6 +10,9 @@ gem 'redis'
 gem 'cloudinary', '1.1.7'
 gem 'attachinary', github: 'assembler/attachinary'
 gem 'jquery-fileupload-rails'
+#http gem for yelp api
+gem "http"
+
 
 gem "geocoder"
 gem "coffee-rails"
