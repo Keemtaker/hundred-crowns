@@ -86,8 +86,8 @@
 
   .error-button{
     text-align: left;
-    margin-top: 10px;
-    margin-left: 10px;
+    margin-top: 20px;
+    margin-left: 20px;
     color:#41423D;
     box-shadow: 10px;
 
@@ -107,10 +107,11 @@
     <div>
     <div class="error-page"> 
      <div class="error-button">
-      <button type="button" class="btn btn-secondary">Take me Back</button>
+
+     <input type="button" class="btn btn-warning" value="Take Me Back!" onclick="history.back(-1)" />
       </div>
       <h1>Well this is embarrassing.</h1>
-    <p>It appears there has been an error. Please stand by while we fix it.</p>
+    <p>It appears there has been an error.</p>
     </div>
     <div id=wrapper>
   <div id=egg-whole></div>
