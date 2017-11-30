@@ -20,7 +20,7 @@
           <div class="destination-hours">
             <h4>
               <i class="fa fa-hourglass-half" aria-hidden="true"></i>
-              <%= "Hours: #{@destination.open_hours}:00 - #{@destination.close_hours}:00" %>
+              <%= " Hours: #{@destination.open_hours}:00 - #{@destination.close_hours}:00" %>
             </h4>
           </div>
         </div>
@@ -56,7 +56,7 @@
               <% @destination.menu_items.where(category: cat).each do |menu_item| %>
               <div class="flex-item-show">
                 <div class="menu-item-card">
-                  <p class="menu-item-name"><i class="fa fa-eercast" aria-hidden="true"></i><%= "#{menu_item.name}" %></p>
+                  <p class="menu-item-name"><i class="fa fa-eercast " aria-hidden="true"></i><%= " #{menu_item.name}" %></p>
                   <p><%= "#{menu_item.price.to_i} DKK" %></p>
                 </div>
               </div>
