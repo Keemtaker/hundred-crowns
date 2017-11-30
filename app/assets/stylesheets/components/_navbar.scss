@@ -28,11 +28,11 @@
 //   font-size: 30px;
 // }
 
-#list {
-  text-decoration: none !important;
-  color: #40413C !important;
-  font-size: 25px;
-}
+// #list {
+//   text-decoration: none !important;
+//   color: #40413C !important;
+
+// }
 
 /* Logo */
 .navbar-wagon-brand img {
@@ -45,15 +45,46 @@
   font-weight: 100px;
 }
 
+.fa-list{
+  color: #F54E51;
+  font-size: 25px;
+  opacity: 0.8;
+}
+
+.fa-list:hover{
+  opacity:1;
+}
+
 .fa-map-marker{
   font-size: 30px;
   color: #F54E51;
+  opacity: 0.8;
+}
+
+.fa-map-marker:hover{
+  color: #F54E51 !important;
+  opacity: 1;
 }
 
 .fa-search{
   color: #F54E51;
   font-size: 30px;
+  opacity: 0.8;
+}
 
+.fa-search:hover{
+  color: #F54E51 !important;
+  opacity: 1;
+}
+
+.fa-chevron-left{
+  color: #F54E51;
+  opacity: 0.8;
+}
+
+.fa-chevron-left:hover{
+  color: #F54E51 !important;
+  opacity: 1;
 }
 
 /* User Avatar */
