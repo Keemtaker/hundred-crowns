@@ -7,20 +7,27 @@
   margin: 0 auto;
  }
 
+
+// INPUT
 #destination_price{
   padding: 20px;
   text-align: center;
   font-style: italic;
   height: 59px;
-  font-size: 14px;
+  font-size: 20px;
   background-color: #D8D6D8;
-  color: #B59535;
+  color: #303B45;
   border-radius: 4px;
+  opacity: 0.8;
 
    &:hover {
     opacity: 1;
     cursor: pointer;
   }
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #303B45;
 }
 
 // LOGO

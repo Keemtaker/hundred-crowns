@@ -15,8 +15,7 @@
                 <i class="fa fa-circle" aria-hidden="true"></i>
               </p>
             </div>
-            <%= simple_form_for :destination, url: destinations_path, :method => :get do |f| %>
-            <%= f.input :price, placeholder: "What would you like to spend?", :autofocus => true, label: false %>
+
 
             <div class="form-group flex-form">
               <input type="hidden" name="destination[category][]" value="">
@@ -67,6 +66,11 @@
               </label>
             </div>
           </div>
+
+
+            <%= simple_form_for :destination, url: destinations_path, :method => :get do |f| %>
+            <%= f.input :price, placeholder: "What would you like to spend?", :autofocus => true, label: false %>
+
 
           <%= f.submit "Search", class: "btn btn-danger" %>
           <% end %>
