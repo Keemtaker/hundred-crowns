@@ -22,16 +22,16 @@
 // }
 
 // Search
-#search {
-  text-decoration: none !important;
-  color: #40413C !important;
-  font-size: 30px;
-}
+// #search {
+//   text-decoration: none !important;
+//   color: #40413C !important;
+//   font-size: 30px;
+// }
 
 #list {
   text-decoration: none !important;
   color: #40413C !important;
-  font-size: 30px;
+  font-size: 25px;
 }
 
 /* Logo */
@@ -47,7 +47,13 @@
 
 .fa-map-marker{
   font-size: 30px;
-  color: #40413C;
+  color: #F54E51;
+}
+
+.fa-search{
+  color: #F54E51;
+  font-size: 30px;
+
 }
 
 /* User Avatar */
