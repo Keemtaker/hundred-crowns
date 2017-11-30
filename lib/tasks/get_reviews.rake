@@ -2,7 +2,6 @@
 require "json"
 require "http"
 require "optparse"
-require 'pry-byebug'
 require 'review_fetch'
 
 
