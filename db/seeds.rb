@@ -70,8 +70,8 @@ bar_list = [
   { name: "Nimb Vinotek", address: "Bernstorffsgade 5, 1577 København V", category: "Bar", open_hours: 16, close_hours: 02 },
   { name: "Brewpub ", address: "Vestergade 29, 1456 København K", category: "Bar", open_hours: 16, close_hours: 02 },
   { name: "Nimb Bar", address: "Bernstorffsgade 5, 1577 København V", category: "Bar", open_hours: 16, close_hours: 02 },
-  { name: "Dia'legd", address: "Viktoriagade 1, 1655 København V", category: "Bar", open_hours: 16, close_hours: 02 }
-  { name: "Old English", address: "Vesterbrogade 2B, 1620 København V", category: "Bar", open_hours: 16, close_hours: 02 },
+  { name: "Dia'legd", address: "Viktoriagade 1, 1655 København V", category: "Bar", open_hours: 16, close_hours: 02 },
+  { name: "Old English", address: "Vesterbrogade 2B, 1620 København V", category: "Bar", open_hours: 16, close_hours: 02 }
 ]
 
 Destination.create!(bar_list)
