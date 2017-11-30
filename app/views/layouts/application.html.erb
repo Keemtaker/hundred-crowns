@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Hundred-Crowns</title>
@@ -27,8 +31,8 @@
   <%= javascript_include_tag "https://cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/infobox/src/infobox_packed.js" %>
 
   <%= javascript_include_tag 'application' %>
-  <%= yield(:after_js) %>
   <%= cloudinary_js_config %>
+  <%= yield(:after_js) %>
 
   <!-- facebook share button Javascript SDK -->
   <div id="fb-root"></div>

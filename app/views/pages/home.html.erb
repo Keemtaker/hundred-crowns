@@ -2,61 +2,78 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 </head>
 
-<div class="container background">
-  <div class="wrapper">
-  <!-- <div class="row"> -->
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-      <img <%= image_tag "100-crowns_logo.png", class: "logo" %>
-      <div class="form-show">
-        <h1>100 Crowns</h1>
-        <p>Get What you Want.</p>
-        <%= simple_form_for :destination, url: destinations_path, :method => :get do |f| %>
-        <%= f.input :price, placeholder: "DKK", :autofocus => true, label: false %>
+<div class="home-wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3 col-xs-12">
+        <div class="home-form-card">
+          <div class="form-show">
+            <div class="home-header text-center">
+              <%= image_tag "100-crowns_logo.png", class: "logo" %>
+              <h1>100 Crowns</h1>
+              <p>Get What you Want
+                <i class="fa fa-circle" aria-hidden="true"></i>
+              </p>
+            </div>
+            <%= simple_form_for :destination, url: destinations_path, :method => :get do |f| %>
+            <%= f.input :price, placeholder: "What would you like to spend?", :autofocus => true, label: false %>
 
-        <div class="form-group">
-          <input type="hidden" name="destination[category][]" value="">
+            <div class="form-group flex-form">
+              <input type="hidden" name="destination[category][]" value="">
 
-        <div class="category-choices">
-          <input class="hidden" type="checkbox" value="beer" name="destination[category][]" id="destination_category_beers">
-          <label class="category-choice" for="destination_category_beers">
-           Beer
-         </label>
+              <div class="category-choices">
+                <input class="hidden" type="checkbox" value="beer" name="destination[category][]" id="destination_category_beers">
+                <label class="category-choice" for="destination_category_beers">
+                 <i class="fa fa-beer fa-3x" aria-hidden="true"></i>
+                 <br>
+                 Beer
+               </label>
 
-         <input class="hidden" type="checkbox" value="wine" name="destination[category][]" id="destination_category_wines">
-         <label class="category-choice" for="destination_category_wines">
-          Wine
-        </label>
+               <input class="hidden" type="checkbox" value="wine" name="destination[category][]" id="destination_category_wines">
+               <label class="category-choice" for="destination_category_wines">
+                 <i class="fa fa-glass fa-3x" aria-hidden="true"></i>
+                 <br>
+                 Wine
+               </label>
 
-        <input class="hidden" type="checkbox" value="cocktail" name="destination[category][]" id="destination_category_cocktails">
-        <label class="category-choice" for="destination_category_cocktails">
-          Cocktails
-        </label>
+               <input class="hidden" type="checkbox" value="cocktail" name="destination[category][]" id="destination_category_cocktails">
+               <label class="category-choice" for="destination_category_cocktails">
+                <i class="fa fa-flask fa-3x" aria-hidden="true"></i>
+                <br>
+                Cocktails
+              </label>
+            </div>
+            <div class="category-choices">
 
-        <input class="hidden" type="checkbox" value="appetizer" name="destination[category][]" id="destination_category_apps">
-        <label class="category-choice" for="destination_category_apps">
-          Appetizers
-        </label>
+              <input class="hidden" type="checkbox" value="appetizer" name="destination[category][]" id="destination_category_apps">
+              <label class="category-choice" for="destination_category_apps">
+                <i class="fa fa-rocket fa-3x" aria-hidden="true"></i>
+                <br>
+                Starters
+              </label>
 
-        <input class="hidden" type="checkbox" value="entree" name="destination[category][]" id="destination_category_mains">
-        <label class="category-choice" for="destination_category_mains">
-          Entrees
-        </label>
+              <input class="hidden" type="checkbox" value="entree" name="destination[category][]" id="destination_category_mains">
+              <label class="category-choice" for="destination_category_mains">
+                <i class="fa fa-cutlery fa-3x" aria-hidden="true"></i>
+                <br>
+                Entrees
+              </label>
 
-        <input class="hidden" type="checkbox" value="dessert" name="destination[category][]" id="destination_category_desserts">
-        <label class="category-choice" for="destination_category_desserts">
-          Dessert
-        </label>
+              <input class="hidden" type="checkbox" value="dessert" name="destination[category][]" id="destination_category_desserts">
+              <label class="category-choice" for="destination_category_desserts">
+                <i class="fa fa-birthday-cake fa-3x" aria-hidden="true"></i>
+                <br>
+                Dessert
+              </label>
+            </div>
+          </div>
 
+          <%= f.submit "Search", class: "btn btn-danger" %>
+          <% end %>
         </div>
       </div>
-
-      <%= f.submit "Search", class: "btn btn-danger" %>
-      <% end %>
     </div>
   </div>
-  </div>
-<!-- </div> -->
 </div>
-
-
+</div>
 

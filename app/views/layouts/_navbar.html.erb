@@ -1,31 +1,32 @@
 <div class="navbar-wagon navbar-fixed-top">
-  <!-- Logo -->
-  <div class="filter">
-    <i class="fa fa-bars" aria-hidden="true"></i>
 
+  <!-- Search Button -->
+  <div class="filter">
+    <a href="/"><i class="fa fa-search" id="search" aria-hidden="true"></i></a>
   </div>
 
+  <!-- Logo -->
   <a href="/" class="navbar-wagon-brand" style="">
    <%= image_tag "100-crowns_logo.png", {id: "logo"}%>
-  </a>
+ </a>
 
-  <!-- Right Navigation -->
-  <div class="navbar-wagon-right hidden-xs hidden-sm">
+ <!-- Right Navigation -->
+ <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-<div class="map-link">
-  <%= link_to map_path do %>
-  <i class="fa fa-map-marker fa-2x" aria-hidden="true"></i> 
-  <% end %>
-</div>
+  <div class="map-link">
+    <%= link_to map_path do %>
+    <i class="fa fa-map-marker" aria-hidden="true"></i>
+    <% end %>
+  </div>
 
 
 
     <!-- <a href="" class="navbar-wagon-item navbar-wagon-link">Host</a>
     <a href="" class="navbar-wagon-item navbar-wagon-link">Trips</a>
     <a href="" class="navbar-wagon-item navbar-wagon-link">Messages</a>
- -->
-    <!-- Profile picture with dropdown list -->
-    <div class="navbar-wagon-item">
+  -->
+  <!-- Profile picture with dropdown list -->
+  <div class="navbar-wagon-item">
       <!-- <div class="dropdown">
         <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
@@ -38,14 +39,22 @@
   </div>
 
   <!-- Dropdown appearing on mobile only -->
+  <!-- Map Button -->
   <div class="navbar-wagon-item hidden-md hidden-lg">
-    <div class="dropdown">
-      <i class="fa fa-map-marker dropdown-toggle" data-toggle="dropdown"></i>
-      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Search</a></li>
-        <li><a href="#">Map</a></li>
-        <li><a href="#">Filter</a></li>
-      </ul>
+    <div class="map-link">
+      <% if params[:controller] == 'destinations' && params[:action] == 'map' %>
+        <%= link_to url_for :back do %>
+          <i id="list" class="fa fa-list"></i>
+        <% end %>
+      <% elsif params[:controller] == 'destinations' && params[:action] == 'index' %>
+        <%= link_to map_path(destinations: @destinations_and_menu_items.map { |destination_to_menu| destination_to_menu.keys }.flatten.map(&:id)) do %>
+          <i class="fa fa-map-marker" aria-hidden="true"></i>
+        <% end %>
+      <% else %>
+        <%= link_to url_for :back do %>
+          <i id="back-symbol" class="fa fa-chevron-left"></i>
+        <% end %>
+      <% end %>
     </div>
   </div>
 </div>

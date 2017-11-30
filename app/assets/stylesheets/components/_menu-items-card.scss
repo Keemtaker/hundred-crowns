@@ -1,0 +1,40 @@
+.category-collection {
+	background: #E0E2E6;
+	border-top-style: solid;
+	border-color: #B59535;
+	border-radius: 2px;
+	border-width: 1px;
+}
+
+
+.menu-item-card {
+  // background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 3px;
+  .menu-item-name {
+    margin-right: 5px;
+  }
+}
+
+.fa-eercast{
+	color: #B59535;
+}
+
+.fa-facebook-square{
+	color: #3b5998;
+	font-size: 20px;
+	// position: relative;
+	// top: 5px;
+	// left: 5px;
+}
+
+.destination-information{
+	background: #E0E2E6;
+	margin-top: 7px;
+
+	h4{
+		font-size: 15px;
+	}
+}

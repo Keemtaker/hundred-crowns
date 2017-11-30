@@ -1,0 +1,39 @@
+// .show-map{
+// 	margin: 0px 10px !important;
+// }
+
+
+// .show-map {
+//   flex: 0 0 450px;
+//   height: 100vh;
+//   position: sticky !important; /* !important to override Gmaps inline CSS */
+//   top: 0 !important;
+// }
+
+
+.flex-show-container{
+	display: flex;
+	// justify-content: space-around;
+	flex-direction: row;
+	// align-items: flex-start;
+	margin: 10px 10px 10px 10px;
+	background-color: #E0E2E6;
+
+}
+
+.flex-all-item{
+	// flex-direction: row;
+	// // justify-content: space-around;
+	// align-items: center;
+}
+
+.map-flex-item{
+	// justify-content: flex-end;
+	// align-items: flex-start;
+	// flex: 0 0 450px;
+	// height: 100vh;
+}
+
+.destination-hours{
+	font-size: 13px;
+}

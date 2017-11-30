@@ -1,3 +1,13 @@
+.map-container{
+  width: 100vw;
+  height: 100vh;
+}
+
+#map {
+  width: 100vw !important;
+  height: 100vh !important;
+}
+
 .map-wrapper {
   //position: relative;
 }
@@ -8,6 +18,51 @@
   //left: 50px;
   //background: white;
   //border-radius: 5px;
+}
+
+.panel-margin {
+  margin-top: none !important;
+  margin-bottom: none !important;
+  padding: none;
+  text-align: center;
+}
+
+.panel-box {
+  background-color: transparent !important;
+  opacity: 1;
+  color: black;
+  border-top-style: none;
+  border-left-style: none;
+  border-right-style: none;
+  border-bottom-style: none;
+  box-shadow: none;
+  margin: none;
+}
+
+.table-lines {
+  border-top-style: none;
+  border-left-style: none;
+  border-right-style: none;
+  border-bottom-style: none;
+  margin: none;
+}
+
+.table>thead>tr>td,
+.table>thead>tr>th {
+  border-top-style: none;
+  border-left-style: none;
+  border-right-style: none;
+  border-bottom-style: none;
+  margin: none;
+}
+
+.table>tbody>tr>td,
+.table>tbody>tr>th {
+  border-top-style: none;
+  border-left-style: none;
+  border-right-style: none;
+  border-bottom-style: none;
+  margin: none;
 }
 
 .menu-row {
@@ -29,11 +84,12 @@ h3 {
 }
 
 h4 {
-  font-size: 16px;
+  font-size: 18px;
   color: black;
 }
 
 p {
   font-size: 16px;
   color: black;
+  opacity: 0.8;
 }
