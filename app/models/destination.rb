@@ -1,5 +1,6 @@
 class Destination < ApplicationRecord
   has_many :menu_items, dependent: :destroy
+  has_many :reviews, dependent: :destroy
   has_attachment :photo
 
   geocoded_by :address

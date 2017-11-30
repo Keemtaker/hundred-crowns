@@ -1,0 +1,53 @@
+.yelp-style {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.btn.sm {
+  font-size: 3px;
+  padding: 5px
+}
+
+.style-rating {
+  color: red;
+  padding: 10px 5px;
+}
+
+.yelp-header {
+  text-align: center;
+}
+
+.yelp-cover {
+  background: #E0E2E6;
+  margin-top: 20px;
+}
+
+.btn-sm,
+.btn-group-sm > .btn {
+  padding: 3px 7px;
+  font-size: 16px;
+  line-height: 1.5;
+  border-radius: 25px;
+}
+
+.yelp-card {
+  background: white;
+  padding: 5px 20px;
+}
+
+
+#yelp-btn {
+  margin: 0px auto;
+  bottom-radius: 50%;
+  margin-top: 10px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+#yelp-title {
+  text-align: center;
+  color: gray;
+  font-weight: bold;
+  margin-top: 50px;
+}
