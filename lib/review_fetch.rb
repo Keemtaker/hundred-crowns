@@ -12,8 +12,8 @@ class ReviewFetch
    @address = @destination.address
   end
 
-  CLIENT_ID = "X3cQsdbtqNiIxj3hkaUleQ"
-  CLIENT_SECRET = "9eE6DOMSEgnjR92xtlGTAZsOLGFRUsPeeU6V0Gv2RQESPPLVH4laTOSFrDT8yKs3"
+  CLIENT_ID = ENV['YELP_ID']
+  CLIENT_SECRET = ENV['YELP_SECRET']
 
   API_HOST = "https://api.yelp.com"
   SEARCH_PATH = "/v3/businesses/search"
@@ -100,7 +100,3 @@ class ReviewFetch
 
 end
 
-#I need to create a review in my database
-#so first i need to specify review params
-#auhor, content, rating and destination_id
-#so all these has to occur in a review_create method
