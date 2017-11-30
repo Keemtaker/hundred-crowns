@@ -24,7 +24,7 @@
         </h4>
         </div>
       </div>
-      
+
         <div class="col-xs-6 col-offset-4">
         <div class="destination-address">
           <h4>
@@ -42,8 +42,8 @@
     <div class="wrapper">
     <div class="flex-show-container">
       <div class="container">
-        <div class="row">        
-        
+        <div class="row">
+
       <div class="flex-all-item">
       <div class="text-center">
         <h3>Menu Items</h3>
@@ -53,17 +53,17 @@
           <% if @destination.menu_items.find { |menu_item| menu_item.category == cat } %>
             <div class="category-collection">
               <h4 class="text-center"><%= cat.capitalize %></h4>
-      </div> <!-- close flex-item -->
-              <div class="flex-item-show">
+            </div> <!-- close flex-item -->
             <% @destination.menu_items.where(category: cat).each do |menu_item| %>
+              <div class="flex-item-show">
                 <div class="menu-item-card">
-                  <p><i class="fa fa-eercast" aria-hidden="true"></i><%= "#{menu_item.name}" %></p>
+                  <p class="menu-item-name"><i class="fa fa-eercast" aria-hidden="true"></i><%= "#{menu_item.name}" %></p>
                   <p><%= "#{menu_item.price.to_i} DKK" %></p>
                 </div>
               </div>
             <% end %> <!-- end menu item iteration -->
-                </div>
           <% end %> <!-- close if statement -->
+              </div>
         <% end %>
                 </div>
         </div>
@@ -77,7 +77,7 @@
       <div id="map" style= "height: 80vh; width: 100vw;"></div>
     <!-- </div> -->
     </div>
-      </div> <!-- close flex-container --> 
+      </div> <!-- close flex-container -->
 
   <%= content_for(:after_js) do %>
     <%= render 'maplink', collection: @markers %>
