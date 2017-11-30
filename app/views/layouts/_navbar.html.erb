@@ -1,8 +1,29 @@
 <div class="navbar-wagon navbar-fixed-top">
 
   <!-- Search Button -->
-  <div class="filter">
-    <a href="/"><i class="fa fa-search" id="search" aria-hidden="true"></i></a>
+  <div class="map-link hidden-xs hidden-sm">
+    <%= link_to map_path do %>
+    <i class="fa fa-map-marker" aria-hidden="true"></i>
+    <% end %>
+  </div>
+
+  <div class="navbar-wagon-item hidden-md hidden-lg">
+  <!-- Map Button -->
+    <div class="map-link">
+      <% if params[:controller] == 'destinations' && params[:action] == 'map' %>
+        <%= link_to url_for :back do %>
+          <i id="list" class="fa fa-list"></i>
+        <% end %>
+      <% elsif params[:controller] == 'destinations' && params[:action] == 'index' %>
+        <%= link_to map_path(destinations: @destinations_and_menu_items.map { |destination_to_menu| destination_to_menu.keys }.flatten.map(&:id)) do %>
+          <i class="fa fa-map-marker" aria-hidden="true"></i>
+        <% end %>
+      <% else %>
+        <%= link_to url_for :back do %>
+          <i id="back-symbol" class="fa fa-chevron-left"></i>
+        <% end %>
+      <% end %>
+    </div>
   </div>
 
   <!-- Logo -->
@@ -11,14 +32,11 @@
  </a>
 
  <!-- Right Navigation -->
- <div class="navbar-wagon-right hidden-xs hidden-sm">
-
-  <div class="map-link">
-    <%= link_to map_path do %>
-    <i class="fa fa-map-marker" aria-hidden="true"></i>
-    <% end %>
+ <div class="navbar-wagon-right">
+  <div class="filter">
+    <a href="/"><i class="fa fa-search" id="search" aria-hidden="true"></i></a>
   </div>
-
+   
     <!-- <a href="" class="navbar-wagon-item navbar-wagon-link">Host</a>
     <a href="" class="navbar-wagon-item navbar-wagon-link">Trips</a>
     <a href="" class="navbar-wagon-item navbar-wagon-link">Messages</a>
@@ -37,22 +55,5 @@
   </div>
 
   <!-- Dropdown appearing on mobile only -->
-  <!-- Map Button -->
-  <div class="navbar-wagon-item hidden-md hidden-lg">
-    <div class="map-link">
-      <% if params[:controller] == 'destinations' && params[:action] == 'map' %>
-        <%= link_to url_for :back do %>
-          <i id="list" class="fa fa-list"></i>
-        <% end %>
-      <% elsif params[:controller] == 'destinations' && params[:action] == 'index' %>
-        <%= link_to map_path(destinations: @destinations_and_menu_items.map { |destination_to_menu| destination_to_menu.keys }.flatten.map(&:id)) do %>
-          <i class="fa fa-map-marker" aria-hidden="true"></i>
-        <% end %>
-      <% else %>
-        <%= link_to url_for :back do %>
-          <i id="back-symbol" class="fa fa-chevron-left"></i>
-        <% end %>
-      <% end %>
-    </div>
-  </div>
+
 </div>
