@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-
+<%= "It appears your search returned no results, click on the crown to search again." if @destinations_and_menu_items.empty? %>
     <% @destinations_and_menu_items.each do |hash| %>
     <% hash.each do |destination, menu_items| %>
 
