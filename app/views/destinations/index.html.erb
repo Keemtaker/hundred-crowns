@@ -1,6 +1,14 @@
 <div class="container">
   <div class="row">
-
+    <div class="col-xs-12 col-offset-4">
+    <div class="text-center">
+      <div class="results-error">
+        <h4>
+    <%= "It appears your search returned no results, click on the crown to search again." if @destinations_and_menu_items.empty? %>
+    </h4>
+      </div> 
+      </div>
+    </div>
     <% @destinations_and_menu_items.each do |hash| %>
     <% hash.each do |destination, menu_items| %>
 
@@ -13,10 +21,10 @@
         </div>
       </div>
       <div class="card-description">
-          
-          <div class="card-location">
-            <%= destination.distance_from("Ahornsgade 15, 2200 Copenhagen").round(1) %> km
-          </div>
+
+        <div class="card-location">
+          <%= destination.distance_from("Ahornsgade 15, 2200 Copenhagen").round(1) %> km
+        </div>
         <div class="card-content">
           <% menu_items.each do |menu_item| %>
           <p>
