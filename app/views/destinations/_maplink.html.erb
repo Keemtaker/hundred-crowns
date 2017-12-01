@@ -19,11 +19,17 @@
           var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
           bounds.extend(position);
           var marker = new google.maps.Marker({
+            animation: google.maps.Animation.DROP,
             position: {lat: markers[i][1], lng: markers[i][2]},
             map: map,
-            title: "marker id:" + markers[i][0]
+            title: markers[i][3]
           })
           ;
+
+
+
+
+
         // Add an event listener to each marker
         google.maps.event.addListener(marker, 'click', (function(marker, i) {
          return function() {

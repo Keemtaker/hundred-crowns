@@ -14,14 +14,14 @@ class DestinationsController < ApplicationController
   def show
     @destination = Destination.find(params[:id])
     @destination_cordinates = { lat: @destination.latitude, lng: @destination.longitude }
-    @markers = [[@destination.id, @destination.latitude, @destination.longitude]]
+    @markers = [[@destination.id, @destination.latitude, @destination.longitude, @destination.name]]
   end
 
   def map
     @destination_ids = params[:destinations]
     @destination_ids.each do |destination_id|
       destination = Destination.find(destination_id)
-      (@markers ||= []).push([destination.id, destination.latitude, destination.longitude])
+      (@markers ||= []).push([destination.id, destination.latitude, destination.longitude, destination.name])
     end
   end
 #     @hash = Gmaps4rails.build_markers(@destinations) do |destination, marker|
